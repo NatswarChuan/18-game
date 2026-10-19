@@ -99,10 +99,25 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                           : 'border-dashed border-white/15 bg-black/20 hover:border-[#00F0FF]/40 hover:bg-[#00F0FF]/5'
                       }`}
                     >
-                      {/* Slot Header Marker */}
-                      <span className="absolute top-1.5 left-2 font-mono text-[10px] text-gray-500">
-                        Ô {slotIndex + 1}
-                      </span>
+                      {/* Slot Header Marker with Tactical Bonus */}
+                      <div className="absolute top-1.5 left-2 right-2 flex items-center justify-between font-mono text-[9px] pointer-events-none z-10">
+                        <span className="text-gray-400 font-bold">Ô {slotIndex + 1}</span>
+                        <span
+                          className={`tracking-wider font-bold ${
+                            behavior.rowType === 'FRONTLINE'
+                              ? 'text-[#FFD700]'
+                              : behavior.rowType === 'MIDLINE'
+                              ? 'text-[#00F0FF]'
+                              : 'text-[#FF2A85]'
+                          }`}
+                        >
+                          {behavior.rowType === 'FRONTLINE'
+                            ? '+15% NỘ MANA'
+                            : behavior.rowType === 'MIDLINE'
+                            ? '+10% TỐC ĐÁNH'
+                            : '+1 TẦM BẮN'}
+                        </span>
+                      </div>
 
                       {placement ? (
                         <div className="w-full">
