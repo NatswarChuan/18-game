@@ -126,6 +126,13 @@ export const App: React.FC = () => {
           >
             {isStreamerMode ? '🛡️ SFW MODE' : '⚔️ 16+ MODE'}
           </button>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-3 py-1.5 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors"
+            title="Khởi động lại ván đấu mới"
+          >
+            🔄 VÁN MỚI
+          </button>
         </div>
 
         {/* Series Score & Round Badge */}

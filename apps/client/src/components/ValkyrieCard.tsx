@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CombatEntitySnapshot, getValkyrieById } from '@valkyrie/shared-domain';
 
 interface ValkyrieCardProps {
@@ -24,6 +24,30 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({ entity, valkyrieId, 
   const isCasting = entity?.isCastingUltimate ?? false;
   const isDead = entity ? !entity.isAlive : false;
 
+  // Floating Combat Numbers
+  const prevHpRef = useRef(hp);
+  const [damageFloater, setDamageFloater] = useState<{ value: number; type: 'DAMAGE' | 'HEAL'; id: number } | null>(null);
+
+  useEffect(() => {
+    if (entity) {
+      const diff = entity.currentHp - prevHpRef.current;
+      if (diff < 0) {
+        setDamageFloater({ value: Math.abs(diff), type: 'DAMAGE', id: Date.now() });
+      } else if (diff > 0) {
+        setDamageFloater({ value: diff, type: 'HEAL', id: Date.now() });
+      }
+      prevHpRef.current = entity.currentHp;
+    }
+  }, [entity?.currentHp]);
+
+  useEffect(() => {
+    if (!damageFloater) return;
+    const timer = setTimeout(() => {
+      setDamageFloater(null);
+    }, 850);
+    return () => clearTimeout(timer);
+  }, [damageFloater?.id]);
+
   // Tier border and glow
   let tierBadge = 'TIER 1 • PRISTINE';
   let tierColor = 'text-[#00F0FF] border-[#00F0FF]/40 bg-[#00F0FF]/10';
@@ -46,6 +70,20 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({ entity, valkyrieId, 
       } ${isCasting ? 'scale-105 shadow-[0_0_25px_#FF2A85]' : ''}`}
       style={{ minWidth: '180px' }}
     >
+      {/* Floating Combat Text */}
+      {damageFloater && (
+        <div
+          key={damageFloater.id}
+          className={`absolute -top-3 right-3 pointer-events-none font-display font-black text-sm z-30 floating-damage ${
+            damageFloater.type === 'DAMAGE'
+              ? 'text-[#FF3344] drop-shadow-[0_0_8px_rgba(255,51,68,0.9)]'
+              : 'text-[#00FF88] drop-shadow-[0_0_8px_rgba(0,255,136,0.9)]'
+          }`}
+        >
+          {damageFloater.type === 'DAMAGE' ? `-${damageFloater.value}` : `+${damageFloater.value}`}
+        </div>
+      )}
+
       {/* Faction Header & Inspect Button */}
       <div className="flex items-center justify-between text-xs mb-1.5">
         <span className="font-mono text-[10px] text-gray-400">
