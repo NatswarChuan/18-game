@@ -1,0 +1,62 @@
+# Cấu hình thông số kỹ năng cho Valkyrie Protocol: Zero (Antigravity Production V2)
+
+waterfall-phase-runner:
+  require_gate_signoff: true
+  stop_on_gate_failure: true
+  min_pass_score: 8.5
+
+local-dev-bootstrap:
+  package_manager: "pnpm"
+  auto_install_missing_runtimes: true
+  server_port: 4000
+  client_port: 5173
+  enable_in_memory_fallback: true
+  verify_health_timeout_ms: 10000
+
+autonomous-browser-playtest:
+  web_url: "http://localhost:5173"
+  min_critic_score: 8.5
+  min_visual_score: 8.5
+  min_ui_score: 8.5
+  target_fps: 60
+  max_iterations: 5
+  require_zero_console_errors: true
+
+game-balance-verifier:
+  max_cosine_asymmetry_epsilon: 0.05
+  orthogonal_pivot_threshold: 0.15
+  spatial_dimension_min_weight: 0.75
+  max_allowed_winrate: 0.53
+  min_allowed_winrate: 0.47
+  simulation_battles_count: 1000000
+
+production-quality-gate:
+  sonarqube:
+    max_cognitive_complexity: 15
+    max_cyclomatic_complexity: 10
+    max_function_lines: 60
+    max_file_lines: 350
+    max_parameters: 4
+    forbid_explicit_any: true
+    forbid_ts_ignore: true
+    forbid_console_log: true
+  coverity_sast:
+    enforce_resource_cleanup: true
+    enforce_null_bounds_check: true
+    enforce_zero_division_guard: true
+    enforce_input_schema_validation: true
+  blackduck_sca:
+    max_high_or_critical_cve: 0
+    allowed_licenses:
+      - "MIT"
+      - "ISC"
+      - "Apache-2.0"
+      - "BSD-2-Clause"
+      - "BSD-3-Clause"
+      - "0BSD"
+    forbidden_licenses:
+      - "GPL"
+      - "AGPL"
+      - "LGPL"
+      - "SSPL"
+      - "CC-BY-NC"
