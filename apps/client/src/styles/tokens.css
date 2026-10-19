@@ -1,0 +1,167 @@
+:root {
+  --color-primary-neon: #FF2A85;
+  --color-accent-cyan: #00F0FF;
+  --color-mystic-purple: #8A2BE2;
+  --color-bg-base: #0D0E15;
+  --color-bg-elevated: #161826;
+  --color-surface-glass: rgba(22, 24, 38, 0.75);
+  --color-surface-border: rgba(255, 42, 133, 0.25);
+  --color-warning-red: #FF3344;
+  --color-gold: #FFD700;
+  --color-text-main: #F0F2FA;
+  --color-text-dim: #949BB3;
+  --font-display: 'Orbitron', -apple-system, sans-serif;
+  --font-sub: 'Rajdhani', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: var(--font-sub);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(255, 42, 133, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.06) 0%, transparent 40%),
+    linear-gradient(rgba(13, 14, 21, 0.95), rgba(13, 14, 21, 0.95));
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-surface-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45),
+              inset 0 0 12px 0 rgba(255, 42, 133, 0.1);
+  border-radius: 12px;
+}
+
+.glass-panel-cyan {
+  background: rgba(10, 25, 40, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45),
+              inset 0 0 12px 0 rgba(0, 240, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Neon Glows */
+.neon-glow-primary {
+  box-shadow: 0 0 15px rgba(255, 42, 133, 0.6),
+              0 0 30px rgba(255, 42, 133, 0.25);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6),
+              0 0 30px rgba(0, 240, 255, 0.25);
+}
+
+.neon-glow-gold {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6),
+              0 0 30px rgba(255, 215, 0, 0.25);
+}
+
+/* Typography styles */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sub {
+  font-family: var(--font-sub);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Buttons */
+.cyber-button {
+  background: linear-gradient(135deg, rgba(255, 42, 133, 0.8), rgba(138, 43, 226, 0.8));
+  color: #FFF;
+  border: 1px solid rgba(255, 42, 133, 0.5);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 42, 133, 0.6);
+  border-color: #FFF;
+}
+
+.cyber-button:active {
+  transform: translateY(0);
+}
+
+.cyber-button-cyan {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.8), rgba(0, 150, 255, 0.8));
+  border-color: rgba(0, 240, 255, 0.5);
+}
+
+.cyber-button-cyan:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+}
+
+/* Cloth / Battle Damage Flash Animations */
+@keyframes damageFlash {
+  0% { filter: brightness(1) drop-shadow(0 0 0 transparent); }
+  50% { filter: brightness(2) drop-shadow(0 0 15px #FF2A85); }
+  100% { filter: brightness(1) drop-shadow(0 0 0 transparent); }
+}
+
+.damage-flash {
+  animation: damageFlash 0.3s ease-out;
+}
+
+@keyframes criticalPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 51, 68, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(255, 51, 68, 0.9); }
+}
+
+.critical-burst-pulse {
+  animation: criticalPulse 1s infinite;
+}
+
+/* Climax Cut-In Banner Animation */
+@keyframes cutInSlide {
+  0% {
+    transform: scaleY(0.4) translateY(-20px);
+    opacity: 0;
+  }
+  15% {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.8) translateY(20px);
+    opacity: 0;
+  }
+}
+
+.cut-in-banner {
+  animation: cutInSlide 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

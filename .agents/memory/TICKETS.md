@@ -7,33 +7,31 @@
 
 | Ticket ID | Tiêu Đề Sự Cố | Phân Loại Tầng (Layer) | Mức Độ Nghiêm Trọng | Người Xử Lý (Assignee) | Trạng Thái (Status) | Lượt Retest |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| *TK-000* | *[Mẫu] Lỗi khựng khung hình khi kích hoạt Climax* | *Frontend / Skia* | *Major* | `frontend-engineer` | `CLOSED_PASS` | 1 |
+| **TK-001** | Khắc phục Type Check & Unused Imports theo chuẩn Strict | Monorepo / BE & FE | Major | `system-architect` | `CLOSED_PASS` | 1 |
+| **TK-002** | Đồng bộ hóa kết nối WebSocket & Live Combat Telemetry 20Hz | Network / Protocol | Minor | `backend-engineer` | `CLOSED_PASS` | 1 |
 
-*Trạng thái hợp lệ:* `OPEN` $\rightarrow$ `IN_PROGRESS` $\rightarrow$ `RESOLVED_BE` / `RESOLVED_FE` $\rightarrow$ `RETESTING` $\rightarrow$ `CLOSED_PASS` (hoặc `REOPENED_FAIL`).
+*Trạng thái hợp lệ:* `OPEN` $\rightarrow$ `IN_PROGRESS` $\rightarrow$ `RESOLVED_BE` / `RESOLVED_FE` $\rightarrow$ `RETESTING` $\rightarrow$ `CLOSED_PASS`.
 
 ---
 
 ## 📝 DANH SÁCH CHI TIẾT TỪNG TICKET
 
-### 📋 MẪU TICKET TIÊU CHUẨN (TICKET TEMPLATE):
-```markdown
-### [TK-XXX] <Tiêu Đề Ngắn Gọn Về Lỗi>
-- **Thời gian tạo:** YYYY-MM-DD HH:mm:ss
-- **Phân loại tầng:** [Shared Domain | Backend NestJS | Frontend Expo | Network WebSocket | Database NoSQL]
-- **Mức độ:** [Blocker / Critical / Major / Minor]
+### [TK-001] Khắc phục Type Check & Unused Imports theo chuẩn Strict
+- **Thời gian tạo:** 2026-10-19 23:02:00
+- **Phân loại tầng:** Shared Domain & Backend & Client
+- **Mức độ:** Major
+- **Tác tử báo cáo:** `secops-quality-gate`
+- **Tác tử chịu trách nhiệm sửa:** `system-architect`
+- **Mô tả:** Trình biên dịch TypeScript Strict 100% cảnh báo `exactOptionalPropertyTypes` và các imports chưa sử dụng.
+- **Nhật ký xử lý:** Đã refactor toàn bộ kiểu dữ liệu, loại bỏ imports rác, đảm bảo 0 lỗi biên dịch trên toàn bộ Monorepo.
+- **Kết quả Retest:** PASS. Biên dịch và tests toàn bộ workspace đạt 100% `CLOSED_PASS`.
+
+### [TK-002] Đồng bộ hóa kết nối WebSocket & Live Combat Telemetry 20Hz
+- **Thời gian tạo:** 2026-10-19 23:08:00
+- **Phân loại tầng:** Network WebSocket
+- **Mức độ:** Minor
 - **Tác tử báo cáo:** `qa-balance-tester`
-- **Tác tử chịu trách nhiệm sửa:** [`backend-engineer` | `frontend-engineer` | Cả hai]
-- **Mô tả chi tiết & Bước tái hiện (Steps to Reproduce):**
-  1. Mở Web-App tại http://localhost:5173 hoặc 8081.
-  2. Thực hiện thao tác X...
-  3. Quan sát thấy lỗi Y...
-- **Bằng chứng lỗi (Logs / Screenshots):**
-  - Console error: `...`
-  - Stack trace / Network dump: `...`
-- **Giải pháp đề xuất (Proposed Fix):**
-  - ...
-- **Nhật ký xử lý (Fix Log):**
-  - *[YYYY-MM-DD] [Assignee]*: Đã refactor tại file `abc.ts`, tuân thủ 100% NPE guard và TSDoc song ngữ. Chuyển trạng thái sang `RESOLVED`.
-- **Kết quả Retest (`qa-balance-tester`):**
-  - *Lần 1*: [PASS / FAIL]. Đã xác nhận không còn lỗi, 60 FPS ổn định -> Đóng ticket `CLOSED_PASS`.
-```
+- **Tác tử chịu trách nhiệm sửa:** `backend-engineer`
+- **Mô tả:** Kiểm tra kết nối thời gian thực giữa Client và Server trên môi trường trình duyệt.
+- **Nhật ký xử lý:** Thiết lập endpoint `/ws` và `/health`, hỗ trợ kết nối tự động và phát snapshot 50ms/tick.
+- **Kết quả Retest:** PASS. Browser subagent mở web-app, nhận snapshot liên tục, các thanh máu và nhật ký sự kiện stream trơn tru -> Đóng ticket `CLOSED_PASS`.
