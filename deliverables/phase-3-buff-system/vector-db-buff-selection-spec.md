@@ -274,18 +274,60 @@ export class VectorBuffSelectionService {
 
     const decisiveFilter = (b: VectorBuffPayload): boolean => {
       if (chosenAIds.has(b.id) || selectedIds.has(b.id)) return false;
-      // At match point (urgency = 1.0), prioritize Depth 4 and Depth 5
+      // At match point or high urgency (urgency >= 0.8), unlock and prioritize Depth 4 & Depth 5 Apex buffs
       if (urgency >= 0.8) return b.depth >= 4;
-      return b.category === 'PIVOT' || b.category === 'GAME_DECIDING';
+      // In early/mid stages (urgency < 0.8): strictly prohibit premature Depth >= 4 Game-Deciding buffs!
+      if (b.depth >= 4) return false;
+      return b.category === 'PIVOT' || b.category === 'SPATIAL';
     };
 
     const decisiveBuffs = await this.vectorDb.searchKNN(decisiveQuery, 3, decisiveFilter);
     decisiveBuffs.forEach((b) => selectedIds.add(b.id));
 
-    return [...synergyBuffs, ...counterBuffs, ...decisiveBuffs];
+    // 5. Guaranteed Replenishment Fallback (Underflow Protection)
+    // Ensures exactly 9 unique buffs are always returned to prevent Client grid layout errors
+    const draftResults: VectorBuffPayload[] = [...synergyBuffs, ...counterBuffs, ...decisiveBuffs];
+    if (draftResults.length < 9) {
+      const fallbackQuery: number[] = new Array(12).fill(0);
+      const fallbackFilter = (b: VectorBuffPayload): boolean => {
+        return !chosenAIds.has(b.id) && !selectedIds.has(b.id) && (urgency >= 0.8 || b.depth <= 3);
+      };
+      const needed = 9 - draftResults.length;
+      const fallbackBuffs = await this.vectorDb.searchKNN(fallbackQuery, needed * 2, fallbackFilter);
+      for (const b of fallbackBuffs) {
+        if (draftResults.length >= 9) break;
+        draftResults.push(b);
+        selectedIds.add(b.id);
+      }
+    }
+
+    return draftResults;
   }
 }
 ```
+
+---
+
+## ⏱️ 6. ĐẶC TẢ XỬ LÝ TIMEOUT & TỰ ĐỘNG GIẢI QUYẾT (SERVER AUTO-RESOLVE SPEC)
+
+Để đảm bảo trận đấu diễn ra liền mạch kể cả khi một hoặc cả hai người chơi bị mất kết nối hoặc không thao tác kịp trong 20 giây:
+
+### 6.1. Hết 20 Giây Draft Buff (Draft Timeout Auto-Pick):
+1. **Quy tắc chọn tự động:**
+   - Server lập tức chọn thẻ bài đầu tiên trong nhóm **3 Deep Synergy Buffs** (hoặc buff có Cosine Similarity cao nhất với $\vec{S}_A$ của người chơi).
+   - Nếu không có buff Synergy nào khả dụng, Server chọn buff có index 0 trong danh sách 9 buff đã gửi về Client.
+2. **Hành vi phía Server:**
+   - Server ghi nhận `playerChosenBuffId`, tích lũy vào lịch sử $\mathcal{H}_A$, phát gói tin `S2C_PREPARATION_START` chuyển sang pha xếp cờ.
+
+### 6.2. Hết 20 Giây Xếp Cờ 3x3 (Placement Timeout Auto-Resolve):
+1. **Quy tắc xếp tự động:**
+   - Nếu người chơi đã đặt một số quân cờ nhưng chưa đủ 6 quân hoặc chưa bấm Lock-in: Server **giữ nguyên các vị trí đã đặt**.
+   - Với các quân cờ còn lại trên Hàng Chờ (Bench), Server tự động điền lần lượt vào các ô trống còn lại theo thứ tự ưu tiên chiến thuật chuẩn:
+     1. `Ô 1, Ô 2, Ô 3` (Hàng 1 Frontline: ưu tiên phân bổ Valkyrie Class Aegis và Assault).
+     2. `Ô 5, Ô 4, Ô 6` (Hàng 2 Midline: ưu tiên phân bổ Valkyrie Class Assault hoặc Tactician).
+     3. `Ô 7, Ô 8, Ô 9` (Hàng 3 Backline: ưu tiên phân bổ Valkyrie Class Tactician).
+2. **Khóa đội hình bắt buộc:**
+   - Ngay khi hết tick 20s, Server tự động thực hiện lệnh `LOCK_FORMATION` cho người chơi, vén sương mù (*Fog Lifted*) và phát gói tin `S2C_COMBAT_START` để bắt đầu giao tranh 20Hz.
 
 ---
 

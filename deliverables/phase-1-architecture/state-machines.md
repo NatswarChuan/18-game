@@ -7,14 +7,14 @@
 
 ```mermaid
 stateDiagram-v2
-    [*] --> LOBBY_MATCHMAKING : Tìm đối thủ
-    LOBBY_MATCHMAKING --> BUFF_DRAFTING : Ghép cặp thành công
-    BUFF_DRAFTING --> FORMATION_PLACEMENT : Hết 20s Draft / Cả 2 đã chọn Buff
-    FORMATION_PLACEMENT --> BATTLE_SIMULATION : Cả 2 bấm Lock-In / Hết 20s
+    [*] --> LOBBY_MATCHMAKING : Tìm đối thủ & ghép cặp
+    LOBBY_MATCHMAKING --> BUFF_DRAFTING : Ghép cặp thành công (Round 1)
+    BUFF_DRAFTING --> FORMATION_PLACEMENT : Hết 20s Draft / Cả 2 đã chọn Buff (hoặc Auto-Pick Timeout)
+    FORMATION_PLACEMENT --> BATTLE_SIMULATION : Cả 2 bấm Lock-In / Hết 20s (Fog of Placement kết thúc)
     BATTLE_SIMULATION --> ROUND_EVALUATION : Một bên quét sạch hoặc hết 60s
-    ROUND_EVALUATION --> FORMATION_PLACEMENT : Chưa đạt BO3/BO5 (Round tiếp theo)
-    ROUND_EVALUATION --> MATCH_ENDED : Đạt đủ điểm thắng chung cuộc
-    MATCH_ENDED --> [*] : Lưu DB & Hủy phòng giải phóng RAM
+    ROUND_EVALUATION --> BUFF_DRAFTING : Chưa đạt điểm chạm BO3/BO5 (Khởi động Round tiếp theo & Vector DB sinh 9 Buff mới)
+    ROUND_EVALUATION --> MATCH_ENDED : Đạt đủ điểm thắng chung cuộc (BO3: 2 wins, BO5: 3 wins)
+    MATCH_ENDED --> [*] : Ghi nhận MongoDB & Giải phóng tài nguyên RAM/Redis
 ```
 
 ---

@@ -9,19 +9,19 @@
 ┌────────────────────────────────────────────────────────┐
 │ [MATCH 1v1 BO3]   Round: 1/3     ⏱️ Đếm ngược: 18s     │
 ├────────────────────────────────────────────────────────┤
-│           CHỌN 1 TRONG 9 BUFF CHIẾN THUẬT (2-2-2-3)     │
+│           CHỌN 1 TRONG 9 BUFF CHIẾN THUẬT (CƠ CẤU 3-3-3)  │
 │                                                        │
 │ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐     │
-│ │ [SYNERGY 1]  │ │ [SYNERGY 2]  │ │ [COUNTER 1]  │     │
-│ │ Hỏa Long     │ │ Khiên Băng   │ │ Khắc Chế Pháo│     │
+│ │ [SYNERGY 1]  │ │ [SYNERGY 2]  │ │ [SYNERGY 3]  │     │
+│ │ Hỏa Long     │ │ Khiên Băng   │ │ Cuồng Bạo Vũ │     │
 │ └──────────────┘ └──────────────┘ └──────────────┘     │
 │ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐     │
-│ │ [COUNTER 2]  │ │ [PIVOT 1]    │ │ [PIVOT 2]    │     │
-│ │ Khắc Sát Thủ │ │ Hồi Phục Đổi │ │ Đột Phá Đổi  │     │
+│ │ [COUNTER 1]  │ │ [COUNTER 2]  │ │ [COUNTER 3]  │     │
+│ │ Khắc Xuyên   │ │ Khắc Sát Thủ │ │ Chống Hồi Máu│     │
 │ └──────────────┘ └──────────────┘ └──────────────┘     │
 │ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐     │
-│ │ [SPATIAL 1]  │ │ [SPATIAL 2]  │ │ [SPATIAL 3]  │     │
-│ │ Tăng Hàng 1  │ │ Tăng Hàng 2  │ │ Tăng Hàng 3  │     │
+│ │ [DECISIVE 1] │ │ [DECISIVE 2] │ │ [DECISIVE 3] │     │
+│ │ Tuyệt Kỹ Apex│ │ Định Đoạt Trận││ Hoán Đổi Cờ  │     │
 │ └──────────────┘ └──────────────┘ └──────────────┘     │
 │                                                        │
 │ [ Chi tiết Buff được chọn hiển thị tại đây kèm Art 18+]│

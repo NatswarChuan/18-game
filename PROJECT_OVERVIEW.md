@@ -27,30 +27,32 @@ Dự án tuyệt đối không trộn lẫn logic nghiệp vụ và mã giao di�
 │  - Expo SDK Universal   │ │  - NestJS Framework     │ │ - Pure TypeScript       │
 │  - Render Web & Mobile  │ │  - Authoritative 20ticks│ │ - Zero Dependencies     │
 │  - Skia / Reanimated    │ │  - NoSQL (Mongo + Redis)│ │ - Base Unit Constants   │
-│  - Dumb Terminal 60fps  │ │  - 8D Vector Equilibrium│ │ - Board 3x3 Math & Types│
+│  - Dumb Terminal 60fps  │ │  - 12D Vector Equilibrium│ │ - Board 3x3 Math & Types│
 │  - Waifu 18+ Visuals    │ │  - Anti-Cheat & Fog     │ │ - Damage Formulas       │
 └─────────────────────────┘ └─────────────────────────┘ └─────────────────────────┘
 ```
 
 1. **`packages/shared-domain/` (Hạt Nhân Toán Học & Kiểu Dữ Liệu Dùng Chung):**
    - Viết bằng Pure TypeScript 100%, **0 runtime dependency**.
-   - Định nghĩa chỉ số cơ bản của quân cờ, cấu trúc lưới 3x3, công thức tính giảm sát thương theo giáp, và không gian Vector 8 chiều.
+   - Định nghĩa chỉ số cơ bản của 27 Valkyries theo 3 Class, cấu trúc lưới 3x3, công thức tính giảm sát thương theo giáp, và không gian Vector 12 chiều.
 2. **`apps/server/` (Trọng Tài Tối Cao - NestJS Server-Authoritative Engine):**
    - Xây dựng hoàn toàn bằng **NestJS** với 100% Strict TypeScript.
    - Quản lý State Machine phòng đấu qua `@WebSocketGateway()`, vòng lặp mô phỏng xác định 20 ticks/s.
    - Tầng lưu trữ **NoSQL (MongoDB qua `@nestjs/mongoose` & Redis Cache)**: Quản lý hồ sơ người chơi, bộ sưu tập Waifu, lịch sử trận đấu và hàng đợi ghép trận.
 3. **`apps/client/` (Đầu Cuối Hiển Thị Đồ Họa 60 FPS - Expo Universal Client):**
    - Xây dựng bằng **Expo SDK (React Native)** render đồng nhất cả **Mobile (iOS, Android)** và **Web (HTML5)** từ 1 codebase duy nhất.
-   - Thể hiện sự quyến rũ của các nữ chiến binh Valkyrie, cơ chế kéo thả bàn cờ 3x3 với Skia và Reanimated, và hoạt ảnh rách giáp chiến đấu.
+   - Thể hiện sự quyến rũ của dàn 27 nữ chiến binh Valkyrie, cơ chế kéo thả bàn cờ 3x3 với Skia và Reanimated, và hoạt ảnh rách giáp chiến đấu.
 
 ---
 
 ## ⚔️ 3. CÁC TRỤ CỘT GAMEPLAY CỐT LÕI (CORE GAMEPLAY PILLARS)
 
-### 1. Đơn Vị Cờ Đồng Nhất — Tuyệt Đối Không Pay-to-Win (Identical Base Units):
-- Toàn bộ các nữ chiến binh Valkyrie khi bước vào ván đấu đều có chỉ số cơ bản **đồng nhất 100%**:
-  - `HP: 1,000` | `ATK: 50` | `Tốc độ đánh: 1.0/s` | `Giáp: 20` | `Kháng phép: 20` | `Năng lượng: 0/100`.
-- Không có bậc tướng (1 đến 5 sao), không có trang bị ngẫu nhiên, không nạp tiền tăng lực chiến.
+### 1. Dàn 27 Valkyrie Đa Dạng — Cân Bằng Đối Xứng Tuyệt Đối (27 Valkyries, Zero Pay-to-Win):
+- Hệ thống gồm **27 Valkyries** thuộc 3 Phe Phái (*Solaris Empire*, *Abyssal Dominion*, *Celestial Order*) và 3 Class chuyên biệt:
+  - **Assault (Tiền Công):** `HP: 900`, `ATK: 65`, `Giáp: 15`, `Kháng phép: 15` — Sát thương bộc phát cao.
+  - **Aegis (Hộ Vệ):** `HP: 1,300`, `ATK: 35`, `Giáp: 35`, `Kháng phép: 25` — Chống chịu kiên cường.
+  - **Tactician (Chiến Thuật):** `HP: 850`, `ATK: 45`, `Giáp: 15`, `Kháng phép: 30`, khởi điểm `20 Mana` — Hồi năng lượng, khống chế.
+- Cả 2 người chơi đều có quyền tiếp cận 100% danh sách tướng đối xứng; tuyệt đối không có gacha chỉ số hay yếu tố Pay-to-Win.
 
 ### 2. Định Hình Vai Trò Qua Tọa Độ Lưới 3x3 (Position-Driven Roles):
 - Mỗi bên sắp xếp **đúng 6 quân cờ vào 9 ô** (luôn có đúng **3 ô trống chiến thuật**).
@@ -59,13 +61,12 @@ Dự án tuyệt đối không trộn lẫn logic nghiệp vụ và mã giao di�
   - **Hàng 2 (Ô 4, 5, 6 - Trung quân / Midline):** Tầm đánh 2 ô, bọc lót đồng minh. Ô 4 & 6 kích hoạt cơ chế **Bọc sườn (Flanking: +25% DMG)** nếu cánh đối diện trống.
   - **Hàng 3 (Ô 7, 8, 9 - Hậu tuyến / Backline):** Xạ thủ tầm xa 3 ô, bắn xuyên cột hoặc hạ gục mục tiêu thấp máu nhất. Không thể bị đánh thường khi còn đồng minh Hàng 1/2 che chắn.
 
-### 3. Hệ Thống 9 Buff Thích Ứng Cân Bằng Tuyệt Đối (8D Vector Equilibrium):
-- Mỗi Round cả 2 người chơi cùng nhìn thấy chung một danh sách **9 Buff** công khai (suy nghĩ trong 20s).
-- Từ Round 2+, thuật toán 8D Vector AI phân bổ chính xác theo công thức **2-2-2-3**:
-  - **2 Buff Đồng Điều (Synergy 1:1):** Phát triển sâu trường phái của mỗi bên.
-  - **2 Buff Khắc Chế (Counter-Play 1:1):** Trao cơ hội lật kèo công bằng.
-  - **2 Buff Chuyển Trục (Orthogonal Pivot):** Mở ra lối đi chiến thuật bất ngờ.
-  - **3 Buff Không Gian 3x3 Trung Tính (Spatial 3x3):** Khai thác 3 ô trống chiến thuật.
+### 3. Hệ Thống 9 Buff Thích Ứng Cá Nhân Hóa (12D Vector DB • Cơ Cấu 3-3-3):
+- Mỗi Round, Vector DB Server tính toán dựa trên lịch sử tích lũy của hai đấu thủ để sinh **9 Buff riêng biệt cho từng người chơi**:
+- Thuật toán 12D Vector kNN phân bổ chính xác theo cơ cấu **3-3-3 History Allocation**:
+  - **3 Buff Cường Hóa Nhánh Lịch Sử (Deep Synergy):** Đẩy sâu trường phái chiến thuật mà bản thân đã tích lũy từ các buff trước.
+  - **3 Buff Phản Ứng Khắc Chế (Direct Counter):** Phản ứng trực diện vô hiệu hóa trường phái mà đối thủ đã chọn.
+  - **3 Buff Định Đoạt / Lật Kèo Đột Biến (Apex Decisive):** Mở rộng theo mức độ khẩn cấp (Urgency) của chuỗi trận BO3/BO5, bùng nổ sức mạnh ở ván quyết định.
 
 ### 4. Tính Kế Thừa Trong Chuỗi Trận BO3 / BO5 (Persistent Series Evolution):
 - Các Buff đã chọn được tích lũy xuyên suốt các Round và giữ nguyên qua các Ván đấu (Game 1, Game 2, Game 3), chỉ được làm mới khi kết thúc hoàn toàn loạt trận BO3/BO5.

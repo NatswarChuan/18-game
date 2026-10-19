@@ -7,13 +7,14 @@
 - **Tên dự án:** VALKYRIE PROTOCOL: ZERO (Anime 18+ Cyberpunk Tactical Auto-Battler).
 - **Mô hình quy trình:** Thác nước nghiêm ngặt (Strict Sequential Waterfall, 7 Pha liên hoàn).
 - **Trạng thái hiện tại:** Hoàn thành Pha 1 (Architecture), Pha 2 (Art & 27 Valkyries), và Pha 3 (243 Buffs & Vector DB Engine); Sẵn sàng chuyển giao Pha 4 (Backend Implementation).
-- **Cơ cấu 6 Tác Tử Độc Lập:**
+- **Cơ cấu 7 Tác Tử Độc Lập:**
   1. `system-architect` (Chủ trì Pha 1 & Pha 7; Reviewer Pha 4, Pha 5, Pha 6)
   2. `art-designer` (Chủ trì Pha 2; Reviewer Pha 5)
   3. `buff-systems-designer` (Chủ trì Pha 3; Reviewer Pha 4, Pha 6)
   4. `backend-engineer` (Chủ trì Pha 4; Reviewer Pha 1, Pha 3, Pha 7)
   5. `frontend-engineer` (Chủ trì Pha 5; Reviewer Pha 2)
   6. `qa-balance-tester` (Chủ trì Pha 6; Reviewer Pha 1, Pha 2, Pha 3, Pha 4, Pha 7)
+  7. `secops-quality-gate` (Kiểm toán độc lập mọi Pha; SonarQube Clean Code, Coverity SAST, Black Duck SCA)
 
 ---
 

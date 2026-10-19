@@ -12,25 +12,46 @@
 - **Đối tượng người chơi mục tiêu:** Những game thủ đam mê chiến thuật đỉnh cao, yêu thích sự công bằng tuyệt đối (Pure-Skill, No P2W), đồng thời là những tín đồ của văn hóa **Anime 18+ (Eroge / Cyber-Waifu / Ecchi Fanservice)**.
 
 ### 4 Nguyên Tắc Thiết Kế Bất Biến:
-1. **Tuyệt Đối Không Pay-to-Win, Không Gacha Nhân Phẩm:** Tất cả quân cờ khi xuất phát đều có bộ chỉ số cơ bản **đồng nhất 100%**. Không có tướng bậc sao, không có thẻ bài SSR/UR vượt trội chỉ số.
-2. **Vai Trò Sinh Ra Từ Vị Trí 3x3 & 8D Buff:** Nhân vật đảm nhận vai trò Khiên Chắn, Sát Thủ Nhảy Ô, hay Xạ Thủ Bắn Tỉa hoàn toàn phụ thuộc vào **tọa độ đứng trên lưới 3x3** và **sự lựa chọn Buff tích lũy**.
-3. **Bể 9 Buff Cân Bằng Đối Xứng Tuyệt Đối (Strict Symmetric Equilibrium):** Cả hai đối thủ cùng quan sát và cùng chọn từ **chung một danh sách 9 Buff**. Không bên nào được hưởng lợi từ sự may rủi.
+1. **Tuyệt Đối Không Pay-to-Win, Không Gacha Nhân Phẩm:** Tất cả người chơi đều có quyền tiếp cận 100% dàn **27 Nữ Chiến Binh Valkyrie** đối xứng. Không có tướng bậc sao, không có thẻ bài SSR/UR vượt trội chỉ số, thắng bại 100% dựa vào kỹ năng bài binh bố trận.
+2. **Vai Trò Sinh Ra Từ Vị Trí 3x3 & 12D Buff:** Nhân vật đảm nhận vai trò Khiên Chắn, Sát Thủ Nhảy Ô, hay Xạ Thủ Bắn Tỉa hoàn toàn phụ thuộc vào **tọa độ đứng trên lưới 3x3** và **sự lựa chọn Buff tích lũy trong không gian Vector 12 chiều**.
+3. **Bể 9 Buff Thích Ứng Cá Nhân Hóa (12D Vector DB Individual Adaptive Pools):** Mỗi đấu thủ sở hữu vector trạng thái tích lũy lịch sử riêng ($\mathcal{H}_A$ và $\mathcal{H}_B$). Từ đó, Vector DB Engine sinh ra **9 Buff cá nhân hóa riêng biệt cho từng người chơi**, loại bỏ hoàn toàn sự may rủi.
 4. **Nghệ Thuật 18+ Quyến Rũ & Cơ Chế Rách Giáp (Sensual Battle Damage):** Từng trận chiến là một bữa tiệc thị giác với các nữ chiến binh Valkyrie, cơ chế trang phục bị phá hủy theo máu (*Cloth Damage Tiers*), và những pha kết liễu *Climax Ultimate* bùng nổ cảm xúc.
 
 ---
 
-## 👩‍🦰 2. BẢNG DANH SÁCH VALKYRIE & CƠ CHẾ RÁCH GIÁP 18+ (VALKYRIE ROSTER)
+## 👩‍🦰 2. BẢNG DANH SÁCH 27 VALKYRIE & CƠ CHẾ RÁCH GIÁP 18+ (27-VALKYRIE ROSTER)
 
-Mặc dù các Valkyrie có cùng chỉ số cơ bản, người chơi có thể tùy chọn ngoại hình đại diện (Skin/Model) cho 6 vị trí cờ của mình từ dàn Waifu quyến rũ:
+Dự án sở hữu **27 Nữ Chiến Binh Valkyrie** chia đều cho 3 Đại Phe Phái (*Solaris Empire*, *Abyssal Dominion*, *Celestial Order*) và 3 Class Chiến Đấu (*Assault, Aegis, Tactician*), chi tiết đặc tả tại [character-roster-18plus.md](deliverables/phase-2-art-design/character-roster-18plus.md):
 
-| Valkyrie ID | Tên Nữ Chiến Binh | Danh Xưng / Phong Cách Thẩm Mỹ | Đặc Trưng Gợi Cảm & Vũ Khí |
-| :--- | :--- | :--- | :--- |
-| **`VALK_01`** | **Kagura** | *Thánh Nữ Cơ Khí (Mecha Shrine Maiden)* | Kimono viễn tưởng cách tân xẻ tà cao, đùi thon tất lưới, song kiếm Plasma. |
-| **`VALK_02`** | **Lilith** | *Ác Nữ Không Gian (Cyber Succubus)* | Bodysuit da bóng bó sát ôm trọn đường cong, cánh dơi năng lượng, roi lôi điện. |
-| **`VALK_03`** | **Freya** | *Đại Tướng Tiền Tuyến (Valkyrie Commander)* | Áo giáp hiệp sĩ bạc ôm khít vòng eo, khiên năng lượng bọc ngực căng tràn, trường thương. |
-| **`VALK_04`** | **Nyx** | *Bóng Ma Sát Thủ (Phantom Shinobi)* | Khăn lụa mỏng tang che nửa khuôn mặt, trang phục nhẫn giả hở lưng quyến rũ, song đoản đao. |
-| **`VALK_05`** | **Astra** | *Xạ Thủ Siêu Không Gian (Nova Sniper)* | Kính ngắm quang học, váy ngắn bồng bềnh lộ dây nịt tất quyến rũ, súng trường photon cỡ lớn. |
-| **`VALK_06`** | **Rhea** | *Pháp Sư Trọng Lực (Graviton Empress)* | Áo choàng hoàng gia xẻ ngực sâu táo bạo, vương miện pha lê, trượng không thời gian. |
+| Phe Phái | Class | Valkyrie ID & Tên | Danh Xưng / Vũ Khí | Điểm Nhấn Quyến Rũ & Biểu Hiện 18+ |
+| :--- | :--- | :--- | :--- | :--- |
+| **Solaris** | **Assault** | `VALK_SOL_01` **Kagura** | Thánh Nữ Kiếm Quang • Song Kiếm Plasma | Kimono xẻ hông cao vút, tất lưới ren, đùi thon nuột nà. |
+| **Solaris** | **Assault** | `VALK_SOL_02` **Aurelia** | Kỵ Sĩ Mặt Trời • Trọng Kiếm Quang Huy | Giáp ngực vàng kim xẻ sâu, eo thon quyến rũ. |
+| **Solaris** | **Assault** | `VALK_SOL_03` **Ignis** | Hỏa Phụng Cuồng Bạo • Song Trảm Đao | Bodysuit da đỏ lửa khoét eo, vệt mồ hôi bóng nhẫy. |
+| **Solaris** | **Aegis** | `VALK_SOL_04` **Freya** | Đại Tướng Thái Dương • Khiên Thần & Giáo | Áo giáp hiệp sĩ bạc ôm khít eo, ngực căng tràn khi thở dốc. |
+| **Solaris** | **Aegis** | `VALK_SOL_05` **Solaria** | Thành Trì Rực Lửa • Đại Thuẫn Titan | Giáp vai hộ thể, váy xẻ tà lộ vòng hông nở nang. |
+| **Solaris** | **Aegis** | `VALK_SOL_06` **Vesta** | Hộ Vệ Ngọn Lửa Thiêng • Chiến Chùy | Váy hộ vệ viền ren, tất trắng đùi cao, ánh mắt kiêu sa. |
+| **Solaris** | **Tactician** | `VALK_SOL_07` **Helios** | Quân Sư Quang Học • Pháp Trượng Thái Dương | Áo choàng mỏng tang, gọng kính tri thức, tiếng rên khẽ. |
+| **Solaris** | **Tactician** | `VALK_SOL_08` **Dawn** | Sứ Giả Bình Minh • Cung Quang Tử | Cung thủ váy ngắn bồng bềnh, dây nịt tất gợi cảm. |
+| **Solaris** | **Tactician** | `VALK_SOL_09` **Corona** | Nữ Bá Tước Nhật Hoa • Quạt Lửa Năng Lượng | Trang phục dạ hội xẻ ngực chữ V táo bạo, nụ cười mê hoặc. |
+| **Abyssal** | **Assault** | `VALK_ABY_01` **Lilith** | Ác Nữ Hư Không • Roi Lôi Điện | Bodysuit da bóng bó sát ôm trọn đường cong, cánh dơi. |
+| **Abyssal** | **Assault** | `VALK_ABY_02` **Nyx** | Bóng Ma Sát Thủ • Song Đoản Đao | Khăn lụa che nửa mặt, trang phục hở lưng sâu tận đáy. |
+| **Abyssal** | **Assault** | `VALK_ABY_03` **Morrigan**| Quạ Đen Tử Thần • Lưỡi Hái Ma Quái | Váy lông vũ đen huyền ảo, cổ áo khoét sâu khoe ngực. |
+| **Abyssal** | **Aegis** | `VALK_ABY_04` **Hecate** | Mẫu Hậu Vực Thẳm • Khiên Xương Hắc Ám | Trang phục nữ chúa Gothic, vòng ngực nghẹt thở, gai nhọn. |
+| **Abyssal** | **Aegis** | `VALK_ABY_05` **Scylla** | Quái Nữ Biển Đêm • Xích Huyết Khiên | Xích trói shibari phát sáng quanh đùi, ánh nhìn khao khát. |
+| **Abyssal** | **Aegis** | `VALK_ABY_06` **Gorgon** | Xà Nữ Hóa Đá • Thuẫn Rắn Độc | Vảy rắn óng ánh ôm sát eo thon, vòng 3 gợi cảm uyển chuyển. |
+| **Abyssal** | **Tactician** | `VALK_ABY_07` **Carmilla**| Nữ Bá Tước Huyết Tộc • Huyết Trượng | Áo choàng quý tộc nhung đỏ, cổ áo corset siết chặt eo. |
+| **Abyssal** | **Tactician** | `VALK_ABY_08` **Raven** | Nữ Phù Thủy Hư Vô • Cầu Ma Lực | Váy ren đen xuyên thấu, môi đỏ mọng thì thầm tà thuật. |
+| **Abyssal** | **Tactician** | `VALK_ABY_09` **Vesper** | Tiếng Vọng Hoàng Hôn • Dao Găm Hắc Ám | Nhẫn giả bí ẩn, tất lưới rách, ánh mắt liếc gợi tình. |
+| **Celestial**| **Assault** | `VALK_CEL_01` **Astra** | Xạ Thủ Siêu Không Gian • Súng Thần Photon | Kính ngắm quang học, váy ngắn lộ dây nịt tất quyến rũ. |
+| **Celestial**| **Assault** | `VALK_CEL_02` **Seraphina**| Thiên Sứ Trừng Phạt • Gươm Ánh Sáng | Đôi cánh thiên thần thuần khiết, váy trắng xẻ cao táo bạo. |
+| **Celestial**| **Assault** | `VALK_CEL_03` **Valkyria** | Nữ Thần Phán Quyết • Kích Tinh Tú | Áo giáp bạch kim siêu nhẹ, đường cong cơ thể hoàn mỹ. |
+| **Celestial**| **Aegis** | `VALK_CEL_04` **Athena** | Nữ Thần Chiến Lũy • Thiên Thuẫn | Mũ giáp chiến binh thần thánh, áo nịt ngực ôm sát cơ thể. |
+| **Celestial**| **Aegis** | `VALK_CEL_05` **Minerva** | Hộ Pháp Tinh Vân • Trọng Khiên Pha Lê | Váy thánh nữ viền vàng, bờ vai trần nuột nà, nhịp thở sâu. |
+| **Celestial**| **Aegis** | `VALK_CEL_06` **Justitia** | Công Lý Bất Diệt • Song Thuẫn Tinh Thể | Áo choàng thánh chức, vòng một căng tròn khẽ nảy theo nhịp. |
+| **Celestial**| **Tactician** | `VALK_CEL_07` **Rhea** | Pháp Sư Trọng Lực • Trượng Không Thời Gian | Áo choàng hoàng gia xẻ ngực sâu táo bạo, vương miện pha lê. |
+| **Celestial**| **Tactician** | `VALK_CEL_08` **Selene** | Nguyệt Nữ Tinh Tú • Nguyệt Luân | Váy dạ hội bạc mỏng như lụa, đôi chân trần thon dài kiêu kỳ. |
+| **Celestial**| **Tactician** | `VALK_CEL_09` **Aurora** | Vũ Nữ Bắc Cực Quang • Dải Lụa Năng Lượng | Dải lụa phát quang che hờ hững thân thể, điệu múa mê hoặc. |
 
 ### 💥 Cơ Chế 3 Cấp Độ Rách Giáp (Battle Damage Tiers):
 Trong quá trình Auto-Combat thời gian thực, mô hình nhân vật sẽ tự động chuyển đổi trạng thái hình thể dựa trên lượng HP còn lại:
@@ -40,19 +61,15 @@ Trong quá trình Auto-Combat thời gian thực, mô hình nhân vật sẽ t�
 
 ---
 
-## ⚔️ 3. CHỈ SỐ CƠ BẢN ĐỒNG NHẤT (BASE STATS EQUILIBRIUM)
+## ⚔️ 3. CHỈ SỐ CƠ BẢN PHÂN HÓA THEO CLASS (BALANCED CLASS ROLES)
 
-Toàn bộ 6 quân cờ trên bàn đấu sở hữu chỉ số khởi điểm **đồng nhất 100%**:
+Để gia tăng chiều sâu chiến thuật trong khi vẫn giữ vững **tính đối xứng 100% giữa hai người chơi**, 27 Valkyries được phân bổ vào 3 Class chuẩn mực với chỉ số cơ bản phân hóa:
 
-| Chỉ Số Cốt Lõi | Giá Trị Khởi Điểm | Ý Nghĩa Trong Giao Tranh |
-| :--- | :--- | :--- |
-| **Máu Tối Đa (Max HP)** | `1,000` | Cột máu sinh mệnh chuẩn của Valkyrie |
-| **Sát Thương Đánh Thường (ATK)** | `50` | Sát thương vật lý cơ bản cho mỗi đòn đánh |
-| **Tốc Độ Đánh (Attack Speed)** | `1.0 đòn/giây` | Nhịp tấn công chuẩn hóa |
-| **Tầm Đánh (Range)** | *Quyết định bởi Hàng* | Hàng 1: 1 ô (Cận chiến) \| Hàng 2: 2 ô (Tầm trung) \| Hàng 3: 3 ô (Tầm xa) |
-| **Giáp Vật Lý (Armor)** | `20` | Giảm chính xác **16.67%** sát thương vật lý |
-| **Kháng Phép (Magic Resist)** | `20` | Giảm chính xác **16.67%** sát thương phép thuật |
-| **Thanh Năng Lượng (Mana)** | `0 / 100` | Nạp đầy để giải phóng kỹ năng Climax Ultimate |
+| Class Chiến Đấu | Máu (HP) | Công (ATK) | Tốc Đánh | Giáp (Armor) | Kháng Phép (MR) | Năng Lượng Khởi Điểm | Vai Trò Chiến Thuật |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Assault (Tiền Công)** | `900` | `65` | `1.1 đòn/s` | `15` (~13% giảm) | `15` (~13% giảm) | `0 / 100` | Sát thương chủ lực, bộc phá hàng sau. |
+| **Aegis (Hộ Vệ)** | `1,300`| `35` | `0.9 đòn/s` | `35` (~26% giảm) | `25` (~20% giảm) | `0 / 100` | Chống chịu tiền tuyến, thu hút hỏa lực. |
+| **Tactician (Chiến Thuật)** | `850` | `45` | `1.0 đòn/s` | `15` (~13% giảm) | `30` (~23% giảm) | `20 / 100` | Khống chế, hồi năng lượng, Climax Cut-in. |
 
 ---
 
@@ -88,20 +105,20 @@ Hàng 3:    [ Ô 7: Xạ thủ ]      [ Ô 8: Pháo đài ]   [ Ô 9: Xạ thủ
 
 ---
 
-## 🧬 5. HỆ THỐNG DRAFT 9 BUFF THÍCH ỨNG (8D VECTOR EQUILIBRIUM)
+## 🧬 5. HỆ THỐNG DRAFT 9 BUFF THÍCH ỨNG CÁ NHÂN HÓA (12D VECTOR DB • 3-3-3 ALLOCATION)
 
-### 5.1. Khởi Đầu Round 1:
-- Cả hai bên cùng được mở chung danh sách **9 Buff ngẫu nhiên** (thời gian chọn 20 giây):
-  - **3 Buff Cá Nhân (Single Waifu Focus):** Kích hoạt nội tại đột biến cho 1 vị trí ô (VD: *Sát Thủ Bước Nhảy Không Gian, Khiên Gai Phản Kích, Đòn Đánh Chí Mạng Tàn Phế*).
-  - **3 Buff Khu Vực (Row/Column Zone):** Cường hóa toàn bộ 1 hàng hoặc 1 cột (VD: *Hàng 1 nhận 300 Giáp Ảo, Hàng 3 tăng 40% Tốc Đánh*).
-  - **3 Buff Toàn Đội (Team-Wide Synergy):** Tác động lên cả 6 quân (VD: *Hút Máu Toàn Đội 15%, Phát Nổ Khi Tử Trận 12% HP, Kháng Khống Chế*).
+Hệ thống buff sở hữu quy mô tối thiểu **$N \ge 243$ Buffs** (chi tiết tại [dynamic-buff-matrix-spec.md](deliverables/phase-3-buff-system/dynamic-buff-matrix-spec.md)). Không phân chia cứng theo Round, Vector DB Server tính toán dựa trên lịch sử $\mathcal{H}_A$ và $\mathcal{H}_B$ để sinh **9 Buff cá nhân hóa độc lập** cho mỗi người chơi theo cơ cấu **3-3-3 History Allocation**:
 
-### 5.2. Từ Round 2+: Thuật Toán Phân Bổ Cân Bằng Đối Xứng 2-2-2-3:
-Thuật toán AI đọc vector lịch sử buff của Người chơi 1 ($\vec{P}_1$) và Người chơi 2 ($\vec{P}_2$) để sinh ra 9 Buff:
-1. **2 Buff Đồng Điều (Synergy 1:1):** 1 Buff phát triển trường phái cho P1, 1 Buff tương xứng cho P2 ($|\text{cos}(\vec{V}_{syn1}, \vec{P}_1) - \text{cos}(\vec{V}_{syn2}, \vec{P}_2)| < 0.05$).
-2. **2 Buff Khắc Chế (Counter-Play 1:1):** 1 Buff giúp P2 khắc chế P1, 1 Buff giúp P1 khắc chế P2 thông qua ma trận nghịch đảo $M_{counter}$.
-3. **2 Buff Chuyển Trục (Orthogonal Pivot):** 2 Buff trực giao vuông góc ($\text{cos} \approx 0$) mở ra hướng đi chiến thuật mới lạ.
-4. **3 Buff Không Gian 3x3 (Spatial 3x3 Neutral):** Tác động trực tiếp vào 3 ô trống trên bàn cờ.
+1. **3 Buff Cường Hóa Nhánh Lịch Sử (Deep Synergy):**
+   - Truy vấn kNN gần nhất với vector tích lũy của chính người chơi $\vec{S}_A$:
+   - Đẩy sâu trường phái chiến thuật đang định hình (Physical, Magic, Shield, Crit, Climax).
+2. **3 Buff Phản Ứng Khắc Chế (Direct Counter):**
+   - Truy vấn kNN theo vector mục tiêu $\vec{T}_{counter} = M_{counter} \times \vec{S}_B$:
+   - Khắc chế trực tiếp những buff mà đối thủ đã chọn trong các ván trước, mở ra cơ hội lật kèo công bằng.
+3. **3 Buff Định Đoạt Thắng Thua / Đột Biến (Apex Decisive & Pivots):**
+   - Tự động mở khóa và khuếch đại theo mức độ khẩn cấp $\mathcal{U}$ của thể thức BO3/BO5.
+   - Ở các ván cuối hoặc Match Point, các Buff Depth 5 sở hữu quyền năng xoay chuyển cờ thế bùng nổ, tạo nên sự kịch tính nghẹt thở.
+   - *Cross-Depth Resurfacing:* Cho phép các Buff chưa được chọn ở các Depth trước tái xuất hiện nếu các lựa chọn sau này tạo ra sự cộng hưởng cao.
 
 ---
 

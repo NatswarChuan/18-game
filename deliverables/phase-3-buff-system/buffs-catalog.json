@@ -1,0 +1,7544 @@
+[
+  {
+    "id": "BUFF-001",
+    "name": "Khởi Nguyên Vật Lý & Trảm Kích 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.79,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.11,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:phys_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Vật Lý & Trảm Kích cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-002",
+    "name": "Khởi Nguyên Phép Thuật & Hỏa Lôi 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.68,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.17,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:magic_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Phép Thuật & Hỏa Lôi cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-003",
+    "name": "Khởi Nguyên Giáp Trụ & Chống Chịu 1",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.82,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.3,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:armor_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Giáp Trụ & Chống Chịu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-004",
+    "name": "Khởi Nguyên Khiên Thần & Hộ Thể 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.87,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.13,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:shield_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khiên Thần & Hộ Thể cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-005",
+    "name": "Khởi Nguyên Bạo Kích & Điểm Yếu 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.73,
+      0.0,
+      0.0,
+      0.0,
+      0.11,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:crit_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Bạo Kích & Điểm Yếu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-006",
+    "name": "Khởi Nguyên Năng Lượng & Tuyệt Kỹ 1",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.67,
+      0.0,
+      0.0,
+      0.25,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:energy_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Năng Lượng & Tuyệt Kỹ cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-007",
+    "name": "Khởi Nguyên Khống Chế & Trói Buộc 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.61,
+      0.0,
+      0.16,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:cc_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khống Chế & Trói Buộc cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-008",
+    "name": "Khởi Nguyên Không Gian 3x3 & Đột Phá 1",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.79,
+      0.26,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:spatial_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Không Gian 3x3 & Đột Phá cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-009",
+    "name": "Khởi Nguyên Rách Giáp 18+ & Climax 1",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.28,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:erotic_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Rách Giáp 18+ & Climax cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-010",
+    "name": "Khởi Nguyên Vật Lý & Trảm Kích 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.84,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.1,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:phys_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Vật Lý & Trảm Kích cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-011",
+    "name": "Khởi Nguyên Phép Thuật & Hỏa Lôi 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.84,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.31,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:magic_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Phép Thuật & Hỏa Lôi cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-012",
+    "name": "Khởi Nguyên Giáp Trụ & Chống Chịu 2",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.7,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.15,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:armor_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Giáp Trụ & Chống Chịu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-013",
+    "name": "Khởi Nguyên Khiên Thần & Hộ Thể 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.89,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.2,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:shield_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khiên Thần & Hộ Thể cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-014",
+    "name": "Khởi Nguyên Bạo Kích & Điểm Yếu 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.63,
+      0.0,
+      0.0,
+      0.0,
+      0.13,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:crit_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Bạo Kích & Điểm Yếu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-015",
+    "name": "Khởi Nguyên Năng Lượng & Tuyệt Kỹ 2",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      0.0,
+      0.0,
+      0.28,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:energy_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Năng Lượng & Tuyệt Kỹ cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-016",
+    "name": "Khởi Nguyên Khống Chế & Trói Buộc 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.84,
+      0.0,
+      0.32,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:cc_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khống Chế & Trói Buộc cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-017",
+    "name": "Khởi Nguyên Không Gian 3x3 & Đột Phá 2",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.76,
+      0.39,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:spatial_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Không Gian 3x3 & Đột Phá cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-018",
+    "name": "Khởi Nguyên Rách Giáp 18+ & Climax 2",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.27,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:erotic_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Rách Giáp 18+ & Climax cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-019",
+    "name": "Khởi Nguyên Vật Lý & Trảm Kích 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.85,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.29,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:phys_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Vật Lý & Trảm Kích cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-020",
+    "name": "Khởi Nguyên Phép Thuật & Hỏa Lôi 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.86,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.27,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:magic_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Phép Thuật & Hỏa Lôi cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-021",
+    "name": "Khởi Nguyên Giáp Trụ & Chống Chịu 3",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.81,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.11,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:armor_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Giáp Trụ & Chống Chịu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-022",
+    "name": "Khởi Nguyên Khiên Thần & Hộ Thể 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.67,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.19,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:shield_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khiên Thần & Hộ Thể cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-023",
+    "name": "Khởi Nguyên Bạo Kích & Điểm Yếu 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.62,
+      0.0,
+      0.0,
+      0.0,
+      0.17,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:crit_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Bạo Kích & Điểm Yếu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-024",
+    "name": "Khởi Nguyên Năng Lượng & Tuyệt Kỹ 3",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.63,
+      0.0,
+      0.0,
+      0.18,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:energy_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Năng Lượng & Tuyệt Kỹ cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-025",
+    "name": "Khởi Nguyên Khống Chế & Trói Buộc 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.79,
+      0.0,
+      0.21,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:cc_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khống Chế & Trói Buộc cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-026",
+    "name": "Khởi Nguyên Không Gian 3x3 & Đột Phá 3",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.71,
+      0.16,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:spatial_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Không Gian 3x3 & Đột Phá cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-027",
+    "name": "Khởi Nguyên Rách Giáp 18+ & Climax 3",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.38,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:erotic_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Rách Giáp 18+ & Climax cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-028",
+    "name": "Khởi Nguyên Vật Lý & Trảm Kích 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.79,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.28,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:phys_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Vật Lý & Trảm Kích cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-029",
+    "name": "Khởi Nguyên Phép Thuật & Hỏa Lôi 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.65,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.32,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:magic_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Phép Thuật & Hỏa Lôi cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-030",
+    "name": "Khởi Nguyên Giáp Trụ & Chống Chịu 4",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.65,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.21,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:armor_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Giáp Trụ & Chống Chịu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-031",
+    "name": "Khởi Nguyên Khiên Thần & Hộ Thể 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.9,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.29,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:shield_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khiên Thần & Hộ Thể cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-032",
+    "name": "Khởi Nguyên Bạo Kích & Điểm Yếu 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.77,
+      0.0,
+      0.0,
+      0.0,
+      0.31,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:crit_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Bạo Kích & Điểm Yếu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-033",
+    "name": "Khởi Nguyên Năng Lượng & Tuyệt Kỹ 4",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      0.0,
+      0.0,
+      0.33,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:energy_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Năng Lượng & Tuyệt Kỹ cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-034",
+    "name": "Khởi Nguyên Khống Chế & Trói Buộc 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.67,
+      0.0,
+      0.11,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:cc_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khống Chế & Trói Buộc cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-035",
+    "name": "Khởi Nguyên Không Gian 3x3 & Đột Phá 4",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.69,
+      0.18,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:spatial_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Không Gian 3x3 & Đột Phá cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-036",
+    "name": "Khởi Nguyên Rách Giáp 18+ & Climax 4",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.38,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:erotic_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Rách Giáp 18+ & Climax cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-037",
+    "name": "Khởi Nguyên Vật Lý & Trảm Kích 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.86,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.19,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:phys_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Vật Lý & Trảm Kích cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-038",
+    "name": "Khởi Nguyên Phép Thuật & Hỏa Lôi 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.8,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.22,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:magic_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Phép Thuật & Hỏa Lôi cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-039",
+    "name": "Khởi Nguyên Giáp Trụ & Chống Chịu 5",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.87,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.24,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:armor_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Giáp Trụ & Chống Chịu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-040",
+    "name": "Khởi Nguyên Khiên Thần & Hộ Thể 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.68,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.17,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:shield_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khiên Thần & Hộ Thể cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-041",
+    "name": "Khởi Nguyên Bạo Kích & Điểm Yếu 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.77,
+      0.0,
+      0.0,
+      0.0,
+      0.18,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:crit_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Bạo Kích & Điểm Yếu cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-042",
+    "name": "Khởi Nguyên Năng Lượng & Tuyệt Kỹ 5",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.78,
+      0.0,
+      0.0,
+      0.37,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:energy_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Năng Lượng & Tuyệt Kỹ cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-043",
+    "name": "Khởi Nguyên Khống Chế & Trói Buộc 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.72,
+      0.0,
+      0.17,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:cc_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Khống Chế & Trói Buộc cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-044",
+    "name": "Khởi Nguyên Không Gian 3x3 & Đột Phá 5",
+    "depth": 1,
+    "category": "SYNERGY",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.9,
+      0.25,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:spatial_root",
+      "tag:tier1_synergy"
+    ],
+    "description": "Tăng cường cơ bản trường phái Không Gian 3x3 & Đột Phá cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-045",
+    "name": "Khởi Nguyên Rách Giáp 18+ & Climax 5",
+    "depth": 1,
+    "category": "SPATIAL",
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.11,
+      0.2,
+      0.1,
+      0.15
+    ],
+    "prerequisiteTags": [],
+    "counterTags": [],
+    "tags": [
+      "tag:erotic_root",
+      "tag:tier1_spatial"
+    ],
+    "description": "Tăng cường cơ bản trường phái Rách Giáp 18+ & Climax cho đội hình khởi đầu."
+  },
+  {
+    "id": "BUFF-046",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.87,
+      0.05,
+      0.12,
+      -0.03,
+      -0.17,
+      -0.05,
+      0.2,
+      0.01,
+      0.46,
+      0.4,
+      0.38,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-047",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.06,
+      0.86,
+      -0.03,
+      -0.02,
+      0.18,
+      0.15,
+      -0.09,
+      0.0,
+      0.48,
+      0.4,
+      0.35,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-048",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.11,
+      0.02,
+      0.92,
+      0.01,
+      -0.2,
+      -0.07,
+      -0.19,
+      0.17,
+      0.58,
+      0.4,
+      0.33,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-049",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.01,
+      -0.17,
+      0.1,
+      0.88,
+      -0.15,
+      -0.01,
+      0.02,
+      -0.09,
+      0.36,
+      0.4,
+      0.39,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-050",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.2,
+      0.06,
+      -0.02,
+      0.01,
+      0.76,
+      -0.11,
+      -0.06,
+      0.04,
+      0.57,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-051",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.17,
+      -0.1,
+      0.07,
+      -0.11,
+      -0.15,
+      0.81,
+      0.03,
+      -0.01,
+      0.43,
+      0.4,
+      0.44,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-052",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.09,
+      0.07,
+      0.19,
+      -0.16,
+      -0.04,
+      -0.06,
+      0.76,
+      -0.1,
+      0.58,
+      0.4,
+      0.43,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-053",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.14,
+      0.02,
+      -0.18,
+      0.2,
+      0.13,
+      0.19,
+      0.17,
+      0.71,
+      0.41,
+      0.4,
+      0.6,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-054",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 1",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.09,
+      0.11,
+      -0.02,
+      -0.03,
+      0.18,
+      0.2,
+      0.02,
+      0.09,
+      0.52,
+      0.4,
+      0.32,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-055",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.76,
+      0.0,
+      0.14,
+      -0.14,
+      0.18,
+      -0.17,
+      -0.13,
+      0.04,
+      0.48,
+      0.4,
+      0.49,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-056",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.03,
+      0.72,
+      0.01,
+      0.17,
+      -0.12,
+      0.09,
+      -0.1,
+      -0.04,
+      0.44,
+      0.4,
+      0.6,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-057",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.2,
+      -0.17,
+      0.95,
+      -0.09,
+      0.17,
+      0.15,
+      0.15,
+      -0.05,
+      0.5,
+      0.4,
+      0.3,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-058",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.13,
+      -0.08,
+      0.07,
+      0.86,
+      -0.15,
+      -0.15,
+      -0.16,
+      0.02,
+      0.38,
+      0.4,
+      0.45,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-059",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.16,
+      0.14,
+      -0.16,
+      -0.03,
+      0.7,
+      -0.2,
+      0.11,
+      0.05,
+      0.32,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-060",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.16,
+      0.02,
+      0.13,
+      0.03,
+      -0.14,
+      0.76,
+      -0.08,
+      0.16,
+      0.33,
+      0.4,
+      0.53,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-061",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.15,
+      -0.04,
+      0.05,
+      -0.14,
+      0.17,
+      0.15,
+      0.93,
+      0.12,
+      0.54,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-062",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.12,
+      -0.09,
+      0.11,
+      -0.16,
+      0.15,
+      0.14,
+      -0.11,
+      0.71,
+      0.36,
+      0.4,
+      0.4,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-063",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 2",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.15,
+      0.19,
+      -0.09,
+      0.06,
+      -0.04,
+      0.19,
+      0.01,
+      0.18,
+      0.33,
+      0.4,
+      0.43,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-064",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.89,
+      -0.07,
+      0.04,
+      0.0,
+      -0.05,
+      0.03,
+      -0.1,
+      0.08,
+      0.5,
+      0.4,
+      0.41,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-065",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.17,
+      0.81,
+      -0.07,
+      -0.07,
+      0.14,
+      0.09,
+      -0.08,
+      -0.08,
+      0.58,
+      0.4,
+      0.5,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-066",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.16,
+      0.05,
+      0.82,
+      0.02,
+      -0.2,
+      -0.09,
+      -0.03,
+      0.03,
+      0.57,
+      0.4,
+      0.54,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-067",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.13,
+      -0.17,
+      0.01,
+      0.82,
+      -0.07,
+      0.13,
+      0.1,
+      0.07,
+      0.55,
+      0.4,
+      0.32,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-068",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.03,
+      0.05,
+      -0.12,
+      0.08,
+      0.74,
+      -0.1,
+      0.06,
+      -0.2,
+      0.59,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-069",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.18,
+      -0.1,
+      0.14,
+      -0.02,
+      0.12,
+      0.83,
+      0.2,
+      0.04,
+      0.55,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-070",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.16,
+      0.1,
+      -0.01,
+      -0.1,
+      -0.1,
+      0.06,
+      0.77,
+      0.01,
+      0.4,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-071",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.14,
+      -0.11,
+      0.08,
+      0.08,
+      -0.17,
+      -0.04,
+      0.02,
+      0.87,
+      0.56,
+      0.4,
+      0.53,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-072",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 3",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.05,
+      -0.2,
+      -0.06,
+      0.1,
+      0.14,
+      0.18,
+      -0.03,
+      0.1,
+      0.31,
+      0.4,
+      0.4,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-073",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.82,
+      -0.04,
+      -0.13,
+      -0.01,
+      -0.15,
+      0.05,
+      -0.19,
+      -0.04,
+      0.32,
+      0.4,
+      0.41,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-074",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.12,
+      0.86,
+      0.1,
+      -0.05,
+      0.1,
+      0.13,
+      -0.1,
+      -0.17,
+      0.53,
+      0.4,
+      0.5,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-075",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.1,
+      0.18,
+      0.85,
+      -0.19,
+      -0.14,
+      -0.15,
+      0.07,
+      0.03,
+      0.52,
+      0.4,
+      0.33,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-076",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.13,
+      0.19,
+      -0.16,
+      0.73,
+      -0.08,
+      0.07,
+      0.18,
+      -0.04,
+      0.53,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-077",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.04,
+      -0.15,
+      0.19,
+      0.11,
+      0.94,
+      -0.03,
+      -0.05,
+      0.0,
+      0.49,
+      0.4,
+      0.55,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-078",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.08,
+      -0.03,
+      0.09,
+      0.19,
+      -0.09,
+      0.91,
+      0.02,
+      -0.01,
+      0.33,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-079",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.1,
+      -0.01,
+      0.04,
+      -0.05,
+      -0.19,
+      0.14,
+      0.77,
+      -0.12,
+      0.3,
+      0.4,
+      0.58,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-080",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.17,
+      0.09,
+      -0.0,
+      0.1,
+      0.08,
+      0.06,
+      -0.0,
+      0.85,
+      0.44,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-081",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 4",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.03,
+      0.1,
+      -0.07,
+      0.08,
+      -0.09,
+      -0.1,
+      -0.15,
+      -0.12,
+      0.45,
+      0.4,
+      0.52,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-082",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.87,
+      0.01,
+      -0.09,
+      -0.16,
+      -0.12,
+      -0.11,
+      -0.13,
+      -0.19,
+      0.34,
+      0.4,
+      0.56,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-083",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.0,
+      0.86,
+      0.03,
+      -0.01,
+      -0.02,
+      -0.13,
+      -0.18,
+      0.18,
+      0.32,
+      0.4,
+      0.34,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-084",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.03,
+      -0.08,
+      0.95,
+      -0.15,
+      0.11,
+      0.04,
+      0.12,
+      -0.11,
+      0.39,
+      0.4,
+      0.49,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-085",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.04,
+      0.1,
+      0.18,
+      0.77,
+      -0.12,
+      0.06,
+      -0.14,
+      -0.13,
+      0.37,
+      0.4,
+      0.51,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-086",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.08,
+      -0.02,
+      0.07,
+      0.17,
+      0.91,
+      0.05,
+      0.06,
+      0.17,
+      0.32,
+      0.4,
+      0.35,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-087",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.08,
+      0.1,
+      0.03,
+      -0.08,
+      -0.15,
+      0.81,
+      0.08,
+      0.18,
+      0.4,
+      0.4,
+      0.38,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-088",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.16,
+      0.18,
+      0.13,
+      0.03,
+      0.18,
+      0.2,
+      0.93,
+      -0.09,
+      0.35,
+      0.4,
+      0.48,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-089",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.05,
+      -0.0,
+      -0.16,
+      -0.06,
+      -0.07,
+      0.07,
+      0.14,
+      0.84,
+      0.44,
+      0.4,
+      0.39,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-090",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 5",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.07,
+      0.19,
+      -0.04,
+      0.01,
+      0.2,
+      0.06,
+      0.02,
+      -0.03,
+      0.36,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-091",
+    "name": "Tiến Hóa Vật Lý & Trảm Kích Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.93,
+      -0.02,
+      0.08,
+      -0.15,
+      0.19,
+      0.04,
+      -0.1,
+      -0.14,
+      0.44,
+      0.4,
+      0.34,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:phys_root"
+    ],
+    "counterTags": [
+      "tag:armor_root"
+    ],
+    "tags": [
+      "tag:phys_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Vật Lý & Trảm Kích, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-092",
+    "name": "Tiến Hóa Phép Thuật & Hỏa Lôi Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.13,
+      0.92,
+      0.09,
+      0.0,
+      -0.09,
+      0.13,
+      0.19,
+      -0.1,
+      0.56,
+      0.4,
+      0.38,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:magic_root"
+    ],
+    "counterTags": [
+      "tag:shield_root"
+    ],
+    "tags": [
+      "tag:magic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Phép Thuật & Hỏa Lôi, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-093",
+    "name": "Tiến Hóa Giáp Trụ & Chống Chịu Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.12,
+      -0.03,
+      0.79,
+      0.0,
+      0.13,
+      -0.09,
+      -0.08,
+      0.03,
+      0.47,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:armor_root"
+    ],
+    "counterTags": [
+      "tag:crit_root"
+    ],
+    "tags": [
+      "tag:armor_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Giáp Trụ & Chống Chịu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-094",
+    "name": "Tiến Hóa Khiên Thần & Hộ Thể Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.02,
+      -0.07,
+      -0.12,
+      0.87,
+      0.03,
+      -0.11,
+      0.11,
+      -0.18,
+      0.55,
+      0.4,
+      0.59,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:shield_root"
+    ],
+    "counterTags": [
+      "tag:energy_root"
+    ],
+    "tags": [
+      "tag:shield_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khiên Thần & Hộ Thể, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-095",
+    "name": "Tiến Hóa Bạo Kích & Điểm Yếu Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      -0.0,
+      -0.19,
+      0.0,
+      0.04,
+      0.74,
+      0.15,
+      -0.02,
+      0.01,
+      0.44,
+      0.4,
+      0.59,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:crit_root"
+    ],
+    "counterTags": [
+      "tag:cc_root"
+    ],
+    "tags": [
+      "tag:crit_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Bạo Kích & Điểm Yếu, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-096",
+    "name": "Tiến Hóa Năng Lượng & Tuyệt Kỹ Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      -0.06,
+      0.08,
+      0.06,
+      0.14,
+      0.14,
+      0.72,
+      -0.05,
+      -0.07,
+      0.49,
+      0.4,
+      0.58,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:energy_root"
+    ],
+    "counterTags": [
+      "tag:spatial_root"
+    ],
+    "tags": [
+      "tag:energy_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Năng Lượng & Tuyệt Kỹ, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-097",
+    "name": "Tiến Hóa Khống Chế & Trói Buộc Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.2,
+      0.1,
+      -0.03,
+      -0.16,
+      0.05,
+      0.15,
+      0.79,
+      0.08,
+      0.34,
+      0.4,
+      0.46,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:cc_root"
+    ],
+    "counterTags": [
+      "tag:erotic_root"
+    ],
+    "tags": [
+      "tag:cc_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Khống Chế & Trói Buộc, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-098",
+    "name": "Tiến Hóa Không Gian 3x3 & Đột Phá Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "SYNERGY",
+    "weights": [
+      0.03,
+      0.12,
+      -0.13,
+      -0.17,
+      0.15,
+      0.05,
+      -0.1,
+      0.7,
+      0.54,
+      0.4,
+      0.57,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_root"
+    ],
+    "counterTags": [
+      "tag:phys_root"
+    ],
+    "tags": [
+      "tag:spatial_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Không Gian 3x3 & Đột Phá, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-099",
+    "name": "Tiến Hóa Rách Giáp 18+ & Climax Cấp 2 - Phân Nhánh 6",
+    "depth": 2,
+    "category": "COUNTER",
+    "weights": [
+      0.07,
+      -0.14,
+      -0.02,
+      -0.06,
+      0.04,
+      0.06,
+      -0.03,
+      -0.1,
+      0.47,
+      0.4,
+      0.47,
+      0.35
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_root"
+    ],
+    "counterTags": [
+      "tag:magic_root"
+    ],
+    "tags": [
+      "tag:erotic_branch",
+      "tag:depth_2"
+    ],
+    "description": "Phát triển nhánh chiến thuật Rách Giáp 18+ & Climax, gia tăng hiệu ứng khi kích hoạt các buff tiền đề."
+  },
+  {
+    "id": "BUFF-100",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.82,
+      -0.12,
+      0.29,
+      0.09,
+      -0.14,
+      0.04,
+      0.11,
+      0.15,
+      0.7,
+      0.6,
+      0.78,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-101",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.09,
+      0.89,
+      0.07,
+      0.11,
+      0.13,
+      0.1,
+      0.2,
+      0.08,
+      0.68,
+      0.6,
+      0.63,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-102",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.12,
+      0.15,
+      0.95,
+      -0.22,
+      0.02,
+      0.28,
+      0.02,
+      0.25,
+      0.69,
+      0.6,
+      0.7,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-103",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.23,
+      0.28,
+      -0.22,
+      0.88,
+      0.22,
+      0.13,
+      0.29,
+      0.28,
+      0.61,
+      0.6,
+      0.8,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-104",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.1,
+      0.05,
+      0.19,
+      0.26,
+      0.96,
+      -0.16,
+      -0.28,
+      0.23,
+      0.73,
+      0.6,
+      0.69,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-105",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.06,
+      -0.22,
+      0.27,
+      -0.12,
+      -0.0,
+      0.85,
+      0.23,
+      -0.22,
+      0.69,
+      0.6,
+      0.65,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-106",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.05,
+      -0.24,
+      -0.01,
+      -0.06,
+      0.27,
+      -0.28,
+      0.89,
+      -0.03,
+      0.74,
+      0.6,
+      0.71,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-107",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.06,
+      -0.19,
+      -0.23,
+      0.21,
+      -0.03,
+      0.1,
+      0.09,
+      0.89,
+      0.52,
+      0.6,
+      0.83,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-108",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 1",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.18,
+      -0.17,
+      0.22,
+      -0.1,
+      -0.21,
+      0.24,
+      -0.3,
+      0.22,
+      0.51,
+      0.6,
+      0.6,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-109",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.88,
+      -0.16,
+      -0.11,
+      -0.2,
+      -0.27,
+      0.15,
+      0.02,
+      0.15,
+      0.74,
+      0.6,
+      0.61,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-110",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.17,
+      0.77,
+      0.01,
+      -0.03,
+      0.28,
+      -0.26,
+      -0.01,
+      -0.06,
+      0.65,
+      0.6,
+      0.62,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-111",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.13,
+      0.08,
+      0.94,
+      -0.1,
+      0.3,
+      0.02,
+      -0.03,
+      0.06,
+      0.68,
+      0.6,
+      0.66,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-112",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.03,
+      -0.16,
+      -0.1,
+      0.96,
+      -0.05,
+      -0.24,
+      -0.04,
+      0.1,
+      0.52,
+      0.6,
+      0.63,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-113",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.14,
+      0.19,
+      0.03,
+      0.05,
+      0.99,
+      -0.1,
+      -0.23,
+      -0.09,
+      0.65,
+      0.6,
+      0.71,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-114",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.05,
+      -0.17,
+      0.09,
+      -0.17,
+      -0.24,
+      0.95,
+      -0.08,
+      0.16,
+      0.65,
+      0.6,
+      0.79,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-115",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.28,
+      0.26,
+      0.2,
+      -0.14,
+      -0.19,
+      0.12,
+      0.79,
+      -0.1,
+      0.66,
+      0.6,
+      0.61,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-116",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.15,
+      -0.17,
+      -0.05,
+      -0.1,
+      -0.08,
+      0.13,
+      0.17,
+      0.92,
+      0.57,
+      0.6,
+      0.8,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-117",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 2",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.01,
+      -0.03,
+      -0.14,
+      0.15,
+      -0.23,
+      -0.04,
+      -0.13,
+      0.11,
+      0.5,
+      0.6,
+      0.69,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-118",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.77,
+      -0.22,
+      -0.15,
+      -0.1,
+      -0.3,
+      0.15,
+      -0.19,
+      -0.07,
+      0.72,
+      0.6,
+      0.61,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-119",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.29,
+      0.96,
+      0.22,
+      0.05,
+      0.04,
+      0.13,
+      -0.05,
+      -0.23,
+      0.73,
+      0.6,
+      0.63,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-120",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.21,
+      -0.15,
+      0.98,
+      0.01,
+      -0.06,
+      -0.11,
+      -0.1,
+      -0.1,
+      0.59,
+      0.6,
+      0.82,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-121",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.19,
+      0.19,
+      -0.16,
+      0.94,
+      -0.18,
+      0.06,
+      0.16,
+      0.09,
+      0.61,
+      0.6,
+      0.88,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-122",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.04,
+      0.08,
+      0.07,
+      0.22,
+      0.83,
+      -0.21,
+      -0.26,
+      -0.03,
+      0.61,
+      0.6,
+      0.62,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-123",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      0.2,
+      -0.25,
+      0.22,
+      0.21,
+      0.07,
+      0.91,
+      -0.02,
+      0.03,
+      0.58,
+      0.6,
+      0.74,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-124",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.21,
+      -0.26,
+      -0.24,
+      0.24,
+      -0.09,
+      0.13,
+      0.79,
+      -0.2,
+      0.59,
+      0.6,
+      0.68,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-125",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.05,
+      -0.1,
+      0.06,
+      0.17,
+      0.09,
+      -0.26,
+      -0.24,
+      0.97,
+      0.58,
+      0.6,
+      0.77,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-126",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 3",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.22,
+      -0.09,
+      0.28,
+      0.12,
+      -0.06,
+      0.06,
+      0.26,
+      -0.11,
+      0.68,
+      0.6,
+      0.81,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-127",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.96,
+      0.09,
+      -0.05,
+      -0.08,
+      -0.08,
+      -0.19,
+      -0.17,
+      0.27,
+      0.53,
+      0.6,
+      0.83,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-128",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.2,
+      0.86,
+      -0.28,
+      -0.1,
+      0.16,
+      -0.22,
+      -0.07,
+      -0.2,
+      0.6,
+      0.6,
+      0.8,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-129",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.16,
+      -0.03,
+      1.0,
+      0.15,
+      -0.03,
+      0.02,
+      -0.11,
+      0.19,
+      0.62,
+      0.6,
+      0.68,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-130",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.07,
+      0.02,
+      0.28,
+      0.96,
+      0.18,
+      -0.22,
+      -0.15,
+      0.08,
+      0.57,
+      0.6,
+      0.83,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-131",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.14,
+      0.24,
+      -0.21,
+      -0.04,
+      1.0,
+      -0.17,
+      -0.03,
+      -0.09,
+      0.59,
+      0.6,
+      0.61,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-132",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.26,
+      0.2,
+      0.09,
+      0.17,
+      -0.22,
+      0.77,
+      0.2,
+      0.12,
+      0.56,
+      0.6,
+      0.85,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-133",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.03,
+      0.14,
+      0.02,
+      -0.23,
+      -0.13,
+      -0.12,
+      0.9,
+      -0.05,
+      0.5,
+      0.6,
+      0.75,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-134",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.15,
+      -0.21,
+      -0.04,
+      0.07,
+      -0.16,
+      -0.05,
+      0.1,
+      1.0,
+      0.64,
+      0.6,
+      0.72,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-135",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 4",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.02,
+      0.08,
+      0.29,
+      -0.15,
+      -0.29,
+      0.17,
+      -0.09,
+      0.14,
+      0.64,
+      0.6,
+      0.84,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-136",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.76,
+      0.17,
+      -0.02,
+      0.12,
+      0.08,
+      0.19,
+      -0.26,
+      0.17,
+      0.73,
+      0.6,
+      0.75,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-137",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.29,
+      0.94,
+      -0.15,
+      0.15,
+      -0.19,
+      -0.09,
+      0.17,
+      0.22,
+      0.72,
+      0.6,
+      0.72,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-138",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.28,
+      -0.0,
+      0.77,
+      0.25,
+      0.01,
+      0.18,
+      0.14,
+      -0.25,
+      0.67,
+      0.6,
+      0.69,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-139",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.06,
+      -0.04,
+      0.11,
+      0.91,
+      -0.27,
+      0.22,
+      -0.09,
+      0.3,
+      0.59,
+      0.6,
+      0.84,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-140",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.11,
+      0.27,
+      -0.21,
+      0.06,
+      0.92,
+      -0.28,
+      -0.26,
+      0.17,
+      0.74,
+      0.6,
+      0.71,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-141",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      0.16,
+      0.04,
+      0.02,
+      -0.06,
+      0.09,
+      0.82,
+      -0.23,
+      0.14,
+      0.61,
+      0.6,
+      0.9,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-142",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.13,
+      0.25,
+      -0.01,
+      -0.23,
+      0.21,
+      -0.03,
+      0.84,
+      -0.03,
+      0.52,
+      0.6,
+      0.76,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-143",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.23,
+      0.21,
+      0.13,
+      0.26,
+      0.08,
+      0.18,
+      0.01,
+      0.89,
+      0.59,
+      0.6,
+      0.84,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-144",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 5",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.03,
+      0.07,
+      -0.25,
+      -0.11,
+      0.3,
+      0.13,
+      0.02,
+      0.16,
+      0.67,
+      0.6,
+      0.7,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-145",
+    "name": "Phản Kích Vật Lý & Trảm Kích Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.93,
+      0.17,
+      0.08,
+      -0.19,
+      0.28,
+      -0.04,
+      0.25,
+      -0.27,
+      0.59,
+      0.6,
+      0.88,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:phys_branch"
+    ],
+    "counterTags": [
+      "tag:magic_branch",
+      "tag:shield_branch"
+    ],
+    "tags": [
+      "tag:phys_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-146",
+    "name": "Phản Kích Phép Thuật & Hỏa Lôi Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.24,
+      0.91,
+      -0.15,
+      0.08,
+      0.03,
+      -0.22,
+      -0.12,
+      0.02,
+      0.68,
+      0.6,
+      0.78,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:magic_branch"
+    ],
+    "counterTags": [
+      "tag:armor_branch",
+      "tag:crit_branch"
+    ],
+    "tags": [
+      "tag:magic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-147",
+    "name": "Phản Kích Giáp Trụ & Chống Chịu Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      0.21,
+      0.04,
+      0.91,
+      -0.28,
+      -0.27,
+      0.08,
+      0.05,
+      0.09,
+      0.57,
+      0.6,
+      0.89,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:armor_branch"
+    ],
+    "counterTags": [
+      "tag:shield_branch",
+      "tag:energy_branch"
+    ],
+    "tags": [
+      "tag:armor_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-148",
+    "name": "Phản Kích Khiên Thần & Hộ Thể Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      -0.01,
+      0.18,
+      0.11,
+      0.93,
+      -0.26,
+      -0.26,
+      -0.04,
+      -0.01,
+      0.72,
+      0.6,
+      0.89,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:shield_branch"
+    ],
+    "counterTags": [
+      "tag:crit_branch",
+      "tag:cc_branch"
+    ],
+    "tags": [
+      "tag:shield_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-149",
+    "name": "Phản Kích Bạo Kích & Điểm Yếu Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      -0.22,
+      -0.08,
+      0.04,
+      -0.11,
+      0.97,
+      -0.14,
+      -0.15,
+      -0.24,
+      0.54,
+      0.6,
+      0.7,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:crit_branch"
+    ],
+    "counterTags": [
+      "tag:energy_branch",
+      "tag:spatial_branch"
+    ],
+    "tags": [
+      "tag:crit_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-150",
+    "name": "Phản Kích Năng Lượng & Tuyệt Kỹ Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.05,
+      -0.11,
+      0.16,
+      -0.0,
+      0.01,
+      0.84,
+      -0.11,
+      -0.29,
+      0.51,
+      0.6,
+      0.75,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:energy_branch"
+    ],
+    "counterTags": [
+      "tag:cc_branch",
+      "tag:erotic_branch"
+    ],
+    "tags": [
+      "tag:energy_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-151",
+    "name": "Phản Kích Khống Chế & Trói Buộc Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "SYNERGY",
+    "weights": [
+      0.23,
+      0.09,
+      -0.02,
+      0.02,
+      0.21,
+      -0.04,
+      0.8,
+      0.14,
+      0.64,
+      0.6,
+      0.62,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:cc_branch"
+    ],
+    "counterTags": [
+      "tag:spatial_branch",
+      "tag:phys_branch"
+    ],
+    "tags": [
+      "tag:cc_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-152",
+    "name": "Phản Kích Không Gian 3x3 & Đột Phá Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "COUNTER",
+    "weights": [
+      0.0,
+      0.16,
+      -0.13,
+      0.29,
+      0.11,
+      -0.23,
+      0.29,
+      0.8,
+      0.63,
+      0.6,
+      0.75,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_branch"
+    ],
+    "counterTags": [
+      "tag:erotic_branch",
+      "tag:magic_branch"
+    ],
+    "tags": [
+      "tag:spatial_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-153",
+    "name": "Phản Kích Rách Giáp 18+ & Climax Đột Biến - Bậc 6",
+    "depth": 3,
+    "category": "PIVOT",
+    "weights": [
+      -0.27,
+      -0.22,
+      -0.1,
+      -0.02,
+      -0.03,
+      0.06,
+      0.01,
+      -0.1,
+      0.58,
+      0.6,
+      0.85,
+      0.55
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_branch"
+    ],
+    "counterTags": [
+      "tag:phys_branch",
+      "tag:armor_branch"
+    ],
+    "tags": [
+      "tag:erotic_pivot",
+      "tag:depth_3"
+    ],
+    "description": "Cú bẻ trục chiến thuật phản ứng khắc chế mạnh mẽ trường phái của đối thủ."
+  },
+  {
+    "id": "BUFF-154",
+    "name": "Trừng Phạt Cực Hạn Vật Lý & Trảm Kích - Apex 1",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.89,
+      0.17,
+      -0.16,
+      0.25,
+      -0.11,
+      0.14,
+      0.38,
+      0.07,
+      0.89,
+      0.8,
+      0.96,
+      0.85
+    ],
+    "prerequisiteTags": [
+      "tag:phys_pivot"
+    ],
+    "counterTags": [
+      "tag:armor_pivot"
+    ],
+    "tags": [
+      "tag:phys_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-155",
+    "name": "Trừng Phạt Cực Hạn Phép Thuật & Hỏa Lôi - Apex 1",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.06,
+      0.8,
+      0.07,
+      -0.26,
+      0.1,
+      0.1,
+      0.27,
+      -0.28,
+      0.76,
+      0.8,
+      0.83,
+      0.84
+    ],
+    "prerequisiteTags": [
+      "tag:magic_pivot"
+    ],
+    "counterTags": [
+      "tag:shield_pivot"
+    ],
+    "tags": [
+      "tag:magic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-156",
+    "name": "Trừng Phạt Cực Hạn Giáp Trụ & Chống Chịu - Apex 1",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.07,
+      0.22,
+      0.83,
+      0.3,
+      0.19,
+      -0.35,
+      -0.29,
+      -0.23,
+      0.88,
+      0.8,
+      0.87,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:armor_pivot"
+    ],
+    "counterTags": [
+      "tag:crit_pivot"
+    ],
+    "tags": [
+      "tag:armor_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-157",
+    "name": "Trừng Phạt Cực Hạn Khiên Thần & Hộ Thể - Apex 1",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.22,
+      0.18,
+      0.11,
+      0.84,
+      0.09,
+      -0.25,
+      -0.2,
+      0.05,
+      0.84,
+      0.8,
+      0.86,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:shield_pivot"
+    ],
+    "counterTags": [
+      "tag:energy_pivot"
+    ],
+    "tags": [
+      "tag:shield_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-158",
+    "name": "Trừng Phạt Cực Hạn Bạo Kích & Điểm Yếu - Apex 1",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.35,
+      0.24,
+      -0.18,
+      -0.3,
+      0.94,
+      -0.1,
+      0.38,
+      0.25,
+      0.77,
+      0.8,
+      0.89,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:crit_pivot"
+    ],
+    "counterTags": [
+      "tag:cc_pivot"
+    ],
+    "tags": [
+      "tag:crit_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-159",
+    "name": "Trừng Phạt Cực Hạn Năng Lượng & Tuyệt Kỹ - Apex 1",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.02,
+      -0.24,
+      0.03,
+      0.35,
+      0.16,
+      0.81,
+      0.09,
+      0.07,
+      0.78,
+      0.8,
+      0.94,
+      0.76
+    ],
+    "prerequisiteTags": [
+      "tag:energy_pivot"
+    ],
+    "counterTags": [
+      "tag:spatial_pivot"
+    ],
+    "tags": [
+      "tag:energy_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-160",
+    "name": "Trừng Phạt Cực Hạn Khống Chế & Trói Buộc - Apex 1",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.22,
+      -0.4,
+      0.04,
+      0.34,
+      -0.07,
+      0.35,
+      0.98,
+      -0.02,
+      0.72,
+      0.8,
+      0.91,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:cc_pivot"
+    ],
+    "counterTags": [
+      "tag:erotic_pivot"
+    ],
+    "tags": [
+      "tag:cc_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-161",
+    "name": "Trừng Phạt Cực Hạn Không Gian 3x3 & Đột Phá - Apex 1",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.18,
+      0.35,
+      0.33,
+      -0.26,
+      0.31,
+      -0.26,
+      0.34,
+      0.99,
+      0.88,
+      0.8,
+      0.8,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_pivot"
+    ],
+    "counterTags": [
+      "tag:phys_pivot"
+    ],
+    "tags": [
+      "tag:spatial_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-162",
+    "name": "Trừng Phạt Cực Hạn Rách Giáp 18+ & Climax - Apex 1",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.31,
+      0.39,
+      -0.17,
+      0.39,
+      0.03,
+      -0.0,
+      0.35,
+      0.28,
+      0.75,
+      0.8,
+      0.84,
+      0.85
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_pivot"
+    ],
+    "counterTags": [
+      "tag:magic_pivot"
+    ],
+    "tags": [
+      "tag:erotic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-163",
+    "name": "Trừng Phạt Cực Hạn Vật Lý & Trảm Kích - Apex 2",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.86,
+      0.05,
+      0.21,
+      -0.26,
+      0.28,
+      0.32,
+      0.26,
+      0.01,
+      0.75,
+      0.8,
+      0.85,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:phys_pivot"
+    ],
+    "counterTags": [
+      "tag:armor_pivot"
+    ],
+    "tags": [
+      "tag:phys_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-164",
+    "name": "Trừng Phạt Cực Hạn Phép Thuật & Hỏa Lôi - Apex 2",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.2,
+      0.98,
+      -0.16,
+      0.18,
+      -0.39,
+      0.12,
+      0.15,
+      -0.35,
+      0.84,
+      0.8,
+      0.86,
+      0.77
+    ],
+    "prerequisiteTags": [
+      "tag:magic_pivot"
+    ],
+    "counterTags": [
+      "tag:shield_pivot"
+    ],
+    "tags": [
+      "tag:magic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-165",
+    "name": "Trừng Phạt Cực Hạn Giáp Trụ & Chống Chịu - Apex 2",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.33,
+      -0.16,
+      0.93,
+      -0.22,
+      -0.29,
+      -0.28,
+      0.2,
+      0.08,
+      0.74,
+      0.8,
+      0.85,
+      0.85
+    ],
+    "prerequisiteTags": [
+      "tag:armor_pivot"
+    ],
+    "counterTags": [
+      "tag:crit_pivot"
+    ],
+    "tags": [
+      "tag:armor_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-166",
+    "name": "Trừng Phạt Cực Hạn Khiên Thần & Hộ Thể - Apex 2",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.3,
+      -0.33,
+      -0.04,
+      0.9,
+      -0.34,
+      0.05,
+      -0.35,
+      0.04,
+      0.72,
+      0.8,
+      0.84,
+      0.83
+    ],
+    "prerequisiteTags": [
+      "tag:shield_pivot"
+    ],
+    "counterTags": [
+      "tag:energy_pivot"
+    ],
+    "tags": [
+      "tag:shield_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-167",
+    "name": "Trừng Phạt Cực Hạn Bạo Kích & Điểm Yếu - Apex 2",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.33,
+      0.01,
+      0.25,
+      -0.04,
+      0.95,
+      -0.03,
+      -0.35,
+      -0.03,
+      0.82,
+      0.8,
+      0.81,
+      0.79
+    ],
+    "prerequisiteTags": [
+      "tag:crit_pivot"
+    ],
+    "counterTags": [
+      "tag:cc_pivot"
+    ],
+    "tags": [
+      "tag:crit_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-168",
+    "name": "Trừng Phạt Cực Hạn Năng Lượng & Tuyệt Kỹ - Apex 2",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.35,
+      0.4,
+      0.35,
+      -0.34,
+      0.35,
+      1.0,
+      -0.07,
+      0.22,
+      0.78,
+      0.8,
+      0.97,
+      0.87
+    ],
+    "prerequisiteTags": [
+      "tag:energy_pivot"
+    ],
+    "counterTags": [
+      "tag:spatial_pivot"
+    ],
+    "tags": [
+      "tag:energy_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-169",
+    "name": "Trừng Phạt Cực Hạn Khống Chế & Trói Buộc - Apex 2",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.1,
+      0.15,
+      0.13,
+      0.03,
+      0.12,
+      -0.12,
+      0.8,
+      0.03,
+      0.76,
+      0.8,
+      0.93,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:cc_pivot"
+    ],
+    "counterTags": [
+      "tag:erotic_pivot"
+    ],
+    "tags": [
+      "tag:cc_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-170",
+    "name": "Trừng Phạt Cực Hạn Không Gian 3x3 & Đột Phá - Apex 2",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.03,
+      0.26,
+      -0.2,
+      -0.12,
+      -0.18,
+      0.35,
+      0.18,
+      0.8,
+      0.74,
+      0.8,
+      0.82,
+      0.75
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_pivot"
+    ],
+    "counterTags": [
+      "tag:phys_pivot"
+    ],
+    "tags": [
+      "tag:spatial_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-171",
+    "name": "Trừng Phạt Cực Hạn Rách Giáp 18+ & Climax - Apex 2",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.08,
+      0.16,
+      -0.36,
+      0.19,
+      -0.08,
+      -0.21,
+      -0.23,
+      0.29,
+      0.76,
+      0.8,
+      0.92,
+      0.84
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_pivot"
+    ],
+    "counterTags": [
+      "tag:magic_pivot"
+    ],
+    "tags": [
+      "tag:erotic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-172",
+    "name": "Trừng Phạt Cực Hạn Vật Lý & Trảm Kích - Apex 3",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.9,
+      -0.16,
+      -0.29,
+      0.13,
+      -0.22,
+      -0.16,
+      -0.35,
+      0.36,
+      0.89,
+      0.8,
+      0.99,
+      0.84
+    ],
+    "prerequisiteTags": [
+      "tag:phys_pivot"
+    ],
+    "counterTags": [
+      "tag:armor_pivot"
+    ],
+    "tags": [
+      "tag:phys_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-173",
+    "name": "Trừng Phạt Cực Hạn Phép Thuật & Hỏa Lôi - Apex 3",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.23,
+      0.91,
+      -0.07,
+      -0.28,
+      -0.1,
+      0.2,
+      -0.02,
+      0.28,
+      0.89,
+      0.8,
+      0.91,
+      0.77
+    ],
+    "prerequisiteTags": [
+      "tag:magic_pivot"
+    ],
+    "counterTags": [
+      "tag:shield_pivot"
+    ],
+    "tags": [
+      "tag:magic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-174",
+    "name": "Trừng Phạt Cực Hạn Giáp Trụ & Chống Chịu - Apex 3",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.21,
+      -0.24,
+      0.84,
+      0.34,
+      0.28,
+      -0.33,
+      0.18,
+      -0.25,
+      0.85,
+      0.8,
+      0.94,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:armor_pivot"
+    ],
+    "counterTags": [
+      "tag:crit_pivot"
+    ],
+    "tags": [
+      "tag:armor_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-175",
+    "name": "Trừng Phạt Cực Hạn Khiên Thần & Hộ Thể - Apex 3",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.02,
+      0.3,
+      -0.13,
+      0.84,
+      -0.39,
+      0.35,
+      0.37,
+      -0.31,
+      0.88,
+      0.8,
+      0.91,
+      0.85
+    ],
+    "prerequisiteTags": [
+      "tag:shield_pivot"
+    ],
+    "counterTags": [
+      "tag:energy_pivot"
+    ],
+    "tags": [
+      "tag:shield_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-176",
+    "name": "Trừng Phạt Cực Hạn Bạo Kích & Điểm Yếu - Apex 3",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.1,
+      0.03,
+      -0.11,
+      -0.19,
+      0.88,
+      -0.0,
+      -0.32,
+      0.39,
+      0.81,
+      0.8,
+      0.84,
+      0.77
+    ],
+    "prerequisiteTags": [
+      "tag:crit_pivot"
+    ],
+    "counterTags": [
+      "tag:cc_pivot"
+    ],
+    "tags": [
+      "tag:crit_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-177",
+    "name": "Trừng Phạt Cực Hạn Năng Lượng & Tuyệt Kỹ - Apex 3",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.19,
+      0.35,
+      0.06,
+      -0.07,
+      -0.28,
+      0.96,
+      -0.1,
+      0.27,
+      0.89,
+      0.8,
+      0.93,
+      0.81
+    ],
+    "prerequisiteTags": [
+      "tag:energy_pivot"
+    ],
+    "counterTags": [
+      "tag:spatial_pivot"
+    ],
+    "tags": [
+      "tag:energy_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-178",
+    "name": "Trừng Phạt Cực Hạn Khống Chế & Trói Buộc - Apex 3",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.27,
+      0.24,
+      -0.26,
+      0.18,
+      -0.01,
+      0.33,
+      0.93,
+      0.11,
+      0.85,
+      0.8,
+      0.88,
+      0.86
+    ],
+    "prerequisiteTags": [
+      "tag:cc_pivot"
+    ],
+    "counterTags": [
+      "tag:erotic_pivot"
+    ],
+    "tags": [
+      "tag:cc_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-179",
+    "name": "Trừng Phạt Cực Hạn Không Gian 3x3 & Đột Phá - Apex 3",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.21,
+      0.17,
+      -0.39,
+      0.0,
+      -0.1,
+      0.09,
+      0.13,
+      0.8,
+      0.81,
+      0.8,
+      0.85,
+      0.88
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_pivot"
+    ],
+    "counterTags": [
+      "tag:phys_pivot"
+    ],
+    "tags": [
+      "tag:spatial_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-180",
+    "name": "Trừng Phạt Cực Hạn Rách Giáp 18+ & Climax - Apex 3",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.39,
+      0.25,
+      0.14,
+      0.24,
+      0.33,
+      -0.31,
+      -0.32,
+      -0.28,
+      0.77,
+      0.8,
+      0.88,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_pivot"
+    ],
+    "counterTags": [
+      "tag:magic_pivot"
+    ],
+    "tags": [
+      "tag:erotic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-181",
+    "name": "Trừng Phạt Cực Hạn Vật Lý & Trảm Kích - Apex 4",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.83,
+      -0.22,
+      0.15,
+      0.28,
+      0.12,
+      0.29,
+      0.21,
+      -0.33,
+      0.8,
+      0.8,
+      0.89,
+      0.85
+    ],
+    "prerequisiteTags": [
+      "tag:phys_pivot"
+    ],
+    "counterTags": [
+      "tag:armor_pivot"
+    ],
+    "tags": [
+      "tag:phys_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-182",
+    "name": "Trừng Phạt Cực Hạn Phép Thuật & Hỏa Lôi - Apex 4",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.05,
+      0.98,
+      -0.32,
+      0.02,
+      -0.37,
+      -0.23,
+      0.29,
+      0.31,
+      0.81,
+      0.8,
+      0.81,
+      0.87
+    ],
+    "prerequisiteTags": [
+      "tag:magic_pivot"
+    ],
+    "counterTags": [
+      "tag:shield_pivot"
+    ],
+    "tags": [
+      "tag:magic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-183",
+    "name": "Trừng Phạt Cực Hạn Giáp Trụ & Chống Chịu - Apex 4",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.15,
+      0.37,
+      0.87,
+      0.2,
+      0.17,
+      -0.08,
+      -0.34,
+      -0.27,
+      0.85,
+      0.8,
+      0.83,
+      0.88
+    ],
+    "prerequisiteTags": [
+      "tag:armor_pivot"
+    ],
+    "counterTags": [
+      "tag:crit_pivot"
+    ],
+    "tags": [
+      "tag:armor_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-184",
+    "name": "Trừng Phạt Cực Hạn Khiên Thần & Hộ Thể - Apex 4",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.18,
+      0.0,
+      0.38,
+      0.85,
+      -0.05,
+      0.27,
+      -0.13,
+      0.22,
+      0.9,
+      0.8,
+      0.9,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:shield_pivot"
+    ],
+    "counterTags": [
+      "tag:energy_pivot"
+    ],
+    "tags": [
+      "tag:shield_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-185",
+    "name": "Trừng Phạt Cực Hạn Bạo Kích & Điểm Yếu - Apex 4",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.35,
+      -0.05,
+      0.14,
+      0.13,
+      0.95,
+      0.09,
+      0.24,
+      0.17,
+      0.76,
+      0.8,
+      0.82,
+      0.75
+    ],
+    "prerequisiteTags": [
+      "tag:crit_pivot"
+    ],
+    "counterTags": [
+      "tag:cc_pivot"
+    ],
+    "tags": [
+      "tag:crit_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-186",
+    "name": "Trừng Phạt Cực Hạn Năng Lượng & Tuyệt Kỹ - Apex 4",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.15,
+      -0.11,
+      -0.18,
+      -0.29,
+      -0.25,
+      0.86,
+      0.04,
+      -0.07,
+      0.78,
+      0.8,
+      0.86,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:energy_pivot"
+    ],
+    "counterTags": [
+      "tag:spatial_pivot"
+    ],
+    "tags": [
+      "tag:energy_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-187",
+    "name": "Trừng Phạt Cực Hạn Khống Chế & Trói Buộc - Apex 4",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.33,
+      0.32,
+      0.32,
+      0.38,
+      0.06,
+      -0.26,
+      0.88,
+      -0.29,
+      0.8,
+      0.8,
+      0.82,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:cc_pivot"
+    ],
+    "counterTags": [
+      "tag:erotic_pivot"
+    ],
+    "tags": [
+      "tag:cc_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-188",
+    "name": "Trừng Phạt Cực Hạn Không Gian 3x3 & Đột Phá - Apex 4",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.2,
+      0.1,
+      0.08,
+      -0.24,
+      -0.31,
+      -0.16,
+      0.36,
+      0.96,
+      0.87,
+      0.8,
+      0.99,
+      0.77
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_pivot"
+    ],
+    "counterTags": [
+      "tag:phys_pivot"
+    ],
+    "tags": [
+      "tag:spatial_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-189",
+    "name": "Trừng Phạt Cực Hạn Rách Giáp 18+ & Climax - Apex 4",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.14,
+      0.36,
+      -0.24,
+      -0.15,
+      0.37,
+      0.37,
+      -0.17,
+      0.16,
+      0.78,
+      0.8,
+      0.82,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_pivot"
+    ],
+    "counterTags": [
+      "tag:magic_pivot"
+    ],
+    "tags": [
+      "tag:erotic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-190",
+    "name": "Trừng Phạt Cực Hạn Vật Lý & Trảm Kích - Apex 5",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.88,
+      0.04,
+      0.15,
+      0.04,
+      0.36,
+      -0.03,
+      0.17,
+      -0.05,
+      0.8,
+      0.8,
+      0.93,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:phys_pivot"
+    ],
+    "counterTags": [
+      "tag:armor_pivot"
+    ],
+    "tags": [
+      "tag:phys_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-191",
+    "name": "Trừng Phạt Cực Hạn Phép Thuật & Hỏa Lôi - Apex 5",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.13,
+      0.87,
+      0.23,
+      -0.34,
+      0.39,
+      -0.02,
+      -0.08,
+      0.01,
+      0.88,
+      0.8,
+      0.91,
+      0.83
+    ],
+    "prerequisiteTags": [
+      "tag:magic_pivot"
+    ],
+    "counterTags": [
+      "tag:shield_pivot"
+    ],
+    "tags": [
+      "tag:magic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-192",
+    "name": "Trừng Phạt Cực Hạn Giáp Trụ & Chống Chịu - Apex 5",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.33,
+      0.22,
+      0.8,
+      -0.12,
+      0.12,
+      -0.36,
+      0.39,
+      0.14,
+      0.75,
+      0.8,
+      0.9,
+      0.82
+    ],
+    "prerequisiteTags": [
+      "tag:armor_pivot"
+    ],
+    "counterTags": [
+      "tag:crit_pivot"
+    ],
+    "tags": [
+      "tag:armor_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-193",
+    "name": "Trừng Phạt Cực Hạn Khiên Thần & Hộ Thể - Apex 5",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.06,
+      0.06,
+      -0.04,
+      0.82,
+      0.22,
+      0.07,
+      0.0,
+      -0.12,
+      0.89,
+      0.8,
+      0.83,
+      0.79
+    ],
+    "prerequisiteTags": [
+      "tag:shield_pivot"
+    ],
+    "counterTags": [
+      "tag:energy_pivot"
+    ],
+    "tags": [
+      "tag:shield_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-194",
+    "name": "Trừng Phạt Cực Hạn Bạo Kích & Điểm Yếu - Apex 5",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.04,
+      -0.23,
+      -0.01,
+      -0.02,
+      0.94,
+      0.16,
+      -0.14,
+      -0.16,
+      0.73,
+      0.8,
+      1.0,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:crit_pivot"
+    ],
+    "counterTags": [
+      "tag:cc_pivot"
+    ],
+    "tags": [
+      "tag:crit_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-195",
+    "name": "Trừng Phạt Cực Hạn Năng Lượng & Tuyệt Kỹ - Apex 5",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.26,
+      -0.27,
+      0.05,
+      0.37,
+      -0.21,
+      0.92,
+      -0.25,
+      0.11,
+      0.78,
+      0.8,
+      0.94,
+      0.78
+    ],
+    "prerequisiteTags": [
+      "tag:energy_pivot"
+    ],
+    "counterTags": [
+      "tag:spatial_pivot"
+    ],
+    "tags": [
+      "tag:energy_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-196",
+    "name": "Trừng Phạt Cực Hạn Khống Chế & Trói Buộc - Apex 5",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      0.2,
+      0.25,
+      -0.35,
+      -0.32,
+      0.3,
+      -0.25,
+      0.92,
+      -0.03,
+      0.82,
+      0.8,
+      0.92,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:cc_pivot"
+    ],
+    "counterTags": [
+      "tag:erotic_pivot"
+    ],
+    "tags": [
+      "tag:cc_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-197",
+    "name": "Trừng Phạt Cực Hạn Không Gian 3x3 & Đột Phá - Apex 5",
+    "depth": 4,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.28,
+      0.09,
+      0.25,
+      0.16,
+      -0.16,
+      0.09,
+      -0.33,
+      0.9,
+      0.78,
+      0.8,
+      0.83,
+      0.8
+    ],
+    "prerequisiteTags": [
+      "tag:spatial_pivot"
+    ],
+    "counterTags": [
+      "tag:phys_pivot"
+    ],
+    "tags": [
+      "tag:spatial_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-198",
+    "name": "Trừng Phạt Cực Hạn Rách Giáp 18+ & Climax - Apex 5",
+    "depth": 4,
+    "category": "COUNTER",
+    "weights": [
+      -0.25,
+      0.11,
+      0.15,
+      0.12,
+      0.4,
+      0.04,
+      -0.01,
+      -0.29,
+      0.73,
+      0.8,
+      0.96,
+      0.88
+    ],
+    "prerequisiteTags": [
+      "tag:erotic_pivot"
+    ],
+    "counterTags": [
+      "tag:magic_pivot"
+    ],
+    "tags": [
+      "tag:erotic_apex_counter",
+      "tag:depth_4"
+    ],
+    "description": "Áp đảo toàn diện và trừng phạt các chỉ số vượt ngưỡng của đối thủ trong giai đoạn then chốt."
+  },
+  {
+    "id": "BUFF-199",
+    "name": "Tuyệt Diệt Băng Hỏa Trùng Phùng (Absolute Zero Supernova) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.01,
+      -0.01,
+      0.18,
+      -0.08,
+      0.34,
+      -0.01,
+      -0.42,
+      -0.47,
+      0.88,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-200",
+    "name": "Vực Thẳm Khuất Phục Tuyệt Đối (Erotic Domination Overwrite) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.24,
+      0.27,
+      0.05,
+      -0.39,
+      -0.39,
+      0.28,
+      0.32,
+      -0.13,
+      1.0,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-201",
+    "name": "Vỡ Vụn Thần Thánh (Aegis Annihilation) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.33,
+      0.25,
+      -0.2,
+      0.5,
+      -0.05,
+      -0.15,
+      0.32,
+      -0.06,
+      0.94,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-202",
+    "name": "Luân Hồi Bất Diệt (Infinite Valkyrie Samsara) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.21,
+      0.13,
+      -0.33,
+      -0.36,
+      -0.29,
+      -0.29,
+      -0.44,
+      -0.15,
+      0.89,
+      1.0,
+      1.0,
+      0.93
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-203",
+    "name": "Hư Vô Thức Tỉnh (Void Oblivion Climax) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.36,
+      0.49,
+      0.18,
+      -0.4,
+      0.46,
+      0.29,
+      0.42,
+      0.49,
+      0.96,
+      1.0,
+      1.0,
+      0.98
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-204",
+    "name": "Trảm Hồn Siêu Không Gian (Hyper-Spatial Guillotine) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.26,
+      0.18,
+      -0.01,
+      0.08,
+      -0.23,
+      -0.09,
+      -0.05,
+      0.13,
+      0.99,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-205",
+    "name": "Phán Quyết Thiên Sứ (Seraphic Retribution) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.45,
+      -0.17,
+      -0.5,
+      0.27,
+      0.23,
+      0.23,
+      -0.04,
+      0.16,
+      0.91,
+      1.0,
+      1.0,
+      0.92
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-206",
+    "name": "Xích Trói Linh Hồn (Eternal Shibari Lockdown) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.23,
+      0.33,
+      -0.16,
+      0.08,
+      0.07,
+      -0.01,
+      -0.16,
+      0.18,
+      0.87,
+      1.0,
+      1.0,
+      0.99
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-207",
+    "name": "Bộc Huyết Cuồng Nộ (Blood Berserk Climax) - Tối Thượng Tier 1",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.06,
+      -0.5,
+      0.46,
+      -0.3,
+      0.19,
+      -0.37,
+      0.15,
+      -0.34,
+      0.91,
+      1.0,
+      1.0,
+      0.99
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-208",
+    "name": "Tuyệt Diệt Băng Hỏa Trùng Phùng (Absolute Zero Supernova) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.33,
+      -0.1,
+      -0.19,
+      0.2,
+      -0.27,
+      0.16,
+      0.2,
+      -0.5,
+      0.85,
+      1.0,
+      1.0,
+      0.97
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-209",
+    "name": "Vực Thẳm Khuất Phục Tuyệt Đối (Erotic Domination Overwrite) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.32,
+      0.49,
+      -0.08,
+      -0.37,
+      -0.43,
+      -0.12,
+      0.23,
+      -0.4,
+      0.96,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-210",
+    "name": "Vỡ Vụn Thần Thánh (Aegis Annihilation) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.49,
+      -0.36,
+      0.03,
+      -0.49,
+      0.15,
+      -0.06,
+      0.22,
+      0.13,
+      0.86,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-211",
+    "name": "Luân Hồi Bất Diệt (Infinite Valkyrie Samsara) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.25,
+      0.09,
+      -0.12,
+      0.46,
+      -0.19,
+      -0.36,
+      -0.22,
+      -0.42,
+      0.95,
+      1.0,
+      1.0,
+      0.98
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-212",
+    "name": "Hư Vô Thức Tỉnh (Void Oblivion Climax) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.16,
+      -0.2,
+      0.02,
+      0.01,
+      0.25,
+      -0.2,
+      -0.45,
+      0.4,
+      0.94,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-213",
+    "name": "Trảm Hồn Siêu Không Gian (Hyper-Spatial Guillotine) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.48,
+      0.49,
+      0.43,
+      -0.37,
+      0.36,
+      0.07,
+      -0.13,
+      0.18,
+      0.86,
+      1.0,
+      1.0,
+      0.93
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-214",
+    "name": "Phán Quyết Thiên Sứ (Seraphic Retribution) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.46,
+      -0.44,
+      0.29,
+      0.01,
+      0.13,
+      0.0,
+      -0.08,
+      0.2,
+      0.9,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-215",
+    "name": "Xích Trói Linh Hồn (Eternal Shibari Lockdown) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.3,
+      0.31,
+      0.04,
+      -0.11,
+      0.13,
+      0.33,
+      0.18,
+      -0.43,
+      0.86,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-216",
+    "name": "Bộc Huyết Cuồng Nộ (Blood Berserk Climax) - Tối Thượng Tier 2",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.05,
+      0.11,
+      -0.19,
+      0.24,
+      0.24,
+      -0.38,
+      0.21,
+      0.2,
+      0.96,
+      1.0,
+      1.0,
+      0.92
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-217",
+    "name": "Tuyệt Diệt Băng Hỏa Trùng Phùng (Absolute Zero Supernova) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.37,
+      0.28,
+      -0.23,
+      0.39,
+      0.27,
+      -0.47,
+      0.31,
+      -0.23,
+      0.92,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-218",
+    "name": "Vực Thẳm Khuất Phục Tuyệt Đối (Erotic Domination Overwrite) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.0,
+      0.07,
+      -0.13,
+      -0.24,
+      -0.4,
+      0.07,
+      0.22,
+      -0.27,
+      0.92,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-219",
+    "name": "Vỡ Vụn Thần Thánh (Aegis Annihilation) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.35,
+      0.43,
+      0.36,
+      0.05,
+      0.41,
+      0.24,
+      -0.08,
+      -0.18,
+      0.91,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-220",
+    "name": "Luân Hồi Bất Diệt (Infinite Valkyrie Samsara) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.4,
+      -0.32,
+      0.3,
+      0.48,
+      0.45,
+      -0.43,
+      -0.03,
+      -0.22,
+      0.88,
+      1.0,
+      1.0,
+      0.96
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-221",
+    "name": "Hư Vô Thức Tỉnh (Void Oblivion Climax) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.2,
+      0.12,
+      -0.04,
+      0.09,
+      -0.01,
+      0.27,
+      -0.3,
+      0.4,
+      0.88,
+      1.0,
+      1.0,
+      0.93
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-222",
+    "name": "Trảm Hồn Siêu Không Gian (Hyper-Spatial Guillotine) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.34,
+      0.38,
+      0.45,
+      -0.5,
+      0.16,
+      0.35,
+      0.23,
+      -0.4,
+      1.0,
+      1.0,
+      1.0,
+      0.97
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-223",
+    "name": "Phán Quyết Thiên Sứ (Seraphic Retribution) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.41,
+      0.42,
+      0.4,
+      0.02,
+      0.2,
+      -0.13,
+      0.47,
+      -0.42,
+      0.94,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-224",
+    "name": "Xích Trói Linh Hồn (Eternal Shibari Lockdown) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.46,
+      -0.26,
+      -0.24,
+      -0.18,
+      0.3,
+      0.2,
+      0.24,
+      -0.18,
+      0.94,
+      1.0,
+      1.0,
+      0.92
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-225",
+    "name": "Bộc Huyết Cuồng Nộ (Blood Berserk Climax) - Tối Thượng Tier 3",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.34,
+      -0.03,
+      -0.09,
+      0.04,
+      0.46,
+      -0.29,
+      -0.19,
+      -0.23,
+      0.95,
+      1.0,
+      1.0,
+      0.9
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-226",
+    "name": "Tuyệt Diệt Băng Hỏa Trùng Phùng (Absolute Zero Supernova) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.34,
+      -0.17,
+      -0.41,
+      -0.25,
+      -0.14,
+      0.01,
+      0.18,
+      -0.24,
+      0.96,
+      1.0,
+      1.0,
+      0.92
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-227",
+    "name": "Vực Thẳm Khuất Phục Tuyệt Đối (Erotic Domination Overwrite) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.04,
+      0.3,
+      -0.36,
+      -0.49,
+      0.33,
+      0.48,
+      -0.37,
+      0.32,
+      0.89,
+      1.0,
+      1.0,
+      0.98
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-228",
+    "name": "Vỡ Vụn Thần Thánh (Aegis Annihilation) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.48,
+      -0.44,
+      0.4,
+      -0.06,
+      -0.37,
+      0.41,
+      0.33,
+      -0.17,
+      0.97,
+      1.0,
+      1.0,
+      0.94
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-229",
+    "name": "Luân Hồi Bất Diệt (Infinite Valkyrie Samsara) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.47,
+      0.18,
+      -0.33,
+      -0.29,
+      -0.31,
+      -0.22,
+      0.38,
+      -0.47,
+      0.93,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-230",
+    "name": "Hư Vô Thức Tỉnh (Void Oblivion Climax) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.22,
+      -0.36,
+      -0.3,
+      0.38,
+      0.03,
+      0.13,
+      0.3,
+      0.29,
+      0.92,
+      1.0,
+      1.0,
+      0.99
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-231",
+    "name": "Trảm Hồn Siêu Không Gian (Hyper-Spatial Guillotine) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.0,
+      -0.11,
+      -0.32,
+      -0.18,
+      -0.28,
+      0.4,
+      0.28,
+      -0.44,
+      1.0,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-232",
+    "name": "Phán Quyết Thiên Sứ (Seraphic Retribution) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.16,
+      -0.23,
+      0.32,
+      0.42,
+      -0.44,
+      0.5,
+      -0.28,
+      0.35,
+      0.88,
+      1.0,
+      1.0,
+      0.96
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-233",
+    "name": "Xích Trói Linh Hồn (Eternal Shibari Lockdown) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.31,
+      0.2,
+      0.41,
+      -0.47,
+      0.2,
+      0.45,
+      0.06,
+      0.06,
+      0.9,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-234",
+    "name": "Bộc Huyết Cuồng Nộ (Blood Berserk Climax) - Tối Thượng Tier 4",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.41,
+      -0.27,
+      -0.28,
+      0.03,
+      -0.5,
+      0.42,
+      -0.3,
+      -0.37,
+      0.85,
+      1.0,
+      1.0,
+      0.96
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-235",
+    "name": "Tuyệt Diệt Băng Hỏa Trùng Phùng (Absolute Zero Supernova) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.42,
+      0.27,
+      0.35,
+      0.36,
+      0.46,
+      -0.13,
+      0.44,
+      -0.1,
+      0.99,
+      1.0,
+      1.0,
+      0.98
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-236",
+    "name": "Vực Thẳm Khuất Phục Tuyệt Đối (Erotic Domination Overwrite) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.46,
+      0.15,
+      -0.33,
+      0.47,
+      0.19,
+      0.43,
+      0.29,
+      -0.28,
+      0.87,
+      1.0,
+      1.0,
+      0.97
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-237",
+    "name": "Vỡ Vụn Thần Thánh (Aegis Annihilation) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      0.45,
+      0.45,
+      -0.11,
+      0.49,
+      0.47,
+      -0.47,
+      0.1,
+      0.42,
+      0.87,
+      1.0,
+      1.0,
+      0.97
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-238",
+    "name": "Luân Hồi Bất Diệt (Infinite Valkyrie Samsara) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.26,
+      0.48,
+      -0.33,
+      0.39,
+      -0.41,
+      0.21,
+      0.14,
+      0.39,
+      0.89,
+      1.0,
+      1.0,
+      0.91
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-239",
+    "name": "Hư Vô Thức Tỉnh (Void Oblivion Climax) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.5,
+      -0.11,
+      0.23,
+      0.47,
+      0.38,
+      -0.01,
+      -0.12,
+      0.05,
+      0.95,
+      1.0,
+      1.0,
+      0.92
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-240",
+    "name": "Trảm Hồn Siêu Không Gian (Hyper-Spatial Guillotine) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.43,
+      0.35,
+      -0.21,
+      -0.18,
+      0.45,
+      -0.43,
+      -0.33,
+      -0.12,
+      0.94,
+      1.0,
+      1.0,
+      0.96
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-241",
+    "name": "Phán Quyết Thiên Sứ (Seraphic Retribution) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.02,
+      -0.47,
+      0.44,
+      -0.34,
+      0.39,
+      -0.34,
+      -0.4,
+      -0.29,
+      0.89,
+      1.0,
+      1.0,
+      0.93
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-242",
+    "name": "Xích Trói Linh Hồn (Eternal Shibari Lockdown) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.26,
+      -0.45,
+      0.07,
+      0.34,
+      -0.35,
+      -0.14,
+      -0.07,
+      -0.21,
+      0.88,
+      1.0,
+      1.0,
+      0.93
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  },
+  {
+    "id": "BUFF-243",
+    "name": "Bộc Huyết Cuồng Nộ (Blood Berserk Climax) - Tối Thượng Tier 5",
+    "depth": 5,
+    "category": "GAME_DECIDING",
+    "weights": [
+      -0.42,
+      0.34,
+      -0.19,
+      -0.1,
+      -0.01,
+      0.16,
+      -0.41,
+      0.04,
+      0.89,
+      1.0,
+      1.0,
+      0.95
+    ],
+    "prerequisiteTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "counterTags": [
+      "tag:depth_3",
+      "tag:depth_4"
+    ],
+    "tags": [
+      "tag:game_deciding",
+      "tag:apex_overwrite",
+      "tag:depth_5"
+    ],
+    "description": "Quyền năng tối thượng phá vỡ luật chơi thông thường, định đoạt thắng thua ngay trong khoảnh khắc."
+  }
+]

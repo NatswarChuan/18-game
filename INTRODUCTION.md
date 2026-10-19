@@ -16,8 +16,8 @@ Trong thời đại mà các tựa game Auto-Battler bị tha hóa bởi yếu t
 
 ### 1. Trí Tuệ & Kỹ Năng Định Đoạt (Absolute Skill Supremacy)
 - Không có bất kỳ yếu tố nạp tiền tăng chỉ số nào tồn tại trong trò chơi.
-- Tất cả các nữ chiến binh Valkyrie đều xuất phát với chỉ số y hệt nhau (`HP: 1,000`, `ATK: 50`, `Armor: 20`). 
-- Vai trò Đỡ Đòn, Sát Thủ hay Xạ Thủ không phải do phẩm cấp thẻ bài quyết định, mà được thai nghén hoàn toàn từ **cách bạn xếp 6 quân cờ vào 9 ô trên lưới 3x3** và **chiến lược lựa chọn 9 Buff thích ứng trong không gian Vector 8 chiều**.
+- Cả hai bên đều bình đẳng tiếp cận 100% dàn **27 Nữ Chiến Binh Valkyrie** thuộc 3 Class (Assault, Aegis, Tactician) với sự cân bằng đối xứng tuyệt đối.
+- Vai trò Đỡ Đòn, Sát Thủ hay Xạ Thủ không phải do phẩm cấp thẻ bài quyết định, mà được thai nghén hoàn toàn từ **cách bạn xếp 6 quân cờ vào 9 ô trên lưới 3x3** và **chiến lược lựa chọn 9 Buff thích ứng trong không gian Vector 12 chiều**.
 
 ### 2. Nghệ Thuật Anime 18+ Quyến Rũ (Sensual Waifu Art & Erotic Tension)
 - Các nữ chiến binh Valkyrie được thiết kế với phong cách Cyberpunk quyến rũ, tôn vinh những đường cong tuyệt mỹ của cơ thể phụ nữ kết hợp với những bộ giáp chiến đấu công nghệ cao.
@@ -26,7 +26,7 @@ Trong thời đại mà các tựa game Auto-Battler bị tha hóa bởi yếu t
 
 ### 3. Chuẩn Mực Kỹ Thuật Hardcore & Chống Gian Lận (Zero-Trust Architecture)
 - Xây dựng từ con số 0 với sự phân tách tuyệt đối giữa **Client** (Dumb Terminal, 60-120 FPS, mượt mà không độ trễ) và **Server** (Server-Authoritative, 20 Ticks/s Simulation, chống can thiệp bộ nhớ).
-- Áp dụng quy trình phát triển phần mềm **Waterfall khép kín với 6 Cổng Chất Lượng (Quality Gates)** nghiêm ngặt, đảm bảo 0 lỗi bảo mật, 0 rò rỉ bộ nhớ, và sẵn sàng triển khai Production bằng 1 lệnh Docker duy nhất.
+- Áp dụng quy trình phát triển phần mềm **Waterfall khép kín với 7 Cổng Chất Lượng (Quality Gates)** nghiêm ngặt, đảm bảo 0 lỗi bảo mật, 0 rò rỉ bộ nhớ, và sẵn sàng triển khai Production bằng 1 lệnh Docker duy nhất.
 
 ---
 

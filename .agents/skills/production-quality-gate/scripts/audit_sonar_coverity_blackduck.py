@@ -12,6 +12,11 @@ import re
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 IGNORE_DIRS = {
     "node_modules", ".git", ".expo", "dist", "build", "coverage", ".next", ".agents", "__pycache__"
 }

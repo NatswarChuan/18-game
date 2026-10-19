@@ -29,7 +29,7 @@ Mọi module phải được thiết kế dựa trên các nguyên lý vàng c�
 ### 1.2. KISS, YAGNI, DRY & Boy Scout Rule:
 - **KISS (Keep It Simple, Stupid):** Ưu tiên giải pháp đơn giản, trực diện, dễ hiểu. Tránh các cấu trúc trừu tượng quá mức không cần thiết.
 - **YAGNI (You Aren't Gonna Need It):** Chỉ viết code phục vụ yêu cầu hiện tại của ván đấu 3x3 và thể thức BO3/BO5, không tự ý thêm các tính năng giả định viển vông.
-- **DRY (Don't Repeat Yourself):** Không lặp lại logic hoặc công thức toán học. Toàn bộ công thức sát thương, giảm giáp, và tính toán Vector 8D phải nằm tập trung duy nhất tại `packages/shared-domain`.
+- **DRY (Don't Repeat Yourself):** Không lặp lại logic hoặc công thức toán học. Toàn bộ công thức sát thương, giảm giáp, và tính toán Vector 12D phải nằm tập trung duy nhất tại `packages/shared-domain`.
 - **Boy Scout Rule:** Luôn để lại vùng code sạch sẽ hơn trước khi bạn chạm vào nó. Khi sửa bug, hãy chủ động refactor các đoạn code cũ còn mùi (Code Smells).
 
 ---
@@ -45,7 +45,7 @@ Mọi module phải được thiết kế dựa trên các nguyên lý vàng c�
 | **Ý định của người chơi** | **Command Pattern** | Đóng gói mọi hành động của Client thành Command Object (`SelectBuffCommand`, `UpdatePlacementCommand`, `LockInCommand`) có khả năng validate và replay. |
 | **Dòng sự kiện giao tranh** | **Observer / Event-Driven Pattern** | Combat Engine phát ra các sự kiện: `UnitAttackedEvent`, `ClothDamageTierChangedEvent`, `ClimaxTriggeredEvent`. Client lắng nghe và render. |
 | **Lưu trữ phòng đấu** | **Port & Adapter (Hexagonal)** | Định nghĩa Port `IRoomStore`. Cung cấp 2 Adapters: `InMemoryRoomAdapter` (cho Local Run) và `RedisRoomAdapter` (cho Production). |
-| **Khởi tạo Valkyrie & Buff** | **Factory Pattern** | Sử dụng `ValkyrieFactory.createUnit()` và `BuffFactory.createVector8D()` đảm bảo luôn tạo ra đối tượng có chỉ số hợp lệ. |
+| **Khởi tạo Valkyrie & Buff** | **Factory Pattern** | Sử dụng `ValkyrieFactory.createUnit()` và `BuffFactory.createVector12D()` đảm bảo luôn tạo ra đối tượng có chỉ số hợp lệ. |
 | **Xử lý lỗi an toàn** | **Result Pattern (`Result<T, E>`)** | Cấm dùng `throw new Error()` cho các lỗi nghiệp vụ thông thường. Sử dụng kiểu trả về `{ ok: true, data: T } \| { ok: false, error: DomainError }`. |
 
 ---
@@ -55,7 +55,7 @@ Mọi module phải được thiết kế dựa trên các nguyên lý vàng c�
 ### 3.1. Quy Ước Đặt Tên & Kiểu Dữ Liệu Tường Minh (Explicit Typing, No Dynamic Types):
 - **Cấm Tuyệt Đối Kiểu Động:** Cấm dùng `any`, `object`, `Function`, hay `Record<string, any>`. Mọi tham số và biến phải có interface/type cụ thể.
 - **Khai Báo Kiểu Trả Về Tường Minh:** Mọi function/method (cả public và private) bắt buộc phải khai báo explicit return type.
-- **`PascalCase`:** Dành cho Classes, Interfaces, Types, Enums, và React Components (`ValkyrieUnit`, `CombatTickFrame`, `BuffVector8D`, `GameBoardGrid`).
+- **`PascalCase`:** Dành cho Classes, Interfaces, Types, Enums, và React Components (`ValkyrieUnit`, `CombatTickFrame`, `BuffVector12D`, `GameBoardGrid`).
 - **`camelCase`:** Dành cho Functions, Methods, Variables, Object Properties (`calculateHyperbolicDamage`, `currentMana`, `unitPlacements`).
 - **`UPPER_SNAKE_CASE`:** Dành cho Hằng số toàn cục và Cấu hình bất biến: `BASE_HP`, `BASE_ATK`, `TICK_RATE_HZ`, `MAX_SLOT_COUNT`.
 - **`kebab-case`:** Dành cho tên thư mục và tên files: `combat-engine.ts`, `vector-math.service.ts`.

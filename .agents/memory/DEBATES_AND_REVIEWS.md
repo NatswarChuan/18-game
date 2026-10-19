@@ -95,6 +95,18 @@ sequenceDiagram
   3. Buff đã chọn tuyệt đối không lặp lại ($b \notin \mathcal{H}_A$), nhưng các buff chưa chọn từng xuất hiện ở ván trước nếu có độ tương thích cao với chuỗi lựa chọn hiện tại sẽ được tái đề xuất vào 9 ô lựa chọn.
 - **Trạng thái:** `RESOLVED` (Đã bổ sung vào Mục 6 của [`dynamic-buff-matrix-spec.md`](../../deliverables/phase-3-buff-system/dynamic-buff-matrix-spec.md) và thuật toán).
 
+### ⚔️ [DEBATE-005] Đồng Bộ Toàn Diện Kiến Trúc & Xử Lý Triệt Để Báo Cáo Kiểm Toán 5 Nhóm Lỗi
+- **Thời gian:** 2026-10-19 22:25:00
+- **Pha liên quan:** Toàn bộ hệ thống (Pha 1 $\to$ Pha 7)
+- **Hội đồng tham gia:** `system-architect`, `art-designer`, `buff-systems-designer`, `backend-engineer`, `frontend-engineer`, `qa-balance-tester`, `secops-quality-gate`.
+- **Nội dung & Quyết định giải quyết:**
+  1. **Nhóm 1 (Workspace & Antigravity):** Di chuyển toàn bộ cấu hình `.agents/`, `AGENTS.md`, `deliverables/` về đúng Root Workspace (`./`); dọn dẹp ghost paths, subagent ảo (`hardcore-critic`), sử dụng chuẩn `browser_subagent`; đánh số tuần tự Rules `01` $\to$ `09`.
+  2. **Nhóm 2 (Desynchronization):** Nâng cấp 100% không gian Vector thành **12D** (`weights: readonly [number, ... 12 floats]`, ma trận `COUNTER_MATRIX 12x12`); chuẩn hóa công thức phân bổ 9 Buff thành **3-3-3 History Allocation** (3 Deep Synergy, 3 Direct Counter, 3 Apex Decisive); đồng bộ **27 Valkyries** với chỉ số phân hóa theo 3 Class (Assault, Aegis, Tactician) vào GDD và Overview; chuẩn hóa bể Buff cá nhân hóa độc lập dựa trên lịch sử riêng.
+  3. **Nhóm 3 (Waterfall Pipeline):** Sửa lỗi đánh số Pha trong `WATERFALL_WORKFLOW.md` (Pha 5 Frontend, Pha 6 QA/Balance, Pha 7 DevOps); cập nhật kỹ năng `waterfall-phase-runner` đủ 7 Pha; chuẩn hóa danh sách chính thức gồm **7 Subagents**.
+  4. **Nhóm 4 (Game Engine & Protocol):** Sửa State Machine: `ROUND_EVALUATION --> BUFF_DRAFTING --> FORMATION_PLACEMENT`; bổ sung đầy đủ hợp đồng WebSocket cho BO3/BO5 (`S2C_ROUND_DRAFT_START`, `C2S_RECONNECT`, `S2C_SYNC_STATE`, `S2C_PREPARATION_START`, `S2C_COMBAT_START`, `S2C_ROUND_RESULT`); siết chặt `decisiveFilter` cấm Depth 5 ở Ván 1; bổ sung Fallback bù đắp đủ 9 Buff; đặc tả 20s Timeout Auto-pick & Auto-placement.
+  5. **Nhóm 5 (Production & Mock Data):** Bổ sung chiến lược phân phối Mobile 18+ (Web/Sideload APK) và cờ kiểm duyệt kép `CENSORSHIP_MODE` (`UNRATED_18_PLUS` vs `STORE_SAFE`) vào `TECH_STACK_CLIENT.md`; tạo tập Seed Fixture JSON 243 Buffs hoàn chỉnh với Vector 12D tại `deliverables/phase-3-buff-system/buffs-catalog.json`.
+- **Trạng thái:** `RESOLVED_AND_VERIFIED` (Toàn bộ 5 nhóm hạng mục đã hoàn thành 100%).
+
 ---
 
 ## 📝 4. BẢNG THEO DÕI TIẾN ĐỘ REVIEW TỪNG PHA HIỆN TẠI

@@ -13,17 +13,19 @@
 
 ---
 
-## 🏛️ 2. HỆ THỐNG 5 SUBAGENT ĐỘC LẬP & CHUYÊN BIỆT (`.agents/agents/`)
+## 🏛️ 2. HỆ THỐNG 7 SUBAGENT ĐỘC LẬP & CHUYÊN BIỆT (`.agents/agents/`)
 
-Hệ thống phân tách thành 5 Agent độc lập, mỗi agent phụ trách một giai đoạn tương ứng trong Waterfall:
+Hệ thống phân tách thành 7 Agent độc lập, mỗi agent phụ trách một chuyên môn tương ứng trong Waterfall 7 Pha:
 
 | Agent Identifier | Chức Danh Chuyên Môn | Persona & Trách Nhiệm Cốt Lõi | Đường Dẫn Định Nghĩa |
 | :--- | :--- | :--- | :--- |
 | **`system-architect`** | Principal System Architect & Tech Lead | Otaku đam mê visual novel sâu sắc; Khó tính về cấu trúc Monorepo, Data Flow, WebSocket Contract, State Machine và tài liệu Deploy. | [`.agents/agents/system-architect/agent.md`](.agents/agents/system-architect/agent.md) |
-| **`art-designer`** | Lead UI/UX & 18+ Anime Art Director | Bậc thầy thẩm mỹ Ecchi/Hentai; Đòi hỏi visual gợi cảm tinh tế, 3 cấp độ Cloth Damage, HUD Glassmorphism, 60fps VFX. | [`.agents/agents/art-designer/agent.md`](.agents/agents/art-designer/agent.md) |
-| **`backend-engineer`** | Senior Backend & Combat Engine Specialist | Kỹ sư cự phách dòng game chiến thuật; Lập trình Server-Authoritative 20 ticks/s, giải thuật 8D Vector đối xứng, zero-trust anti-cheat. | [`.agents/agents/backend-engineer/agent.md`](.agents/agents/backend-engineer/agent.md) |
+| **`art-designer`** | Lead UI/UX & 18+ Anime Art Director | Bậc thầy thẩm mỹ Ecchi/Hentai; Đòi hỏi visual gợi cảm tinh tế cho 27 Valkyries, 3 cấp độ Cloth Damage, HUD Glassmorphism, 60fps VFX. | [`.agents/agents/art-designer/agent.md`](.agents/agents/art-designer/agent.md) |
+| **`buff-systems-designer`** | Lead Combat Buff & Tactical Vector DB Architect | Chuyên gia toán học & game theory; Thiết kế hệ sinh thái ≥243 Buffs 5 tầng, Vector nhúng 12D, kNN History Allocation 3-3-3 cho BO3/BO5. | [`.agents/agents/buff-systems-designer/agent.md`](.agents/agents/buff-systems-designer/agent.md) |
+| **`backend-engineer`** | Senior Backend & Combat Engine Specialist | Kỹ sư cự phách dòng game chiến thuật; Lập trình Server-Authoritative 20 ticks/s, giải thuật 12D Vector đối xứng, zero-trust anti-cheat. | [`.agents/agents/backend-engineer/agent.md`](.agents/agents/backend-engineer/agent.md) |
 | **`frontend-engineer`** | Senior Frontend & Graphics/Animation Lead | Game thủ nghiền nhịp điệu & fighter; Tối ưu 60-120 FPS, Canvas/Skia/WebGL, kéo thả 3x3 siêu nhạy, Waifu Climax cut-ins. | [`.agents/agents/frontend-engineer/agent.md`](.agents/agents/frontend-engineer/agent.md) |
 | **`qa-balance-tester`** | Lead QA, Anti-Cheat & Hardcore Game Critic | Nhà phê bình game tàn nhẫn; Tự động playtest qua `browser_subagent`, chạy giả lập hàng triệu trận đấu, săn lùng lỗi blocker. | [`.agents/agents/qa-balance-tester/agent.md`](.agents/agents/qa-balance-tester/agent.md) |
+| **`secops-quality-gate`** | Lead DevSecOps & Production Quality Auditor | Trưởng ban kiểm toán SonarQube Clean Code, Coverity SAST chống rò rỉ bộ nhớ, Black Duck SCA giấy phép bản quyền. | [`.agents/agents/secops-quality-gate/agent.md`](.agents/agents/secops-quality-gate/agent.md) |
 
 ---
 
@@ -31,7 +33,7 @@ Hệ thống phân tách thành 5 Agent độc lập, mỗi agent phụ trách m
 
 ### 📌 Nhóm 1: Quản Trị Dự Án & Quy Trình Waterfall
 - [`AGENTS.md`](AGENTS.md) — **[Luôn Bật]** Hiến pháp dự án & Giao thức điều phối Master Waterfall Orchestrator.
-- [`WATERFALL_WORKFLOW.md`](WATERFALL_WORKFLOW.md) — Đặc tả 6 pha Waterfall, tiêu chí nghiệm thu từng Cổng (Stage-Gates) và biên bản bàn giao.
+- [`WATERFALL_WORKFLOW.md`](WATERFALL_WORKFLOW.md) — Đặc tả 7 pha Waterfall, tiêu chí nghiệm thu từng Cổng (Stage-Gates) và biên bản bàn giao.
 - [`LOCAL_SETUP_GUIDE.md`](LOCAL_SETUP_GUIDE.md) — **[MỚI]** Cẩm nang Agent tự động cài đặt thư viện & chạy Local không cần deploy.
 - [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) — Hướng dẫn triển khai Production từ con số 0 (Docker, Nginx, SSL, WebSocket, Redis).
 - [`PROJECT_OVERVIEW.md`](PROJECT_OVERVIEW.md) — Tóm tắt dự án, cấu trúc Monorepo Client/Server và các trụ cột cốt lõi.

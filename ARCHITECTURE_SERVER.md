@@ -27,9 +27,9 @@ apps/server/src/
 ├── app.module.ts                    # Root Module kết nối toàn bộ hệ thống
 ├── main.ts                          # Bootstrap Fastify/Express + WebSocket Adapter
 ├── modules/
-│   ├── combat-engine/               # [Cốt Lõi] Vòng lặp 20 ticks/s & 8D Vector Math
+│   ├── combat-engine/               # [Cốt Lõi] Vòng lặp 20 ticks/s & 12D Vector Math
 │   │   ├── combat-engine.service.ts # 50ms Tick Simulation Loop
-│   │   ├── vector-draft.service.ts  # Thuật toán 8D Vector 2-2-2-3 Equilibrium
+│   │   ├── vector-draft.service.ts  # Thuật toán 12D Vector 3-3-3 History Allocation
 │   │   └── combat-engine.module.ts
 │   ├── game-room/                   # Quản lý vòng đời phòng đấu BO3/BO5
 │   │   ├── game-room.gateway.ts     # @WebSocketGateway() xử lý gói tin realtime
@@ -110,7 +110,7 @@ export class MatchHistory {
   @Prop({ type: [Number] }) // [2, 1]
   finalScore: number[];
 
-  @Prop({ type: Array }) // Lưu vết các vector 8D buff được chọn từng round
+  @Prop({ type: Array }) // Lưu vết các vector 12D buff được chọn từng round
   p1BuffVectors: number[][];
 
   @Prop({ type: Array })

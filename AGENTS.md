@@ -117,7 +117,7 @@ Khi điều phối dự án, Master Orchestrator và các Agents **bắt buộc 
    - `/waterfall-phase-runner`: Lệnh kích hoạt và điều phối tuần tự các pha trong Waterfall.
    - `/autonomous-browser-playtest`: Lệnh kích hoạt trình chơi thử tự động qua trình duyệt.
    - `/local-dev-bootstrap`: Lệnh tự động cài đặt thư viện và khởi động môi trường Local.
-   - `/game-balance-verifier`: Lệnh chạy mô phỏng toán học kiểm tra cân bằng 8D Buff.
+   - `/game-balance-verifier`: Lệnh chạy mô phỏng toán học kiểm tra cân bằng 12D Buff.
    - `/production-quality-gate`: Lệnh kiểm toán mã nguồn tĩnh (SonarQube, Coverity SAST, Black Duck SCA).
 
 ---

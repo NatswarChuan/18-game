@@ -49,3 +49,28 @@
   - *Layer 1 (Dưới cùng):* Bàn cờ 3x3 tĩnh & hiệu ứng ánh sáng sàn đấu.
   - *Layer 2 (Giữa):* Skia Canvas chuyển động của 6 quân cờ, hoạt cảnh tấn công, tia đạn.
   - *Layer 3 (Trên cùng):* HUD giao diện người dùng, thanh máu, đồng hồ đếm ngược 20s, và nút Lock-in.
+
+---
+
+## 🔞 4. CHIẾN LƯỢC PHÂN PHỐI GAME 18+ & CHẾ ĐỘ KIỂM DUYỆT KÉP (STORE COMPLIANCE & DUAL CENSORSHIP)
+
+Do chính sách kiểm duyệt khắt khe của Apple App Store (Guideline 1.1 / 1.2) và Google Play Store đối với nội dung người lớn (Eroge, Cloth Damage Tier 3, rên rỉ khiêu gợi), dự án áp dụng chiến lược đa kênh kết hợp kiến trúc kiểm duyệt kép:
+
+### 4.1. Chiến Lược Phân Phối Đa Kênh:
+1. **Kênh Chính — Web HTML5 / PWA (Uncensored 18+ Edition):**
+   - Phục vụ trực tiếp qua trình duyệt Chromium / WebKit (Desktop & Mobile Browser).
+   - Không phụ thuộc vào bất kỳ chợ ứng dụng nào; người chơi trải nghiệm toàn bộ đồ họa 18+ nguyên bản ở 60 FPS.
+2. **Kênh Mobile Android Sideloading (APK Direct Download):**
+   - Cung cấp file APK trực tiếp trên website chính thức của dự án và các nền tảng phát hành game 18+ quốc tế (*Erolabs, Nutaku, itch.io, DMM Games*).
+3. **Kênh Store Submission (Store Demo Edition):**
+   - Sử dụng cờ biên dịch `STORE_SAFE` để đóng gói bản demo tuân thủ nguyên tắc cộng đồng đưa lên Google Play / App Store nhằm tiếp cận tập người dùng đại chúng.
+
+### 4.2. Kiến Trúc Cờ Kiểm Duyệt Kép (`CENSORSHIP_MODE`):
+Cấu hình thông qua biến môi trường `EXPO_PUBLIC_CENSORSHIP_MODE` hoặc tùy chọn trong mục Cài Đặt của Client:
+
+| Thuộc Tính Hiển Thị | Chế Độ `UNRATED_18_PLUS` (Web / Sideload APK) | Chế Độ `STORE_SAFE` (App Store / Family-Safe) |
+| :--- | :--- | :--- |
+| **Cloth Damage Tier 2** | Vải áo rách toạc lộ nội y ren và đường cong cơ thể | Vết xước trang phục nhẹ, giáp nứt vỡ không hở da thịt |
+| **Cloth Damage Tier 3** | Quần áo rách tả tơi khiêu gợi, ngực đầy đặn thở dốc | Bao phủ bởi hiệu ứng ánh sáng thần thánh (*Holy Light*) |
+| **Âm Thanh Rách Giáp** | Tiếng thở dốc, rên rỉ quyến rũ tiếng Nhật (Ecchi SFX) | Tiếng kim loại va chạm và tiếng thét chiến đấu kiên cường |
+| **Climax Cut-In** | Khung hình zoom sát góc máy gợi cảm, ánh mắt đắm say | Chân dung chiến binh anh dũng với ánh hào quang năng lượng |

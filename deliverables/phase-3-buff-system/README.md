@@ -18,6 +18,7 @@ Mọi quyết định thiết kế ở đây nhằm giải quyết triệt để
 | [`dynamic-buff-matrix-spec.md`](dynamic-buff-matrix-spec.md) | Kho $\ge 243$ Buffs tiến hóa đa tầng (Depth 1 $\to$ 5), cơ chế Game-Deciding & Hiệu ứng 18+ (Erotic Combat Triggers). | `backend-engineer`, `frontend-engineer` |
 | [`history-dependent-algorithm.md`](history-dependent-algorithm.md) | Giải thuật Vector Markov sinh 9 Buffs phụ thuộc 100% vào các buff đã chọn trước đó, không phụ thuộc Round. | `backend-engineer`, `qa-balance-tester` |
 | [`vector-db-buff-selection-spec.md`](vector-db-buff-selection-spec.md) | Kiến trúc Vector DB (12D Embeddings, Dual In-Memory/Qdrant), tối ưu hóa kNN & Điều biến nhịp độ BO3 vs BO5. | `backend-engineer`, `system-architect` |
+| [`buffs-catalog.json`](buffs-catalog.json) | **[MỚI]** Tập Mock Data / Seed Fixtures đầy đủ 243 Buffs với Vector 12D và tags, nạp trực tiếp vào `InMemoryVectorDatabaseService`. | `backend-engineer`, `qa-balance-tester` |
 
 ---
 

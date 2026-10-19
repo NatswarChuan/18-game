@@ -145,7 +145,7 @@ Quy trình phát triển dự án tuân thủ kỷ luật **Strict Sequential Wa
 
 ---
 
-### 🧪 Pha 5: Kiểm Thử, Cân Bằng & Chơi Thử Độc Lập (QA, Balance & Automated Playtest)
+### 🧪 Pha 6: Kiểm Thử, Cân Bằng & Chơi Thử Độc Lập (QA, Balance & Automated Playtest)
 - **Tác tử chủ trì:** `qa-balance-tester`
 - **Tác tử thẩm định & phản biện (Reviewer):** `system-architect` (Trọng tài tối cao nghiệm thu Scorecard & Đóng Cổng)
 - **Mục tiêu:** Thẩm định chất lượng toàn diện với tư duy của một game thủ khó tính bậc nhất, săn lùng bug, kiểm toán cân bằng game, thiết lập vòng lặp xử lý ticket sự cố và chạy playtest tự động trên máy Local.
@@ -154,7 +154,10 @@ Quy trình phát triển dự án tuân thủ kỷ luật **Strict Sequential Wa
   2. Kích hoạt `browser_subagent` tự động mở trình duyệt vào Web-App thực tế trên máy local.
   3. Tự tay chơi qua các giai đoạn: Chọn Buff $\rightarrow$ Sắp xếp 6 quân cờ $\rightarrow$ Bấm Khóa $\rightarrow$ Quan sát giao tranh $\rightarrow$ Kiểm tra rách giáp $\rightarrow$ Thắng/Thua.
   4. Ghi hình video WebP và chụp ảnh màn hình lưu vào Artifacts.
-  5. Chạy script mô phỏng 1,000,000 trận đấu ngẫu nhiên để vẽ biểu đồ phân phối tỷ lệ thắng giữa các tổ hợp Buff (đảm bảo không tổ hợp nào vượt ngưỡng $53\%$ Winrate).
+  5. Chạy script mô phỏng 1,000,000 trận đấu ngẫu nhiên để vẽ biểu đồ phân phối tỷ lệ thắng giữa các tổ hợp Buff (đảm bảo không tổ hợp nào vượt ngưỡng $53\%$ Winrate):
+     ```bash
+     python3 .agents/skills/game-balance-verifier/scripts/verify_12d_equilibrium.py
+     ```
   6. **Quy Trình Quản Trị Ticket & Vòng Lặp Sửa Lỗi Tương Tác (QA Ticketing & Retest Loop):**
      - Khi `qa-balance-tester` phát hiện bất kỳ lỗi nào (Logic, Desync, Khựng khung hình, Rách giáp lệch layer, Lỗi mạng, Vi phạm NPE, hoặc Thiếu TSDoc song ngữ), lập tức ghi ticket vào [`.agents/memory/TICKETS.md`](.agents/memory/TICKETS.md) theo mẫu `[TK-XXX]`.
      - Phân định rõ tầng lỗi (`Shared Domain`, `Backend NestJS`, `Frontend Expo`, `Network WebSocket`, `Database NoSQL`) và chỉ định Agent xử lý (`backend-engineer`, `frontend-engineer`, hoặc cả hai).
@@ -168,7 +171,7 @@ Quy trình phát triển dự án tuân thủ kỷ luật **Strict Sequential Wa
   1. `qa-balance-tester` nộp Playtest Scorecard và danh sách Tickets.
   2. `system-architect` review lại toàn bộ: Kiểm tra 100% tickets đã `CLOSED_PASS` chưa, điểm số có trung thực $\ge 8.5/10$ không.
   3. Nếu còn nghi vấn hoặc bất đồng, ghi nhận tranh luận tại [`.agents/memory/DEBATES_AND_REVIEWS.md`](.agents/memory/DEBATES_AND_REVIEWS.md). Chỉ ký duyệt `STAGE_GATE_PASS` khi 0 ticket tồn đọng.
-- **Thủ tục nghiệm thu Cổng 5 (Gate 5 Sign-Off Checklist):**
+- **Thủ tục nghiệm thu Cổng 6 (Gate 6 Sign-Off Checklist):**
   - [ ] Biên bản nghiệm thu được ký duyệt `STAGE_GATE_PASS` tại [`.agents/memory/DEBATES_AND_REVIEWS.md`](.agents/memory/DEBATES_AND_REVIEWS.md).
   - [ ] **100% Tickets trong [`.agents/memory/TICKETS.md`](.agents/memory/TICKETS.md) đạt trạng thái `CLOSED_PASS`** (Số ticket tồn đọng `OPEN` / `IN_PROGRESS` / `REOPENED_FAIL` = 0).
   - [ ] Điểm **Game Feel & Đòn Đánh**: $\ge 8.5 / 10$.
@@ -176,11 +179,11 @@ Quy trình phát triển dự án tuân thủ kỷ luật **Strict Sequential Wa
   - [ ] Điểm **Độ Mượt UI/UX & Phản Hồi**: $\ge 8.5 / 10$.
   - [ ] Toàn bộ chu trình chơi thử hoàn thành trơn tru trên môi trường Local (không cần deploy).
   - [ ] Số lượng lỗi Blocker / Critical / High: **Chính xác bằng 0**.
-  - [ ] Sai số bất đối xứng của thuật toán Vector 8D $\epsilon \le 0.05$.
+  - [ ] Sai số bất đối xứng của thuật toán Vector 12D $\epsilon \le 0.05$.
 
 ---
 
-### 🚀 Pha 6: Đóng Gói Triển Khai & Vận Hành (DevOps & Production Deployment)
+### 🚀 Pha 7: Đóng Gói Triển Khai & Vận Hành (DevOps & Production Deployment)
 - **Tác tử chủ trì:** `system-architect` (Phối hợp cùng toàn bộ team)
 - **Tác tử thẩm định & phản biện (Reviewer):** `backend-engineer` & `qa-balance-tester`
 - **Mục tiêu:** Đóng gói toàn bộ hệ thống vào Docker Containers, thiết lập mạng nội bộ, máy chủ đảo chiều Nginx có SSL, và hoàn thiện bộ tài liệu hướng dẫn triển khai từ A đến Z.
@@ -194,7 +197,7 @@ Quy trình phát triển dự án tuân thủ kỷ luật **Strict Sequential Wa
   1. `system-architect` hoàn thiện script deploy và docker-compose.
   2. `backend-engineer` kiểm tra network/volume mounting; `qa-balance-tester` chạy thử nghiệm `docker compose up` trên máy local kiểm tra thời gian đáp ứng `/health`.
   3. Tranh luận/sửa đổi nếu có issue tại [`.agents/memory/DEBATES_AND_REVIEWS.md`](.agents/memory/DEBATES_AND_REVIEWS.md). Chỉ ký `STAGE_GATE_PASS` khi 1 lệnh khởi chạy thành công.
-- **Thủ tục nghiệm thu Cổng 6 (Gate 6 Sign-Off Checklist):**
+- **Thủ tục nghiệm thu Cổng 7 (Gate 7 Sign-Off Checklist):**
   - [ ] Biên bản nghiệm thu được ký duyệt `STAGE_GATE_PASS` tại [`.agents/memory/DEBATES_AND_REVIEWS.md`](.agents/memory/DEBATES_AND_REVIEWS.md).
   - [ ] Chạy thử nghiệm thành công toàn bộ hệ thống bằng đúng 1 câu lệnh duy nhất: `docker compose up -d --build`.
   - [ ] Endpoint `/health` trả về mã trạng thái HTTP 200 kèm theo thời gian đáp ứng (Latency) < 10ms.

@@ -26,7 +26,7 @@ Mọi module trong dự án bắt buộc phải tuân theo 5 nguyên lý SOLID �
 
 ### 1.3. Phân Tách Kiến Trúc (Clean Architecture & DDD)
 - **`packages/shared-domain/` (Pure TypeScript - Zero External Runtime Dependencies):**
-  - Chứa toàn bộ hằng số bất biến (`BASE_HP = 1000`, `BASE_ATK = 50`), Value Objects (`UnitState`, `BoardGrid3x3`, `BuffVector8D`), và Pure Functions.
+  - Chứa toàn bộ hằng số bất biến (`BASE_STATS_BY_CLASS`, `TICKS_PER_SECOND = 20`), Value Objects (`UnitState`, `BoardGrid3x3`, `BuffVector12D`), và Pure Functions.
   - Tuyệt đối cấm import React Native, Node.js `fs`/`http` hay cơ sở dữ liệu vào đây.
 - **`apps/server/` (Hexagonal / Ports & Adapters Architecture):**
   - `domain/`: State Machine trận đấu (`BO3/BO5`), `DeterministicCombatEngine` (20 ticks/s), `SymmetricVectorDraftEngine`.
@@ -159,5 +159,5 @@ Phòng chống triệt để các nhóm lỗi tĩnh (Static Defects) và lỗ h�
 2. **Quản lý Lỗ hổng Bảo mật (Zero Known High/Critical CVEs):**
    - Không sử dụng các gói thư viện đã bị ngừng bảo trì (deprecated) hoặc có lỗ hổng `Critical` / `High` trên National Vulnerability Database (NVD) / GitHub Advisory.
 3. **Dependency Hygiene & Pinning:**
-   - Cấm cài đặt thư viện thừa cho những tác vụ đơn giản (ví dụ: cấm cài `lodash` hay `moment`; phải dùng hàm gốc của ES2023+ hoặc viết hàm toán học Vector 8D thuần túy).
+   - Cấm cài đặt thư viện thừa cho những tác vụ đơn giản (ví dụ: cấm cài `lodash` hay `moment`; phải dùng hàm gốc của ES2023+ hoặc viết hàm toán học Vector 12D thuần túy).
    - Giữ cố định phiên bản trong `package.json` và luôn đồng bộ lockfile (`package-lock.json` / `pnpm-lock.yaml`).

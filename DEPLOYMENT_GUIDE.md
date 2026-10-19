@@ -17,19 +17,15 @@ Tài liệu này cung cấp hướng dẫn đầy đủ từ con số 0 để x�
                         ┌───────────────────────────────────────────┐
                         │      NGINX REVERSE PROXY (SSL / TLS)      │
                         │    - Let's Encrypt Auto-Renewal           │
-                        │    - Rate Limiting (DDoS Shield)          │
-                        │    - Gzip / Brotli Static Compression     │
-                        └─────────────┬─────────────────────────────┘
-                                      │
-              ┌───────────────────────┴───────────────────────┐
-       [HTTP Proxy :80]                              [WSS / WebSocket Proxy]
-              ▼                                               ▼
+                        │    - Rate Limiting (DDoS Shield)                       ┌───────────────────────┴───────────────────────┐
+        [HTTP Proxy :80]                              [WSS / WebSocket Proxy]
+               ▼                                               ▼
 ┌───────────────────────────┐                   ┌───────────────────────────┐
 │       CLIENT CONTAINER    │                   │      SERVER CONTAINER     │
 │   (Vite/React Static Web) │                   │  (Node.js Combat Engine)  │
 │    - Internal Nginx Alpine│                   │   - Fastify / Express     │
 │    - 60 FPS Skia/Canvas   │                   │   - 20 Ticks/s Simulation │
-│    - Waifu 18+ Assets     │                   │   - 8D Vector Equilibrium │
+│    - Waifu 18+ Assets     │                   │   - 12D Vector Equilibrium│
 └───────────────────────────┘                   └─────────────┬─────────────┘
                                                               │
                                                               ▼
@@ -58,7 +54,7 @@ valkyrie-protocol-zero/
 │   └── server/                  # Ứng dụng Server (Combat Engine, WebSocket)
 │       ├── src/
 │       │   ├── engine/          # 20 Ticks/s Deterministic Simulation Loop
-│       │   ├── draft/           # Thuật toán 8D Vector Equilibrium (2-2-2-3)
+│       │   ├── draft/           # Thuật toán 12D Vector DB (3-3-3 History Allocation)
 │       │   ├── rooms/           # State Machine phòng đấu BO3/BO5
 │       │   └── transport/       # WebSocket Gateway & MessagePack Encoder
 │       ├── Dockerfile           # Multi-stage build Node.js Alpine
@@ -66,8 +62,8 @@ valkyrie-protocol-zero/
 ├── packages/
 │   └── shared-domain/           # Thư viện dùng chung (Pure TypeScript)
 │       ├── src/
-│       │   ├── constants/       # Chỉ số cờ gốc (HP: 1000, ATK: 50, Armor: 20)
-│       │   ├── types/           # WebSocket Packets, Board 3x3, Buff Vector 8D
+│       │   ├── constants/       # Chỉ số 27 Valkyries theo 3 Class (Assault, Aegis, Tactician)
+│       │   ├── types/           # WebSocket Packets, Board 3x3, Buff Vector 12D
 │       │   └── formulas/        # Hàm tính sát thương, giảm giáp thuần túy
 │       └── package.json
 ├── docker/
