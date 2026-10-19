@@ -44,6 +44,16 @@
 - **Tác tử ký duyệt:** `qa-balance-tester`
 - **Nội dung:** Triệu hồi `browser_subagent` tự động mở trình duyệt truy cập `http://localhost:5173`, thực hiện toàn bộ luồng chơi: Chọn Buff từ màn Draft 9 Buffs $\rightarrow$ Bố trí đội hình 3x3 $\rightarrow$ Khóa đội hình $\rightarrow$ Chứng kiến trận chiến Auto-Combat 20Hz và quan sát rách giáp/tuyệt kỹ. Ghi lại video WebP `valkyrie_playtest_1792426156649.webp` và chụp ảnh màn hình lưu vào artifacts. Bảng điểm Playtest Scorecard đạt **9.4 / 10**, 0 lỗi Blocker/High, 100% tickets đạt `CLOSED_PASS`.
 
+### 📌 Biên Bản Nghiệm Thu Cổng 5 & 6 Cập Nhật (Fullscreen Web/Mobile Game UI Redesign)
+- **Tác tử ký duyệt:** `frontend-engineer` & `qa-balance-tester`
+- **Nội dung:** Tái thiết kế toàn diện giao diện từ kiểu trang web cuộn dọc truyền thống thành **Đấu trường Web Game / Mobile Web Game Fullscreen 100vh** chuẩn Teamfight Tactics / Hearthstone:
+  - Khóa chặt viewport (`h-screen overflow-hidden`), triệt tiêu 100% thanh cuộn dọc body.
+  - **Top Gaming HUD:** Tích hợp Hồ sơ Chỉ huy, Huy hiệu Elo Xếp hạng (`🥇 VÀNG KIM 1,450`), Tỷ số BO3, và thanh công cụ tiện ích nhanh (`LOG`, `QUY TẮC`, `SFX`, `16+`, `RESET`).
+  - **Đấu Trường 2 Phía Đối Kháng (2-Sided Cyberpunk Arena):** Bàn cờ Đối thủ 3x3 (Phía trên, che phủ bởi Fog of War khi dàn trận), Đường chia cắt Chiến tuyến Neon 20Hz ở giữa, Bàn cờ Người chơi 3x3 (Phía dưới, kèm tag buff hàng Tiên phong/Đột kích/Trùng pháo).
+  - **Command Deck & Hàng Chờ Docked Phía Dưới:** Thẻ Valkyrie quân bài công nghệ, bộ lọc phe phái (`VALHALLA`, `EDEN`, `SOL`), nút chọn nhanh đội hình (`Tiên Phong`, `Đột Kích`), và CTA bừng sáng `KHÓA ĐỘI HÌNH & CHIẾN ➔`.
+  - **Hệ Thống Modals & Slide-out Drawers:** Chuyển `CombatLog` thành ngăn kéo trượt mượt mà từ cạnh phải, thêm `TacticalGuideModal` và `LeaderboardModal`.
+  - Kiểm thử tự động bằng `browser_subagent` ghi lại video WebP `valkyrie_fullscreen_game_ui_1792454070510.webp` xác nhận layout hiển thị xuất sắc, không lỗi console, chuẩn 60 FPS.
+
 ### 📌 Biên Bản Nghiệm Thu Cổng 7 (Phase 7 - Docker Containerization & Handover)
 - **Tác tử ký duyệt:** `system-architect`
 - **Nội dung:** Đóng gói Dockerfile Multi-Stage tối ưu cho Server (`node:22-alpine`) và Client (`nginx:alpine`). Thiết lập `docker-compose.yml` 1-Click Launch tích hợp healthcheck tự động. Dự án hoàn thiện 100% theo mô hình Waterfall chuẩn Enterprise.
