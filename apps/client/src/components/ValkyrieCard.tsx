@@ -6,9 +6,16 @@ interface ValkyrieCardProps {
   readonly valkyrieId: string;
   readonly isEnemy?: boolean | undefined;
   readonly onInspect?: ((valkyrieId: string) => void) | undefined;
+  readonly compact?: boolean | undefined;
 }
 
-export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({ entity, valkyrieId, isEnemy = false, onInspect }) => {
+export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
+  entity,
+  valkyrieId,
+  isEnemy = false,
+  onInspect,
+  compact = false
+}) => {
   const valk = getValkyrieById(valkyrieId);
   if (!valk) return null;
 
@@ -61,6 +68,96 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({ entity, valkyrieId, 
     tierBadge = 'TIER 3 • OVERDRIVE';
     tierColor = 'text-[#FF2A85] border-[#FF2A85]/50 bg-[#FF2A85]/20 animate-pulse';
     cardBorder = 'border-[#FF2A85] critical-burst-pulse';
+  }
+
+  // Compact Mode: Optimized for in-grid battle token
+  if (compact) {
+    return (
+      <div
+        className={`relative w-full h-full p-1.5 rounded-lg border glass-panel transition-all duration-200 flex flex-col justify-between ${cardBorder} ${
+          isDead ? 'opacity-30 grayscale' : ''
+        } ${isCasting ? 'scale-105 shadow-[0_0_20px_#FF2A85] border-[#FF2A85]' : ''}`}
+      >
+        {/* Floating Damage Text */}
+        {damageFloater && (
+          <div
+            key={damageFloater.id}
+            className={`absolute -top-3 right-1 pointer-events-none font-display font-black text-xs z-30 floating-damage ${
+              damageFloater.type === 'DAMAGE'
+                ? 'text-[#FF3344] drop-shadow-[0_0_8px_rgba(255,51,68,0.9)]'
+                : 'text-[#00FF88] drop-shadow-[0_0_8px_rgba(0,255,136,0.9)]'
+            }`}
+          >
+            {damageFloater.type === 'DAMAGE' ? `-${damageFloater.value}` : `+${damageFloater.value}`}
+          </div>
+        )}
+
+        {/* Top: Avatar + Name + Tier Badge */}
+        <div className="flex items-center gap-1.5">
+          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0 relative shadow-sm">
+            <img
+              src={`/avatars/${valk.id}.jpg`}
+              alt={valk.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <span className="absolute inset-0 flex items-center justify-center font-bold text-[10px] text-white">
+              {valk.name[0]}
+            </span>
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between">
+              <h5 className="font-display font-bold text-[11px] text-white truncate leading-tight">
+                {valk.name}
+              </h5>
+              {onInspect && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onInspect(valk.id);
+                  }}
+                  className="w-3.5 h-3.5 rounded bg-white/10 hover:bg-[#00F0FF]/30 text-[9px] text-gray-300 hover:text-white flex items-center justify-center transition-colors flex-shrink-0"
+                  title="Chi tiết"
+                >
+                  ℹ
+                </button>
+              )}
+            </div>
+            <div className="flex items-center gap-1 mt-0.5">
+              <span className={`px-1 py-0.1 rounded text-[8px] font-mono font-bold border ${tierColor}`}>
+                {tier === 1 ? 'T1' : tier === 2 ? 'T2 TORN' : 'T3 BURST'}
+              </span>
+              {isEnemy && <span className="text-[8px] text-red-400 font-mono font-bold">[FOE]</span>}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Mini HP & Mana Bars */}
+        <div className="space-y-1 mt-1">
+          {/* Mini HP */}
+          <div className="w-full h-1 bg-black/60 rounded-full overflow-hidden">
+            <div
+              className={`h-full transition-all duration-150 ${
+                hpPercent > 50 ? 'bg-[#00F0FF]' : hpPercent > 25 ? 'bg-[#FFD700]' : 'bg-[#FF3344]'
+              }`}
+              style={{ width: `${hpPercent}%` }}
+            />
+          </div>
+          {/* Mini Mana */}
+          <div className="w-full h-1 bg-black/60 rounded-full overflow-hidden">
+            <div
+              className={`h-full transition-all duration-150 ${
+                mana >= 100 ? 'bg-[#FF2A85] animate-pulse' : 'bg-[#8A2BE2]'
+              }`}
+              style={{ width: `${manaPercent}%` }}
+            />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (

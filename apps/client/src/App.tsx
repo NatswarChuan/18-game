@@ -4,15 +4,22 @@ import {
   SlotIndex,
   UnitPlacement,
   VALKYRIE_ROSTER,
-  getValkyrieById
+  getValkyrieById,
+  getRankTierFromElo
 } from '@valkyrie/shared-domain';
 import { CombatLog } from './components/CombatLog.js';
 import { DraftModal } from './components/DraftModal.js';
 import { GameBoard } from './components/GameBoard.js';
 import { ValkyrieModal } from './components/ValkyrieModal.js';
+import { LeaderboardModal } from './components/LeaderboardModal.js';
+import { TacticalGuideModal } from './components/TacticalGuideModal.js';
 import { UltimateCutInBanner, UltimateCutInData } from './components/UltimateCutInBanner.js';
 import { useGameWebSocket } from './hooks/useGameWebSocket.js';
 
+/**
+ * Main Web Game Arena Viewport (VALKYRIE PROTOCOL: ZERO).
+ * Đấu trường Web Game toàn màn hình chuẩn Esports Auto-Battler 60-120 FPS.
+ */
 export const App: React.FC = () => {
   const playerId = 'player_me';
   const displayName = 'Commander_Alpha';
@@ -24,6 +31,54 @@ export const App: React.FC = () => {
   const [isAudioMuted, setIsAudioMuted] = useState(false);
   const [isStreamerMode, setIsStreamerMode] = useState(false);
   const [benchFaction, setBenchFaction] = useState<FactionId | 'ALL'>('ALL');
+  const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
+  const [isLogOpen, setIsLogOpen] = useState(false);
+
+  const [playerElo, setPlayerElo] = useState<number>(() => {
+    const saved = localStorage.getItem('valkyrie_elo');
+    return saved ? parseInt(saved, 10) : 1525;
+  });
+
+  const playerRankInfo = getRankTierFromElo(playerElo);
+
+  // Update Elo on match completion
+  useEffect(() => {
+    if (state.phase === 'MATCH_OVER') {
+      const isWinner = state.matchWinnerId === playerId;
+      const delta = isWinner ? 25 : -25;
+      setPlayerElo((prev) => {
+        const nextElo = Math.max(0, prev + delta);
+        localStorage.setItem('valkyrie_elo', nextElo.toString());
+        return nextElo;
+      });
+    }
+  }, [state.phase, state.matchWinnerId, playerId]);
+
+  const applyPreset = (presetName: 'VANGUARD' | 'FLANK' | 'BUNKER') => {
+    if (state.phase !== 'FORMATION_PLACEMENT' && state.phase !== 'MATCHMAKING') return;
+    let preset: UnitPlacement[] = [];
+    if (presetName === 'VANGUARD') {
+      preset = [
+        { valkyrieId: 'VALK-01', slotIndex: 1 },
+        { valkyrieId: 'VALK-02', slotIndex: 0 },
+        { valkyrieId: 'VALK-07', slotIndex: 2 }
+      ];
+    } else if (presetName === 'FLANK') {
+      preset = [
+        { valkyrieId: 'VALK-03', slotIndex: 3 },
+        { valkyrieId: 'VALK-11', slotIndex: 1 },
+        { valkyrieId: 'VALK-12', slotIndex: 5 }
+      ];
+    } else if (presetName === 'BUNKER') {
+      preset = [
+        { valkyrieId: 'VALK-02', slotIndex: 1 },
+        { valkyrieId: 'VALK-04', slotIndex: 6 },
+        { valkyrieId: 'VALK-05', slotIndex: 8 }
+      ];
+    }
+    updateFormation(preset);
+  };
 
   // Filter reserve Valkyries across 3 factions (all 27 Valkyries)
   const filteredValkyries = benchFaction === 'ALL'
@@ -88,251 +143,291 @@ export const App: React.FC = () => {
   const isCombatActive = state.phase === 'BATTLE_SIMULATION';
 
   return (
-    <div className="min-h-screen flex flex-col p-4 md:p-6 max-w-7xl mx-auto">
-      {/* Top Cyberpunk Header */}
-      <header className="glass-panel p-4 mb-6 border border-white/10 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF2A85] to-[#00F0FF] flex items-center justify-center font-display font-black text-xl text-white shadow-lg">
+    <div className="h-screen w-screen max-h-screen overflow-hidden flex flex-col justify-between bg-black text-white select-none relative">
+      {/* 1. TOP GAMING HUD (Fixed 48px Header) */}
+      <header className="h-[48px] flex-shrink-0 px-3 py-1 flex items-center justify-between border-b border-white/10 glass-panel z-20">
+        {/* Left: Player Profile & Elo */}
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF2A85] to-[#00F0FF] flex items-center justify-center font-display font-black text-sm text-white shadow-md">
             V
           </div>
           <div>
-            <h1 className="font-display font-black text-xl md:text-2xl tracking-wider text-white flex items-center gap-2">
-              VALKYRIE PROTOCOL: ZERO
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/40">
-                {isStreamerMode ? 'SFW STREAMER MODE' : '16+ TACTICAL EDITION'}
+            <div className="flex items-center gap-1.5">
+              <span className="font-display font-black text-xs text-white tracking-wide">
+                Commander Alpha
               </span>
-            </h1>
-            <p className="text-xs text-gray-400 font-mono">
-              Server-Authoritative 20Hz Auto-Battler • 12D Vector DB Adaptive Buffs
-            </p>
+              <button
+                onClick={() => setIsLeaderboardOpen(true)}
+                className="px-2 py-0.2 rounded text-[9px] font-mono font-bold transition-all border"
+                style={{
+                  borderColor: `${playerRankInfo.color}80`,
+                  backgroundColor: `${playerRankInfo.color}20`,
+                  color: playerRankInfo.color
+                }}
+                title="Bảng Xếp Hạng Đấu Hạng"
+              >
+                🏆 {playerRankInfo.title} ({playerElo})
+              </button>
+            </div>
+            <span className="text-[9px] text-gray-400 font-mono block leading-none">
+              VALKYRIE PROTOCOL: ZERO • 20HZ
+            </span>
           </div>
         </div>
 
-        {/* Center: Controls & Settings */}
-        <div className="flex items-center gap-3">
+        {/* Center: Match Score & Phase Emblem */}
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10">
+            <span className="font-display font-black text-base text-[#00F0FF]">
+              {state.seriesScore.playerWins}
+            </span>
+            <span className="text-gray-500 font-bold text-xs">-</span>
+            <span className="font-display font-black text-base text-[#FF2A85]">
+              {state.seriesScore.opponentWins}
+            </span>
+            <span className="text-[10px] font-mono text-gray-400 ml-1">
+              ({state.format})
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gradient-to-r from-[#FFD700]/15 to-[#FF2A85]/15 border border-[#FFD700]/30 shadow-[0_0_12px_rgba(255,215,0,0.2)]">
+            <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-ping" />
+            <span className="font-display font-black text-xs text-[#FFD700] tracking-wider">
+              ROUND {state.roundNumber}
+            </span>
+            <span className="text-[10px] font-mono text-gray-300 ml-1">
+              • {isCombatActive ? 'GIAO TRANH 20HZ' : 'BỐ TRÍ ĐỘI HÌNH'}
+            </span>
+          </div>
+        </div>
+
+        {/* Right: Actions & Audio Controls */}
+        <div className="flex items-center gap-2">
+          {/* Combat Log Drawer Button */}
+          <button
+            onClick={() => setIsLogOpen(!isLogOpen)}
+            className={`px-2 py-1 rounded-lg border font-mono text-xs transition-colors flex items-center gap-1 ${
+              isLogOpen
+                ? 'border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF]'
+                : 'border-white/20 bg-white/5 text-gray-300 hover:text-white'
+            }`}
+            title="Mở nhật ký giao tranh 20Hz"
+          >
+            <span>📜</span>
+            <span className="hidden sm:inline">LOG</span>
+            <span className="text-[10px] text-gray-400 font-mono">({state.combatEvents.length})</span>
+          </button>
+
+          {/* Tactical Guide Modal Button */}
+          <button
+            onClick={() => setIsGuideOpen(true)}
+            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
+            title="Hướng dẫn quy tắc 3x3"
+          >
+            ℹ️ QUY TẮC
+          </button>
+
+          {/* Sound Toggle */}
           <button
             onClick={() => setIsAudioMuted(!isAudioMuted)}
-            className="px-3 py-1.5 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
+            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
+            title="Bật/Tắt âm thanh Web Audio"
           >
-            {isAudioMuted ? '🔇 SFX TẮT' : '🔊 SFX BẬT'}
+            {isAudioMuted ? '🔇' : '🔊'}
           </button>
+
+          {/* SFW / 16+ Switch */}
           <button
             onClick={() => setIsStreamerMode(!isStreamerMode)}
-            className={`px-3 py-1.5 rounded-lg border font-mono text-xs transition-colors ${
+            className={`px-2 py-1 rounded-lg border font-mono text-xs transition-colors ${
               isStreamerMode
                 ? 'border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF]'
                 : 'border-white/20 bg-white/5 text-gray-300 hover:border-[#FF2A85]'
             }`}
+            title="Chuyển đổi SFW Streamer Mode / 16+ Tactical Mode"
           >
-            {isStreamerMode ? '🛡️ SFW MODE' : '⚔️ 16+ MODE'}
+            {isStreamerMode ? '🛡️ SFW' : '⚔️ 16+'}
           </button>
+
+          {/* Quick Restart */}
           <button
             onClick={() => window.location.reload()}
-            className="px-3 py-1.5 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors"
+            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors"
             title="Khởi động lại ván đấu mới"
           >
-            🔄 VÁN MỚI
+            🔄
           </button>
-        </div>
-
-        {/* Series Score & Round Badge */}
-        <div className="flex items-center gap-6">
-          <div className="text-center">
-            <span className="font-mono text-[10px] text-gray-400 uppercase">THỂ THỨC & TỶ SỐ</span>
-            <div className="font-display font-bold text-lg text-white flex items-center gap-2">
-              <span className="text-[#00F0FF]">{state.seriesScore.playerWins}</span>
-              <span className="text-gray-500">-</span>
-              <span className="text-[#FF2A85]">{state.seriesScore.opponentWins}</span>
-              <span className="text-xs font-mono text-gray-400">({state.format})</span>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <span className="font-mono text-[10px] text-gray-400 uppercase">ROUND</span>
-            <div className="font-display font-bold text-lg text-[#FFD700]">
-              ROUND {state.roundNumber}
-            </div>
-          </div>
-
-          {/* Connection Status */}
-          <div className="flex items-center gap-2 pl-4 border-l border-white/10">
-            <div
-              className={`w-2.5 h-2.5 rounded-full ${
-                state.connected ? 'bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]' : 'bg-red-500'
-              }`}
-            />
-            <span className="font-mono text-xs text-gray-300">
-              {state.connected ? 'WS CONNECTED' : 'CONNECTING...'}
-            </span>
-          </div>
         </div>
       </header>
 
-      {/* Main Gameplay Arena */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
-        {/* Left 2 Cols: 3x3 Grid & Bench */}
-        <div className="lg:col-span-2 flex flex-col gap-6">
-          {/* Phase Banner */}
-          <div className="glass-panel p-4 flex items-center justify-between border border-white/10">
-            <div>
-              <span className="font-mono text-[10px] text-gray-400 uppercase">TRẠNG THÁI HIỆN TẠI</span>
-              <h3 className="font-display font-bold text-base text-white flex items-center gap-2">
-                <span className="text-[#FF2A85]">▶</span> {state.phase.replace('_', ' ')}
-              </h3>
-            </div>
+      {/* 2. CENTRAL BATTLEFIELD (Fixed Viewport Stage) */}
+      <main className="flex-1 min-h-0 overflow-hidden flex flex-col items-center justify-center p-1 md:p-2 relative">
+        <GameBoard
+          playerFormation={state.playerFormation}
+          opponentFormation={state.opponentFormation}
+          combatEntities={state.combatEntities}
+          isCombatActive={isCombatActive}
+          onSlotClick={handleSlotClick}
+          onDropValkyrie={handleDropValkyrie}
+          onInspect={setInspectingValkyrieId}
+        />
+      </main>
 
+      {/* 3. BOTTOM COMMAND DECK & BENCH (Docked 115px Bar) */}
+      <footer className="h-[120px] md:h-[128px] flex-shrink-0 border-t border-white/10 glass-panel px-3 py-1.5 flex flex-col justify-between z-20">
+        {/* Top Control Bar: Faction Filters, Presets, and Lock CTA */}
+        <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-1.5">
+          {/* Faction Tabs */}
+          <div className="flex items-center gap-1">
+            <span className="text-[9px] font-mono text-gray-400 uppercase hidden sm:inline mr-1">
+              PHE:
+            </span>
+            {(['ALL', 'NEO_VALHALLA', 'ABYSSAL_EDEN', 'SOL_DYNASTY'] as const).map((fac) => (
+              <button
+                key={fac}
+                onClick={() => setBenchFaction(fac)}
+                className={`px-2 py-0.5 rounded text-[9px] font-mono font-bold transition-all ${
+                  benchFaction === fac
+                    ? 'bg-[#00F0FF]/25 text-[#00F0FF] border border-[#00F0FF]/60 shadow-[0_0_8px_rgba(0,240,255,0.4)]'
+                    : 'bg-white/5 text-gray-400 border border-white/10 hover:text-white'
+                }`}
+              >
+                {fac === 'ALL' ? 'TẤT CẢ (27)' : fac.replace('_', ' ')}
+              </button>
+            ))}
+          </div>
+
+          {/* Quick Formation Presets */}
+          <div className="hidden md:flex items-center gap-1.5">
+            <span className="text-[9px] font-mono text-gray-400 uppercase mr-1">
+              MẪU NHANH:
+            </span>
+            <button
+              onClick={() => applyPreset('VANGUARD')}
+              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#FFD700]/20 border border-white/10 hover:border-[#FFD700] text-gray-300 hover:text-[#FFD700] transition-colors"
+              title="3 Tiên phong vững chắc"
+            >
+              🛡️ Tiên Phong
+            </button>
+            <button
+              onClick={() => applyPreset('FLANK')}
+              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#FF2A85]/20 border border-white/10 hover:border-[#FF2A85] text-gray-300 hover:text-[#FF2A85] transition-colors"
+              title="Đột kích 2 cánh sườn"
+            >
+              ⚡ Đột Kích
+            </button>
+            <button
+              onClick={() => applyPreset('BUNKER')}
+              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#00F0FF]/20 border border-white/10 hover:border-[#00F0FF] text-gray-300 hover:text-[#00F0FF] transition-colors"
+              title="Xạ thủ pháo kích tầm xa"
+            >
+              🎯 Pháo Đài
+            </button>
+          </div>
+
+          {/* Lock In / Deployment Action CTA */}
+          <div>
             {state.phase === 'FORMATION_PLACEMENT' && !state.isLockedIn && (
               <button
                 onClick={lockFormation}
-                className="cyber-button text-xs px-6 py-2.5 neon-glow-primary"
+                className="cyber-button text-xs py-1 px-4 neon-glow-primary shadow-[0_0_15px_rgba(255,42,133,0.5)] font-display tracking-wider"
               >
-                KHÓA ĐỘI HÌNH & BẮT ĐẦU ➔
+                KHÓA ĐỘI HÌNH & CHIẾN ➔
               </button>
             )}
 
             {state.isLockedIn && state.phase === 'FORMATION_PLACEMENT' && (
-              <span className="font-mono text-xs text-[#00F0FF] px-4 py-2 rounded bg-[#00F0FF]/10 border border-[#00F0FF]/30 font-bold">
-                ✓ ĐÃ KHÓA ĐỘI HÌNH (CHỜ GIAO TRANH)
+              <span className="px-3 py-1 rounded bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/50 text-xs font-mono font-bold shadow-[0_0_10px_rgba(0,240,255,0.3)]">
+                ✓ ĐÃ KHÓA (CHỜ ĐẤU)
+              </span>
+            )}
+
+            {isCombatActive && (
+              <span className="px-3 py-1 rounded bg-red-950/40 text-red-400 border border-red-500/40 text-xs font-mono font-bold animate-pulse">
+                ⚡ ĐANG GIAO TRANH 20HZ
               </span>
             )}
           </div>
+        </div>
 
-          {/* 3x3 Tactical Board */}
-          <GameBoard
-            playerFormation={state.playerFormation}
-            opponentFormation={state.opponentFormation}
-            combatEntities={state.combatEntities}
-            isCombatActive={isCombatActive}
-            onSlotClick={handleSlotClick}
-            onDropValkyrie={handleDropValkyrie}
-            onInspect={setInspectingValkyrieId}
-          />
+        {/* Bottom Horizontal Bench Carousel */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-0.5 pt-1">
+          {filteredValkyries.map((valk) => {
+            const isSelected = selectedBenchValkyrie === valk.id;
+            const isAlreadyPlaced = state.playerFormation.some((p) => p.valkyrieId === valk.id);
 
-          {/* Reserve Valkyries Bench (All 27 Valkyries with Faction Filters) */}
-          {!isCombatActive && (
-            <div className="glass-panel p-4 border border-white/10">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-3 border-b border-white/10 pb-2">
-                <div className="flex items-center gap-2">
-                  <h4 className="font-display font-bold text-xs text-white">
-                    HÀNG CHỜ DỰ BỊ ({filteredValkyries.length}/27 CHIẾN BINH)
-                  </h4>
-                  <span className="text-[10px] font-mono text-gray-400">
-                    {selectedBenchValkyrie ? `Đã chọn: ${selectedBenchValkyrie}` : 'Kéo thả hoặc nhấp để xếp đội'}
+            return (
+              <div
+                key={valk.id}
+                draggable={!isAlreadyPlaced}
+                onDragStart={(e) => {
+                  e.dataTransfer.setData('text/plain', valk.id);
+                  e.dataTransfer.effectAllowed = 'move';
+                }}
+                onClick={() => !isAlreadyPlaced && setSelectedBenchValkyrie(valk.id)}
+                className={`flex-shrink-0 p-1.5 rounded-lg border transition-all duration-150 cursor-grab active:cursor-grabbing flex items-center gap-2 min-w-[145px] relative ${
+                  isSelected
+                    ? 'border-[#FF2A85] bg-[#FF2A85]/20 shadow-[0_0_12px_#FF2A85]'
+                    : isAlreadyPlaced
+                    ? 'opacity-35 border-white/5 bg-black/40 cursor-not-allowed'
+                    : 'border-white/10 hover:border-white/30 bg-white/5 hover:scale-102'
+                }`}
+              >
+                <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0 relative shadow-sm">
+                  <img
+                    src={`/avatars/${valk.id}.jpg`}
+                    alt={valk.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center font-bold text-[10px] text-white">
+                    {valk.name[0]}
                   </span>
                 </div>
 
-                {/* Faction Tabs */}
-                <div className="flex items-center gap-1.5">
-                  {(['ALL', 'NEO_VALHALLA', 'ABYSSAL_EDEN', 'SOL_DYNASTY'] as const).map((fac) => (
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between text-[8px] font-mono text-gray-400">
+                    <span className="truncate">{valk.role.split('_')[0]}</span>
                     <button
-                      key={fac}
-                      onClick={() => setBenchFaction(fac)}
-                      className={`px-2.5 py-1 rounded text-[10px] font-mono font-bold transition-all ${
-                        benchFaction === fac
-                          ? 'bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/50 shadow-[0_0_8px_rgba(0,240,255,0.3)]'
-                          : 'bg-white/5 text-gray-400 border border-white/10 hover:text-white'
-                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setInspectingValkyrieId(valk.id);
+                      }}
+                      className="hover:text-[#00F0FF] px-1 text-[9px]"
+                      title="Xem chi tiết"
                     >
-                      {fac === 'ALL' ? 'TẤT CẢ (27)' : fac.replace('_', ' ')}
+                      ℹ
                     </button>
-                  ))}
+                  </div>
+                  <div className="font-display font-bold text-[11px] text-white truncate leading-tight">
+                    {valk.name}
+                  </div>
+                  <div className="text-[9px] text-gray-400 font-mono">
+                    HP:{valk.stats.maxHp} ATK:{valk.stats.attack}
+                  </div>
                 </div>
               </div>
-
-              {/* Bench Grid */}
-              <div className="flex items-center gap-3 overflow-x-auto pb-2">
-                {filteredValkyries.map((valk) => {
-                  const isSelected = selectedBenchValkyrie === valk.id;
-                  const isAlreadyPlaced = state.playerFormation.some((p) => p.valkyrieId === valk.id);
-
-                  return (
-                    <div
-                      key={valk.id}
-                      draggable={!isAlreadyPlaced}
-                      onDragStart={(e) => {
-                        e.dataTransfer.setData('text/plain', valk.id);
-                        e.dataTransfer.effectAllowed = 'move';
-                      }}
-                      onClick={() => !isAlreadyPlaced && setSelectedBenchValkyrie(valk.id)}
-                      className={`flex-shrink-0 p-2.5 rounded-xl border transition-all duration-200 cursor-grab active:cursor-grabbing flex items-center gap-2.5 min-w-[170px] relative ${
-                        isSelected
-                          ? 'border-[#FF2A85] bg-[#FF2A85]/20 shadow-[0_0_12px_#FF2A85]'
-                          : isAlreadyPlaced
-                          ? 'opacity-40 border-white/5 bg-black/20 cursor-not-allowed'
-                          : 'border-white/10 hover:border-white/30 bg-white/5 hover:scale-102'
-                      }`}
-                    >
-                      <div className="w-9 h-9 rounded-lg overflow-hidden border border-white/20 bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0 relative">
-                        <img
-                          src={`/avatars/${valk.id}.jpg`}
-                          alt={valk.name}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLElement).style.display = 'none';
-                          }}
-                        />
-                        <span className="absolute inset-0 flex items-center justify-center font-bold text-xs text-white">
-                          {valk.name[0]}
-                        </span>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between text-[9px] font-mono text-gray-400">
-                          <span>{valk.role.split('_')[0]}</span>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setInspectingValkyrieId(valk.id);
-                            }}
-                            className="hover:text-[#00F0FF] px-1"
-                            title="Xem chi tiết"
-                          >
-                            ℹ
-                          </button>
-                        </div>
-                        <div className="font-display font-bold text-xs text-white">
-                          {valk.name}
-                        </div>
-                        <div className="text-[10px] text-gray-300">
-                          HP: {valk.stats.maxHp} | ATK: {valk.stats.attack}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+            );
+          })}
         </div>
+      </footer>
 
-        {/* Right Col: Combat Log & Game Stats */}
-        <div className="flex flex-col gap-6">
-          <CombatLog events={state.combatEvents} />
+      {/* 4. MODALS, DRAWERS & OVERLAYS */}
 
-          {/* Tactical Guide / Information Card */}
-          <div className="glass-panel p-4 border border-white/10 flex-1">
-            <h4 className="font-display font-bold text-xs text-[#00F0FF] mb-3 flex items-center gap-1.5">
-              <span>ℹ️</span> QUY TẮC CHIẾN THUẬT 3x3
-            </h4>
-            <div className="space-y-2.5 text-xs text-gray-300 leading-relaxed font-sub">
-              <p>
-                • <strong>Tiên Phong (Hàng 1):</strong> Ô 1, 2, 3 nhận thêm +15% Mana khi bị tấn công, làm lá chắn hút sát thương.
-              </p>
-              <p>
-                • <strong>Đột Kích (Hàng 2):</strong> Ô 4, 5, 6 tăng +10% Tốc độ đánh, tấn công sườn đối phương.
-              </p>
-              <p>
-                • <strong>Trùng Pháo / Yểm Trợ (Hàng 3):</strong> Ô 7, 8, 9 tăng +1 Tầm đánh, được bảo vệ khỏi đòn cận chiến trực diện.
-              </p>
-              <p>
-                • <strong>3 Cấp Độ Rách Giáp (16+):</strong>
-                <br />- Tier 1: Pristine (Máu ≥ 70%)
-                <br />- Tier 2: Battle-Torn (30% ≤ Máu &lt; 70%)
-                <br />- Tier 3: Critical Overdrive (Máu &lt; 30%)
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Slide-out Combat Log Drawer */}
+      <CombatLog
+        events={state.combatEvents}
+        isOpen={isLogOpen}
+        onClose={() => setIsLogOpen(false)}
+      />
+
+      {/* Tactical Rules Guide Modal */}
+      <TacticalGuideModal
+        isOpen={isGuideOpen}
+        onClose={() => setIsGuideOpen(false)}
+      />
 
       {/* Draft 9 Buffs Modal */}
       {state.phase === 'BUFF_DRAFTING' && state.draftBuffs.length > 0 && !state.chosenBuffId && (
@@ -353,23 +448,23 @@ export const App: React.FC = () => {
       {/* Round Evaluation Overlay Banner */}
       {state.phase === 'ROUND_EVALUATION' && (
         <div className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md pointer-events-none">
-          <div className="glass-panel p-6 text-center max-w-sm w-full border-2 border-[#00F0FF] shadow-[0_0_40px_rgba(0,240,255,0.4)]">
+          <div className="glass-panel p-5 text-center max-w-sm w-full border-2 border-[#00F0FF] shadow-[0_0_40px_rgba(0,240,255,0.4)]">
             <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-wider block mb-1">
               KẾT QUẢ ROUND {state.roundNumber}
             </span>
-            <h3 className="font-display font-black text-2xl text-white tracking-widest mb-3">
+            <h3 className="font-display font-black text-xl text-white tracking-widest mb-3">
               ROUND HOÀN TẤT
             </h3>
-            <div className="flex items-center justify-center gap-4 py-3 px-4 rounded-xl bg-white/5 border border-white/10 mb-4">
+            <div className="flex items-center justify-center gap-4 py-2.5 px-4 rounded-xl bg-white/5 border border-white/10 mb-3">
               <div className="text-center">
-                <span className="text-[10px] font-mono text-gray-400 block">BẠN</span>
+                <span className="text-[9px] font-mono text-gray-400 block">BẠN</span>
                 <span className="font-display font-black text-2xl text-[#00F0FF]">
                   {state.seriesScore.playerWins}
                 </span>
               </div>
               <span className="font-display font-bold text-gray-500 text-lg">-</span>
               <div className="text-center">
-                <span className="text-[10px] font-mono text-gray-400 block">ĐỐI THỦ</span>
+                <span className="text-[9px] font-mono text-gray-400 block">ĐỐI THỦ</span>
                 <span className="font-display font-black text-2xl text-[#FF2A85]">
                   {state.seriesScore.opponentWins}
                 </span>
@@ -385,26 +480,34 @@ export const App: React.FC = () => {
       {/* Match Over Modal */}
       {state.phase === 'MATCH_OVER' && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-lg">
-          <div className="glass-panel p-8 text-center max-w-md w-full border-2 border-[#FFD700] shadow-[0_0_50px_rgba(255,215,0,0.4)]">
-            <h2 className="font-display font-black text-3xl text-white mb-2 tracking-widest">
+          <div className="glass-panel p-6 text-center max-w-md w-full border-2 border-[#FFD700] shadow-[0_0_50px_rgba(255,215,0,0.4)]">
+            <h2 className="font-display font-black text-2xl text-white mb-2 tracking-widest">
               {state.matchWinnerId === playerId ? '🏆 CHIẾN THẮNG QUANG VINH!' : '⚔️ KẾT THÚC TRẬN ĐẤU'}
             </h2>
-            <p className="text-sm text-gray-300 mb-6">
+            <p className="text-sm text-gray-300 mb-5">
               Chuỗi trận {state.format} đã khép lại với tỷ số {state.seriesScore.playerWins} - {state.seriesScore.opponentWins}.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="cyber-button text-sm px-8 py-3 neon-glow-primary"
+              className="cyber-button text-xs px-8 py-2.5 neon-glow-primary"
             >
               CHƠI VÁN MỚI ➔
             </button>
           </div>
         </div>
       )}
+
       {/* Cinematic Climax Ultimate Cut-In Banner */}
       <UltimateCutInBanner
         cutIn={activeCutIn}
         onDismiss={() => setActiveCutIn(null)}
+      />
+
+      {/* Global Ranked Leaderboard Modal */}
+      <LeaderboardModal
+        playerElo={playerElo}
+        isOpen={isLeaderboardOpen}
+        onClose={() => setIsLeaderboardOpen(false)}
       />
     </div>
   );
