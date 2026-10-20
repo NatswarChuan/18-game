@@ -19,8 +19,8 @@ interface GameBoardProps {
 }
 
 /**
- * 2-Sided Cyberpunk Arena GameBoard (Fixed Web Game Viewport).
- * Đấu trường chiến thuật 2 phía đối kháng chuẩn Web Game / Mobile Game.
+ * 2-Sided Cyberpunk Esports Arena GameBoard (V2 Zero-Clutter Hologram Grid).
+ * Đấu trường 3x3 đối kháng chuẩn Esports Auto-Battler: Không chữ thừa, Bệ Hologram 52px.
  */
 export const GameBoard: React.FC<GameBoardProps> = ({
   playerFormation,
@@ -47,50 +47,48 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   };
 
   // Opponent rows: Backline (top), Midline, Frontline (facing center clash line)
-  const opponentRows: { title: string; slots: SlotIndex[] }[] = [
-    { title: 'ĐỐI THỦ • HÀNG 3 (TRÙNG PHÁO)', slots: [6, 7, 8] },
-    { title: 'ĐỐI THỦ • HÀNG 2 (ĐỘT KÍCH)', slots: [3, 4, 5] },
-    { title: 'ĐỐI THỦ • HÀNG 1 (TIÊN PHONG)', slots: [0, 1, 2] }
+  const opponentRows: { slots: SlotIndex[] }[] = [
+    { slots: [6, 7, 8] },
+    { slots: [3, 4, 5] },
+    { slots: [0, 1, 2] }
   ];
 
   // Player rows: Frontline (center), Midline, Backline (bottom)
-  const playerRows: { title: string; slots: SlotIndex[]; bonus: string; color: string }[] = [
-    { title: 'BẠN • HÀNG 1 (TIÊN PHONG)', slots: [0, 1, 2], bonus: '+15% MANA GÁNH CHỊU', color: 'text-[#FFD700]' },
-    { title: 'BẠN • HÀNG 2 (ĐỘT KÍCH)', slots: [3, 4, 5], bonus: '+10% TỐC ĐỘ ĐÁNH', color: 'text-[#00F0FF]' },
-    { title: 'BẠN • HÀNG 3 (TRÙNG PHÁO)', slots: [6, 7, 8], bonus: '+1 TẦM BẮN XẠ THỦ', color: 'text-[#FF2A85]' }
+  const playerRows: { slots: SlotIndex[]; glyph: string; color: string }[] = [
+    { slots: [0, 1, 2], glyph: '🛡️ +15% MANA', color: 'text-[#FFD700]' },
+    { slots: [3, 4, 5], glyph: '⚡ +10% TỐC ĐÁNH', color: 'text-[#00F0FF]' },
+    { slots: [6, 7, 8], glyph: '🎯 +1 TẦM BẮN', color: 'text-[#FF2A85]' }
   ];
 
   return (
-    <div className="w-full h-full flex flex-col justify-between max-w-4xl mx-auto px-2 select-none">
-      {/* 1. Opponent Sector (Top Grid) */}
-      <div className="flex flex-col gap-1 p-1.5 rounded-xl border border-red-500/20 bg-red-950/10 relative">
-        <div className="flex items-center justify-between text-[10px] font-mono px-1">
-          <span className="text-red-400 font-bold flex items-center gap-1.5">
-            <span>🛡️</span> CHIẾN TUYẾN ĐỐI PHƯƠNG
+    <div className="w-full max-w-[460px] flex flex-col justify-center gap-1 mx-auto select-none py-1">
+      {/* 1. Opponent Sector (Top 3x3 Hologram Grid) */}
+      <div className="flex flex-col gap-1 p-1 rounded-xl border border-red-500/20 bg-red-950/10 relative">
+        <div className="flex items-center justify-between text-[9px] font-mono px-1">
+          <span className="text-red-400 font-bold flex items-center gap-1">
+            <span>🛡️</span> SECTOR ĐỐI PHƯƠNG
           </span>
-          <span className="text-gray-400">
-            {isCombatActive ? '🔴 ĐÃ PHÁ GIẢI SƯƠNG MÙ' : '🔒 SƯƠNG MÙ BẢO VỆ (FOG OF WAR)'}
+          <span className="text-red-500/60 font-mono">
+            {isCombatActive ? '⚡ KÍCH HOẠT GIAO TRANH' : '🔒 RADAR FOG-OF-WAR'}
           </span>
         </div>
 
         <div className="flex flex-col gap-1">
-          {opponentRows.map((row) => (
-            <div key={row.title} className="grid grid-cols-3 gap-1.5">
+          {opponentRows.map((row, rIdx) => (
+            <div key={`opp_row_${rIdx}`} className="grid grid-cols-3 gap-1.5">
               {row.slots.map((slotIndex) => {
                 const oppUnit = getOpponentPlacement(slotIndex);
                 const entity = isCombatActive ? getEntityForSlot(slotIndex, true) : undefined;
 
                 if (!isCombatActive) {
-                  // Shrouded in Fog of War
+                  // Shrouded in Hologram Crimson Radar Grid
                   return (
                     <div
                       key={`opp_${slotIndex}`}
-                      className="h-[60px] rounded-lg border border-red-500/15 bg-black/40 flex flex-col items-center justify-center text-center relative overflow-hidden"
+                      className="h-[52px] rounded-lg hologram-pad-enemy flex flex-col items-center justify-center text-center relative overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-[radial-gradient(#FF3344_1px,transparent_1px)] [background-size:12px_12px] opacity-20" />
-                      <span className="text-base text-red-500/40 mb-0.5">🔒</span>
-                      <span className="text-[9px] font-mono text-red-400/60 font-bold uppercase tracking-widest">
-                        Ô {slotIndex + 1}
+                      <span className="text-[10px] font-mono text-red-500/50 font-bold">
+                        ⬡ Ô {slotIndex + 1}
                       </span>
                     </div>
                   );
@@ -100,7 +98,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 return (
                   <div
                     key={`opp_${slotIndex}`}
-                    className="h-[60px] rounded-lg border border-red-500/20 bg-black/30 flex items-center justify-center p-1 relative"
+                    className="h-[52px] rounded-lg border border-red-500/20 bg-black/40 flex items-center justify-center p-0.5 relative"
                   >
                     {oppUnit ? (
                       <ValkyrieCard
@@ -111,7 +109,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                         compact={true}
                       />
                     ) : (
-                      <span className="text-[9px] font-mono text-gray-600">Trống</span>
+                      <span className="text-[8px] font-mono text-gray-600">Trống</span>
                     )}
                   </div>
                 );
@@ -121,37 +119,37 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         </div>
       </div>
 
-      {/* 2. Central Clash Line / Energy Beam */}
-      <div className="my-1.5 py-1 px-3 rounded-lg border border-white/10 bg-black/40 flex items-center justify-between shadow-[0_0_15px_rgba(255,42,133,0.15)]">
-        <span className="text-[10px] font-mono text-red-400 font-bold">
-          {isCombatActive ? '⚔️ TẤN CÔNG DIỆN RỘNG' : 'CHỜ ĐỐI THỦ'}
+      {/* 2. Central Clash Laser Beam (18px) */}
+      <div className="h-4.5 my-0.5 px-3 rounded-full clash-laser-beam flex items-center justify-between shadow-[0_0_12px_rgba(0,240,255,0.3)]">
+        <span className="text-[9px] font-mono text-red-400 font-bold tracking-wide">
+          {isCombatActive ? '⚔️ GIAO TRANH' : '1v1 ESPORTS'}
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <div className="w-1.5 h-1.5 rounded-full bg-[#FF2A85] animate-ping" />
-          <span className="font-display font-black text-xs text-white tracking-widest uppercase">
-            ⚡ CHIẾN TUYẾN GIAO TRANH 20HZ ⚡
+          <span className="font-display font-black text-[10px] text-white tracking-widest uppercase">
+            ⚡ CHIẾN TUYẾN 20HZ ⚡
           </span>
           <div className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
         </div>
-        <span className="text-[10px] font-mono text-[#00F0FF] font-bold">
-          {playerFormation.length}/6 QUÂN BỐ TRÍ
+        <span className="text-[9px] font-mono text-[#00F0FF] font-bold">
+          {playerFormation.length}/6 QUÂN
         </span>
       </div>
 
-      {/* 3. Player Sector (Bottom Grid) */}
-      <div className="flex flex-col gap-1 p-1.5 rounded-xl border border-[#00F0FF]/30 bg-[#00F0FF]/5 relative">
-        <div className="flex items-center justify-between text-[10px] font-mono px-1">
-          <span className="text-[#00F0FF] font-bold flex items-center gap-1.5">
-            <span>⚔️</span> CHIẾN TUYẾN CỦA BẠN (3x3 TACTICAL GRID)
+      {/* 3. Player Sector (Bottom 3x3 Hologram Grid) */}
+      <div className="flex flex-col gap-1 p-1 rounded-xl border border-[#00F0FF]/30 bg-[#00F0FF]/5 relative">
+        <div className="flex items-center justify-between text-[9px] font-mono px-1">
+          <span className="text-[#00F0FF] font-bold flex items-center gap-1">
+            <span>⚔️</span> SECTOR CỦA BẠN
           </span>
           <span className="text-gray-400">
-            Kéo thả hoặc nhấp để bố trí quân vào ô cờ
+            Nhấp hoặc thả quân vào bệ
           </span>
         </div>
 
         <div className="flex flex-col gap-1">
-          {playerRows.map((row) => (
-            <div key={row.title} className="grid grid-cols-3 gap-1.5">
+          {playerRows.map((row, rIdx) => (
+            <div key={`player_row_${rIdx}`} className="grid grid-cols-3 gap-1.5">
               {row.slots.map((slotIndex) => {
                 const placement = getPlayerPlacement(slotIndex);
                 const entity = isCombatActive ? getEntityForSlot(slotIndex, false) : undefined;
@@ -174,23 +172,23 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                         onDropValkyrie(valkId, slotIndex);
                       }
                     }}
-                    className={`h-[60px] rounded-lg border flex items-center justify-center p-1 relative transition-all duration-150 cursor-pointer ${
+                    className={`h-[52px] rounded-lg hologram-pad flex items-center justify-center p-0.5 relative transition-all duration-150 cursor-pointer ${
                       isSelected
-                        ? 'border-[#00F0FF] bg-[#00F0FF]/20 shadow-[0_0_15px_rgba(0,240,255,0.5)]'
+                        ? 'border-[#00F0FF] bg-[#00F0FF]/25 shadow-[0_0_15px_rgba(0,240,255,0.6)]'
                         : placement
                         ? 'border-white/20 bg-white/5 hover:border-white/40'
-                        : 'border-dashed border-white/20 bg-black/40 hover:border-[#00F0FF]/60 hover:bg-[#00F0FF]/10'
+                        : 'border-dashed border-white/20 hover:border-[#00F0FF]/60 hover:bg-[#00F0FF]/10'
                     }`}
                   >
                     {/* Header Marker inside empty slot */}
                     {!placement && (
-                      <div className="absolute top-1 left-2 right-2 flex items-center justify-between text-[8px] font-mono text-gray-500 pointer-events-none">
+                      <div className="w-full px-2 flex items-center justify-between text-[8px] font-mono text-gray-500 pointer-events-none">
                         <span>Ô {slotIndex + 1}</span>
-                        <span className={row.color}>{row.bonus}</span>
+                        <span className={row.color}>{row.glyph}</span>
                       </div>
                     )}
 
-                    {placement ? (
+                    {placement && (
                       <ValkyrieCard
                         valkyrieId={placement.valkyrieId}
                         entity={entity}
@@ -198,11 +196,6 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                         onInspect={onInspect}
                         compact={true}
                       />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center text-gray-500 pt-2">
-                        <span className="text-base leading-none text-gray-600">+</span>
-                        <span className="text-[9px] font-mono text-gray-400 mt-0.5">Đặt Quân</span>
-                      </div>
                     )}
                   </div>
                 );

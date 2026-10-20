@@ -144,69 +144,53 @@ export const App: React.FC = () => {
 
   return (
     <div className="h-screen w-screen max-h-screen overflow-hidden flex flex-col justify-between bg-black text-white select-none relative">
-      {/* 1. TOP GAMING HUD (Fixed 48px Header) */}
-      <header className="h-[48px] flex-shrink-0 px-3 py-1 flex items-center justify-between border-b border-white/10 glass-panel z-20">
+      {/* 1. TOP ULTRA-SLIM ESPORTS HUD (Fixed 36px Header) */}
+      <header className="h-[36px] min-h-[36px] flex-shrink-0 px-3 flex items-center justify-between border-b border-white/10 glass-panel z-20">
         {/* Left: Player Profile & Elo */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF2A85] to-[#00F0FF] flex items-center justify-center font-display font-black text-sm text-white shadow-md">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-[#FF2A85] to-[#00F0FF] flex items-center justify-center font-display font-black text-xs text-white shadow-sm">
             V
           </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-display font-black text-xs text-white tracking-wide">
-                Commander Alpha
-              </span>
-              <button
-                onClick={() => setIsLeaderboardOpen(true)}
-                className="px-2 py-0.2 rounded text-[9px] font-mono font-bold transition-all border"
-                style={{
-                  borderColor: `${playerRankInfo.color}80`,
-                  backgroundColor: `${playerRankInfo.color}20`,
-                  color: playerRankInfo.color
-                }}
-                title="Bảng Xếp Hạng Đấu Hạng"
-              >
-                🏆 {playerRankInfo.title} ({playerElo})
-              </button>
-            </div>
-            <span className="text-[9px] text-gray-400 font-mono block leading-none">
-              VALKYRIE PROTOCOL: ZERO • 20HZ
-            </span>
-          </div>
+          <span className="font-display font-bold text-xs text-white tracking-wide hidden sm:inline">
+            Commander Alpha
+          </span>
+          <button
+            onClick={() => setIsLeaderboardOpen(true)}
+            className="px-2 py-0.5 rounded text-[8px] font-mono font-bold transition-all border"
+            style={{
+              borderColor: `${playerRankInfo.color}80`,
+              backgroundColor: `${playerRankInfo.color}20`,
+              color: playerRankInfo.color
+            }}
+            title="Bảng Xếp Hạng Đấu Hạng"
+          >
+            🏆 {playerRankInfo.title} ({playerElo})
+          </button>
         </div>
 
-        {/* Center: Match Score & Phase Emblem */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 border border-white/10">
-            <span className="font-display font-black text-base text-[#00F0FF]">
-              {state.seriesScore.playerWins}
-            </span>
-            <span className="text-gray-500 font-bold text-xs">-</span>
-            <span className="font-display font-black text-base text-[#FF2A85]">
-              {state.seriesScore.opponentWins}
-            </span>
-            <span className="text-[10px] font-mono text-gray-400 ml-1">
-              ({state.format})
-            </span>
+        {/* Center: Match Series Score & Phase Tracker */}
+        <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-xs font-mono">
+            <span className="font-display font-bold text-[#00F0FF]">{state.seriesScore.playerWins}</span>
+            <span className="text-gray-500 font-bold">-</span>
+            <span className="font-display font-bold text-[#FF2A85]">{state.seriesScore.opponentWins}</span>
+            <span className="text-[9px] text-gray-400">({state.format})</span>
           </div>
 
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gradient-to-r from-[#FFD700]/15 to-[#FF2A85]/15 border border-[#FFD700]/30 shadow-[0_0_12px_rgba(255,215,0,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-ping" />
-            <span className="font-display font-black text-xs text-[#FFD700] tracking-wider">
-              ROUND {state.roundNumber}
-            </span>
-            <span className="text-[10px] font-mono text-gray-300 ml-1">
-              • {isCombatActive ? 'GIAO TRANH 20HZ' : 'BỐ TRÍ ĐỘI HÌNH'}
+          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-gradient-to-r from-[#FFD700]/15 to-[#FF2A85]/15 border border-[#FFD700]/30 shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] animate-ping" />
+            <span className="font-display font-bold text-[10px] text-[#FFD700] tracking-wider uppercase">
+              ROUND {state.roundNumber} • {isCombatActive ? 'GIAO TRANH 20HZ' : 'BỐ TRÍ ĐỘI HÌNH'}
             </span>
           </div>
         </div>
 
         {/* Right: Actions & Audio Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           {/* Combat Log Drawer Button */}
           <button
             onClick={() => setIsLogOpen(!isLogOpen)}
-            className={`px-2 py-1 rounded-lg border font-mono text-xs transition-colors flex items-center gap-1 ${
+            className={`px-2 py-0.5 rounded border font-mono text-[10px] transition-colors flex items-center gap-1 ${
               isLogOpen
                 ? 'border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF]'
                 : 'border-white/20 bg-white/5 text-gray-300 hover:text-white'
@@ -215,13 +199,13 @@ export const App: React.FC = () => {
           >
             <span>📜</span>
             <span className="hidden sm:inline">LOG</span>
-            <span className="text-[10px] text-gray-400 font-mono">({state.combatEvents.length})</span>
+            <span className="text-[9px] text-gray-400 font-mono">({state.combatEvents.length})</span>
           </button>
 
           {/* Tactical Guide Modal Button */}
           <button
             onClick={() => setIsGuideOpen(true)}
-            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
+            className="px-2 py-0.5 rounded border border-white/20 bg-white/5 font-mono text-[10px] text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
             title="Hướng dẫn quy tắc 3x3"
           >
             ℹ️ QUY TẮC
@@ -230,7 +214,7 @@ export const App: React.FC = () => {
           {/* Sound Toggle */}
           <button
             onClick={() => setIsAudioMuted(!isAudioMuted)}
-            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
+            className="px-1.5 py-0.5 rounded border border-white/20 bg-white/5 font-mono text-[10px] text-gray-300 hover:border-[#00F0FF] hover:text-white transition-colors"
             title="Bật/Tắt âm thanh Web Audio"
           >
             {isAudioMuted ? '🔇' : '🔊'}
@@ -239,7 +223,7 @@ export const App: React.FC = () => {
           {/* SFW / 16+ Switch */}
           <button
             onClick={() => setIsStreamerMode(!isStreamerMode)}
-            className={`px-2 py-1 rounded-lg border font-mono text-xs transition-colors ${
+            className={`px-1.5 py-0.5 rounded border font-mono text-[10px] transition-colors ${
               isStreamerMode
                 ? 'border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF]'
                 : 'border-white/20 bg-white/5 text-gray-300 hover:border-[#FF2A85]'
@@ -252,7 +236,7 @@ export const App: React.FC = () => {
           {/* Quick Restart */}
           <button
             onClick={() => window.location.reload()}
-            className="px-2 py-1 rounded-lg border border-white/20 bg-white/5 font-mono text-xs text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors"
+            className="px-1.5 py-0.5 rounded border border-white/20 bg-white/5 font-mono text-[10px] text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors"
             title="Khởi động lại ván đấu mới"
           >
             🔄
@@ -260,8 +244,8 @@ export const App: React.FC = () => {
         </div>
       </header>
 
-      {/* 2. CENTRAL BATTLEFIELD (Fixed Viewport Stage) */}
-      <main className="flex-1 min-h-0 overflow-hidden flex flex-col items-center justify-center p-1 md:p-2 relative">
+      {/* 2. CENTRAL BATTLEFIELD (540px Unobstructed Space) */}
+      <main className="flex-1 min-h-0 overflow-hidden flex flex-col items-center justify-center p-1 relative">
         <GameBoard
           playerFormation={state.playerFormation}
           opponentFormation={state.opponentFormation}
@@ -273,85 +257,52 @@ export const App: React.FC = () => {
         />
       </main>
 
-      {/* 3. BOTTOM COMMAND DECK & BENCH (Docked 115px Bar) */}
-      <footer className="h-[120px] md:h-[128px] flex-shrink-0 border-t border-white/10 glass-panel px-3 py-1.5 flex flex-col justify-between z-20">
-        {/* Top Control Bar: Faction Filters, Presets, and Lock CTA */}
-        <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-1.5">
-          {/* Faction Tabs */}
+      {/* 3. BOTTOM FLOATING DOCK RAIL (84px Floating Dock) */}
+      <footer className="h-[84px] flex-shrink-0 floating-dock-rail rounded-2xl mx-2 md:mx-4 mb-2 px-3 py-1 flex items-center justify-between gap-3 z-20">
+        {/* Left: Minimalist Faction Chips & Quick Presets */}
+        <div className="flex flex-col gap-1 flex-shrink-0">
           <div className="flex items-center gap-1">
-            <span className="text-[9px] font-mono text-gray-400 uppercase hidden sm:inline mr-1">
-              PHE:
-            </span>
             {(['ALL', 'NEO_VALHALLA', 'ABYSSAL_EDEN', 'SOL_DYNASTY'] as const).map((fac) => (
               <button
                 key={fac}
                 onClick={() => setBenchFaction(fac)}
-                className={`px-2 py-0.5 rounded text-[9px] font-mono font-bold transition-all ${
+                className={`px-1.5 py-0.5 rounded text-[8px] font-mono font-bold transition-all ${
                   benchFaction === fac
                     ? 'bg-[#00F0FF]/25 text-[#00F0FF] border border-[#00F0FF]/60 shadow-[0_0_8px_rgba(0,240,255,0.4)]'
                     : 'bg-white/5 text-gray-400 border border-white/10 hover:text-white'
                 }`}
               >
-                {fac === 'ALL' ? 'TẤT CẢ (27)' : fac.replace('_', ' ')}
+                {fac === 'ALL'
+                  ? 'TẤT CẢ'
+                  : fac === 'NEO_VALHALLA'
+                  ? 'VAL'
+                  : fac === 'ABYSSAL_EDEN'
+                  ? 'EDEN'
+                  : 'SOL'}
               </button>
             ))}
           </div>
 
-          {/* Quick Formation Presets */}
-          <div className="hidden md:flex items-center gap-1.5">
-            <span className="text-[9px] font-mono text-gray-400 uppercase mr-1">
-              MẪU NHANH:
-            </span>
+          <div className="flex items-center gap-1">
             <button
               onClick={() => applyPreset('VANGUARD')}
-              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#FFD700]/20 border border-white/10 hover:border-[#FFD700] text-gray-300 hover:text-[#FFD700] transition-colors"
-              title="3 Tiên phong vững chắc"
+              className="px-1.5 py-0.5 rounded text-[8px] font-mono bg-white/5 hover:bg-[#FFD700]/20 border border-white/10 hover:border-[#FFD700] text-gray-300 hover:text-[#FFD700] transition-colors"
+              title="3 Tiên phong"
             >
               🛡️ Tiên Phong
             </button>
             <button
               onClick={() => applyPreset('FLANK')}
-              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#FF2A85]/20 border border-white/10 hover:border-[#FF2A85] text-gray-300 hover:text-[#FF2A85] transition-colors"
-              title="Đột kích 2 cánh sườn"
+              className="px-1.5 py-0.5 rounded text-[8px] font-mono bg-white/5 hover:bg-[#FF2A85]/20 border border-white/10 hover:border-[#FF2A85] text-gray-300 hover:text-[#FF2A85] transition-colors"
+              title="Đột kích sườn"
             >
               ⚡ Đột Kích
             </button>
-            <button
-              onClick={() => applyPreset('BUNKER')}
-              className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-[#00F0FF]/20 border border-white/10 hover:border-[#00F0FF] text-gray-300 hover:text-[#00F0FF] transition-colors"
-              title="Xạ thủ pháo kích tầm xa"
-            >
-              🎯 Pháo Đài
-            </button>
-          </div>
-
-          {/* Lock In / Deployment Action CTA */}
-          <div>
-            {state.phase === 'FORMATION_PLACEMENT' && !state.isLockedIn && (
-              <button
-                onClick={lockFormation}
-                className="cyber-button text-xs py-1 px-4 neon-glow-primary shadow-[0_0_15px_rgba(255,42,133,0.5)] font-display tracking-wider"
-              >
-                KHÓA ĐỘI HÌNH & CHIẾN ➔
-              </button>
-            )}
-
-            {state.isLockedIn && state.phase === 'FORMATION_PLACEMENT' && (
-              <span className="px-3 py-1 rounded bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/50 text-xs font-mono font-bold shadow-[0_0_10px_rgba(0,240,255,0.3)]">
-                ✓ ĐÃ KHÓA (CHỜ ĐẤU)
-              </span>
-            )}
-
-            {isCombatActive && (
-              <span className="px-3 py-1 rounded bg-red-950/40 text-red-400 border border-red-500/40 text-xs font-mono font-bold animate-pulse">
-                ⚡ ĐANG GIAO TRANH 20HZ
-              </span>
-            )}
           </div>
         </div>
 
-        {/* Bottom Horizontal Bench Carousel */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-0.5 pt-1">
+        {/* Center: Horizontal Scrollable Reserve Valkyries */}
+        <div className="flex-1 min-w-0 flex items-center gap-2 overflow-x-auto scrollbar-thin py-0.5">
           {filteredValkyries.map((valk) => {
             const isSelected = selectedBenchValkyrie === valk.id;
             const isAlreadyPlaced = state.playerFormation.some((p) => p.valkyrieId === valk.id);
@@ -365,7 +316,7 @@ export const App: React.FC = () => {
                   e.dataTransfer.effectAllowed = 'move';
                 }}
                 onClick={() => !isAlreadyPlaced && setSelectedBenchValkyrie(valk.id)}
-                className={`flex-shrink-0 p-1.5 rounded-lg border transition-all duration-150 cursor-grab active:cursor-grabbing flex items-center gap-2 min-w-[145px] relative ${
+                className={`flex-shrink-0 p-1 rounded-lg border transition-all duration-150 cursor-grab active:cursor-grabbing flex items-center gap-1.5 w-[136px] h-[58px] relative ${
                   isSelected
                     ? 'border-[#FF2A85] bg-[#FF2A85]/20 shadow-[0_0_12px_#FF2A85]'
                     : isAlreadyPlaced
@@ -373,7 +324,7 @@ export const App: React.FC = () => {
                     : 'border-white/10 hover:border-white/30 bg-white/5 hover:scale-102'
                 }`}
               >
-                <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0 relative shadow-sm">
+                <div className="w-8 h-8 rounded-md overflow-hidden border border-white/20 bg-black/60 flex-shrink-0 relative shadow-sm">
                   <img
                     src={`/avatars/${valk.id}.jpg`}
                     alt={valk.name}
@@ -388,29 +339,53 @@ export const App: React.FC = () => {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between text-[8px] font-mono text-gray-400">
+                  <div className="flex items-center justify-between text-[7px] font-mono text-gray-400">
                     <span className="truncate">{valk.role.split('_')[0]}</span>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setInspectingValkyrieId(valk.id);
                       }}
-                      className="hover:text-[#00F0FF] px-1 text-[9px]"
-                      title="Xem chi tiết"
+                      className="hover:text-[#00F0FF] px-0.5 text-[8px]"
+                      title="Chi tiết"
                     >
                       ℹ
                     </button>
                   </div>
-                  <div className="font-display font-bold text-[11px] text-white truncate leading-tight">
+                  <div className="font-display font-bold text-[10px] text-white truncate leading-tight">
                     {valk.name}
                   </div>
-                  <div className="text-[9px] text-gray-400 font-mono">
+                  <div className="text-[8px] text-gray-400 font-mono">
                     HP:{valk.stats.maxHp} ATK:{valk.stats.attack}
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Right: Battle CTA Button */}
+        <div className="flex-shrink-0">
+          {state.phase === 'FORMATION_PLACEMENT' && !state.isLockedIn && (
+            <button
+              onClick={lockFormation}
+              className="cyber-button text-xs py-2 px-4 neon-glow-primary shadow-[0_0_15px_rgba(255,42,133,0.6)] font-display tracking-wider font-bold"
+            >
+              ⚔️ CHIẾN!
+            </button>
+          )}
+
+          {state.isLockedIn && state.phase === 'FORMATION_PLACEMENT' && (
+            <span className="px-3 py-1.5 rounded-lg bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/50 text-xs font-mono font-bold shadow-[0_0_10px_rgba(0,240,255,0.3)]">
+              ✓ ĐÃ KHÓA
+            </span>
+          )}
+
+          {isCombatActive && (
+            <span className="px-3 py-1.5 rounded-lg bg-red-950/50 text-red-400 border border-red-500/50 text-xs font-mono font-bold animate-pulse">
+              ⚡ 20HZ
+            </span>
+          )}
         </div>
       </footer>
 

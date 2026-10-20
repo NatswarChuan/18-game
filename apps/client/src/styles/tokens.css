@@ -108,6 +108,7 @@ body {
 .max-w-4xl { max-width: 56rem; }
 .max-w-5xl { max-width: 64rem; }
 .max-w-\[120px\] { max-width: 120px; }
+.max-w-\[460px\] { max-width: 460px; }
 .max-w-\[480px\] { max-width: 480px; }
 .max-w-\[520px\] { max-width: 520px; }
 .max-w-\[90vw\] { max-width: 90vw; }
@@ -116,6 +117,8 @@ body {
 .h-2 { height: 8px; }
 .w-8 { width: 32px; }
 .h-8 { height: 32px; }
+.w-9 { width: 36px; }
+.h-9 { height: 36px; }
 .w-12 { width: 48px; }
 .h-12 { height: 48px; }
 .w-14 { width: 56px; }
@@ -123,15 +126,61 @@ body {
 .w-16 { width: 64px; }
 .h-16 { height: 64px; }
 .h-1\.5 { height: 6px; }
+.h-4 { height: 16px; }
+.h-4\.5 { height: 18px; }
 .h-6 { height: 24px; }
 .h-32 { height: 128px; }
+.h-\[36px\] { height: 36px; }
+.min-h-\[36px\] { min-height: 36px; }
+.h-\[48px\] { height: 48px; }
 .min-h-\[48px\] { min-height: 48px; }
+.h-\[52px\] { height: 52px; }
 .h-\[60px\] { height: 60px; }
 .h-\[74px\] { height: 74px; }
+.h-\[84px\] { height: 84px; }
 .h-\[120px\] { height: 120px; }
 .h-\[128px\] { height: 128px; }
+.w-\[150px\] { width: 150px; }
 .w-\[170px\] { width: 170px; }
 .w-\[380px\] { width: 380px; }
+
+.rounded-2xl { border-radius: 16px; }
+.rounded-3xl { border-radius: 24px; }
+
+.bottom-2 { bottom: 8px; }
+.inset-x-2 { left: 8px; right: 8px; }
+.inset-x-4 { left: 16px; right: 16px; }
+
+/* V2 Holographic Tech-Pads & Battle Rail */
+.hologram-pad {
+  background: radial-gradient(circle at center, rgba(0, 240, 255, 0.08) 0%, rgba(13, 14, 21, 0.85) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hologram-pad:hover {
+  border-color: rgba(0, 240, 255, 0.65);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+  background: radial-gradient(circle at center, rgba(0, 240, 255, 0.16) 0%, rgba(13, 14, 21, 0.85) 100%);
+}
+
+.hologram-pad-enemy {
+  background: radial-gradient(circle at center, rgba(255, 51, 68, 0.08) 0%, rgba(13, 14, 21, 0.85) 100%);
+  border: 1px solid rgba(255, 51, 68, 0.25);
+}
+
+.clash-laser-beam {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 42, 133, 0.5) 25%, rgba(0, 240, 255, 0.8) 50%, rgba(255, 42, 133, 0.5) 75%, transparent 100%);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+.floating-dock-rail {
+  background: rgba(13, 14, 21, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.75), 0 0 20px rgba(0, 240, 255, 0.18);
+}
 
 /* ==========================================================================
    POSITIONING
