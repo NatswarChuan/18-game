@@ -14,6 +14,7 @@ Tất cả các tác tử ở giai đoạn sau (`frontend-engineer` ở Pha 4, `
 | [`design-system-tokens.md`](design-system-tokens.md) | Bảng mã màu Dark Cyberpunk Neon, Glassmorphism, khoảng cách chạm, phông chữ. | `frontend-engineer` |
 | [`character-roster-18plus.md`](character-roster-18plus.md) | Dàn 27 Valkyries (3 Factions: Neo-Valhalla, Abyssal Eden, Sol-Dynasty): Lore, Visual Specs, 3 Cấp độ rách giáp (Pristine $\rightarrow$ Torn $\rightarrow$ Climax Extreme). | `frontend-engineer`, `backend-engineer` |
 | [`ui-wireframes-3x3.md`](ui-wireframes-3x3.md) | Wireframes chi tiết 3 màn hình cốt lõi: Draft 9 Buff, Xếp cờ 3x3 (Magnetic Snap) và Combat HUD. | `frontend-engineer`, `qa-balance-tester` |
+| [`ui-redesign-v2-esports-arena.md`](ui-redesign-v2-esports-arena.md) | **[MỚI V2]** Đặc tả tái thiết kế UI/UX Esports Arena V2: Triệt tiêu text thừa, Bệ Hologram, Dock nổi bo cong, và Biên bản Review 3 Agents đạt Pass 100%. | `frontend-engineer`, `qa-balance-tester`, `system-architect` |
 | [`vfx-climax-storyboard.md`](vfx-climax-storyboard.md) | Kịch bản phân cảnh Ultimate Cut-In cận cảnh, hiệu ứng rung chấn và tia lửa hạt Skia. | `frontend-engineer` |
 | [`audio-voice-spec.md`](audio-voice-spec.md) | Đặc tả âm thanh va chạm kim loại, nhạc nền synthwave dồn dập, và danh mục voice-lines tiếng Nhật gợi cảm. | `frontend-engineer` |
 | [`assets/`](assets/README.md) | Thư mục lưu trữ assets hình ảnh concept art, waifu portrait được sinh ra từ `generate_image`. | `frontend-engineer` |
