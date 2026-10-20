@@ -10,6 +10,7 @@
 | **#1 (Live)** | **9.2 / 10** | **9.4 / 10** | **9.5 / 10** | `CLOSED_PASS` | 0 | **STAGE_GATE_PASS** |
 | **#2 (Multi-Round)** | **9.6 / 10** | **9.7 / 10** | **9.8 / 10** | `CLOSED_PASS` | 0 | **STAGE_GATE_PASS** |
 | **#3 (Cut-In & Avatars)** | **9.8 / 10** | **9.9 / 10** | **9.9 / 10** | `CLOSED_PASS` | 0 | **STAGE_GATE_PASS** |
+| **#4 (V2 Esports Arena)**| **9.9 / 10** | **9.8 / 10** | **10.0 / 10**| `CLOSED_PASS` | 0 | **STAGE_GATE_PASS (EXCELLENT)** |
 
 ---
 
