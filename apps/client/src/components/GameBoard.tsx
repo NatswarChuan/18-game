@@ -63,7 +63,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   return (
     <div className="w-full h-full flex flex-col justify-between max-w-4xl mx-auto px-2 select-none">
       {/* 1. Opponent Sector (Top Grid) */}
-      <div className="flex flex-col gap-1.5 p-2 rounded-xl border border-red-500/20 bg-red-950/10 relative">
+      <div className="flex flex-col gap-1 p-1.5 rounded-xl border border-red-500/20 bg-red-950/10 relative">
         <div className="flex items-center justify-between text-[10px] font-mono px-1">
           <span className="text-red-400 font-bold flex items-center gap-1.5">
             <span>🛡️</span> CHIẾN TUYẾN ĐỐI PHƯƠNG
@@ -73,9 +73,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           </span>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           {opponentRows.map((row) => (
-            <div key={row.title} className="grid grid-cols-3 gap-2">
+            <div key={row.title} className="grid grid-cols-3 gap-1.5">
               {row.slots.map((slotIndex) => {
                 const oppUnit = getOpponentPlacement(slotIndex);
                 const entity = isCombatActive ? getEntityForSlot(slotIndex, true) : undefined;
@@ -85,7 +85,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                   return (
                     <div
                       key={`opp_${slotIndex}`}
-                      className="h-[74px] rounded-lg border border-red-500/15 bg-black/40 flex flex-col items-center justify-center text-center relative overflow-hidden"
+                      className="h-[60px] rounded-lg border border-red-500/15 bg-black/40 flex flex-col items-center justify-center text-center relative overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-[radial-gradient(#FF3344_1px,transparent_1px)] [background-size:12px_12px] opacity-20" />
                       <span className="text-base text-red-500/40 mb-0.5">🔒</span>
@@ -100,7 +100,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 return (
                   <div
                     key={`opp_${slotIndex}`}
-                    className="h-[74px] rounded-lg border border-red-500/20 bg-black/30 flex items-center justify-center p-1 relative"
+                    className="h-[60px] rounded-lg border border-red-500/20 bg-black/30 flex items-center justify-center p-1 relative"
                   >
                     {oppUnit ? (
                       <ValkyrieCard
@@ -139,7 +139,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       </div>
 
       {/* 3. Player Sector (Bottom Grid) */}
-      <div className="flex flex-col gap-1.5 p-2 rounded-xl border border-[#00F0FF]/30 bg-[#00F0FF]/5 relative">
+      <div className="flex flex-col gap-1 p-1.5 rounded-xl border border-[#00F0FF]/30 bg-[#00F0FF]/5 relative">
         <div className="flex items-center justify-between text-[10px] font-mono px-1">
           <span className="text-[#00F0FF] font-bold flex items-center gap-1.5">
             <span>⚔️</span> CHIẾN TUYẾN CỦA BẠN (3x3 TACTICAL GRID)
@@ -149,9 +149,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           </span>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           {playerRows.map((row) => (
-            <div key={row.title} className="grid grid-cols-3 gap-2">
+            <div key={row.title} className="grid grid-cols-3 gap-1.5">
               {row.slots.map((slotIndex) => {
                 const placement = getPlayerPlacement(slotIndex);
                 const entity = isCombatActive ? getEntityForSlot(slotIndex, false) : undefined;
@@ -174,7 +174,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                         onDropValkyrie(valkId, slotIndex);
                       }
                     }}
-                    className={`h-[74px] rounded-lg border flex items-center justify-center p-1 relative transition-all duration-150 cursor-pointer ${
+                    className={`h-[60px] rounded-lg border flex items-center justify-center p-1 relative transition-all duration-150 cursor-pointer ${
                       isSelected
                         ? 'border-[#00F0FF] bg-[#00F0FF]/20 shadow-[0_0_15px_rgba(0,240,255,0.5)]'
                         : placement
