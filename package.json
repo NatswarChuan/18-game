@@ -2,21 +2,24 @@
   "name": "valkyrie-protocol-zero",
   "version": "1.0.0",
   "private": true,
-  "description": "Valkyrie Protocol: Zero - Tactical 3x3 Anime Cyberpunk Auto-Battler with 12D Vector DB (16+ Edition)",
+  "type": "module",
+  "description": "Valkyrie Protocol: Zero - Tactical 3x3 Anime Cyberpunk Auto-Battler with 27 Valkyries and 3D Arena in XR Blocks",
   "scripts": {
-    "build": "pnpm --filter \"@valkyrie/*\" build",
-    "test": "pnpm --filter \"@valkyrie/*\" test",
-    "typecheck": "pnpm --filter \"@valkyrie/*\" typecheck",
-    "lint": "pnpm --filter \"@valkyrie/*\" lint",
-    "dev:server": "pnpm --filter @valkyrie/server dev",
-    "dev:client": "pnpm --filter @valkyrie/client dev",
-    "local-bootstrap": "pnpm install && pnpm --filter @valkyrie/shared-domain build"
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pmndrs/uikit": "1.0.64",
+    "@preact/signals-core": "1.14.0",
+    "lit": "3.3.1",
+    "three": "0.186.0",
+    "xrblocks": "0.24.0"
   },
   "devDependencies": {
+    "@types/three": "0.186.0",
     "typescript": "^5.7.3",
-    "vitest": "^3.0.7"
-  },
-  "engines": {
-    "node": ">=20.0.0"
+    "vite": "^6.0.0"
   }
 }

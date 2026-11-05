@@ -1,0 +1,522 @@
+:root {
+  font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #060913;
+  color: #f1f5f9;
+  user-select: none;
+}
+
+/* ==========================================================================
+   Cyberpunk Tactical Arena 3x3 Grid - CSS Animations & Hover Effects
+   ========================================================================== */
+
+@keyframes arenaTargetPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.45), inset 0 0 8px rgba(0, 240, 255, 0.25);
+    border-color: rgba(0, 240, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 240, 255, 0.95), inset 0 0 18px rgba(0, 240, 255, 0.55);
+    border-color: #00f0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.45), inset 0 0 8px rgba(0, 240, 255, 0.25);
+    border-color: rgba(0, 240, 255, 0.7);
+  }
+}
+
+@keyframes arenaScanlineSweep {
+  0% {
+    top: -120%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 220%;
+    opacity: 0;
+  }
+}
+
+@keyframes arenaReticleLock {
+  0% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltipFlyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes arenaCornerGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px #00f0ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #00f0ff);
+  }
+}
+
+/* 2D HUD Arena 3x3 Overlay Dock */
+.arena-hud-dock {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(8, 12, 28, 0.94);
+  border: 1.5px solid rgba(0, 240, 255, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 14px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 240, 255, 0.25);
+  width: 390px;
+  max-width: calc(100vw - 40px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+}
+
+.arena-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  padding-bottom: 6px;
+}
+
+.arena-hud-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #00f0ff;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arena-hud-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.arena-3x3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: visible;
+}
+
+.arena-row-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: visible;
+}
+
+.arena-row-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.arena-row-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  overflow: visible;
+}
+
+/* 3X3 GRID CELLS WITH INTERACTIVE CSS HOVER EFFECTS */
+.arena-grid-cell {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(8, 12, 28, 0.98));
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Internal Scanline Boundary Container */
+.cell-scanline-container {
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Cell Hologram Laser Scanline */
+.cell-scanline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(180deg, transparent, rgba(0, 240, 255, 0.8), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* INTERACTIVE HOVER ANIMATION STATE */
+.arena-grid-cell:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: #00f0ff;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(15, 23, 42, 0.98));
+  animation: arenaTargetPulse 1.6s infinite ease-in-out;
+  z-index: 50;
+}
+
+.arena-grid-cell:hover .cell-scanline-container::before {
+  animation: arenaScanlineSweep 1.1s infinite ease-in-out;
+}
+
+/* Corner Reticle Brackets */
+.arena-grid-cell .cell-reticle {
+  position: absolute;
+  inset: 2px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 6;
+}
+
+.arena-grid-cell .cell-reticle span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: #00f0ff;
+  border-style: solid;
+}
+
+.arena-grid-cell .cell-reticle .tl {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+.arena-grid-cell .cell-reticle .tr {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+.arena-grid-cell .cell-reticle .bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+.arena-grid-cell .cell-reticle .br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+.arena-grid-cell:hover .cell-reticle {
+  opacity: 1;
+  animation: arenaReticleLock 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+             arenaCornerGlow 1.6s infinite ease-in-out;
+}
+
+/* SELECTED / ACTIVE TARGETED CELL STATE */
+.arena-grid-cell.targeted {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(15, 23, 42, 0.98));
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.8), inset 0 0 14px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+  z-index: 20;
+}
+
+.arena-grid-cell.targeted .cell-reticle {
+  opacity: 1;
+}
+
+.arena-grid-cell.targeted .cell-reticle span {
+  border-color: #ffd700;
+}
+
+/* ==========================================================================
+   HOVER-TRIGGERED CHARACTER STATS TOOLTIP (ATK, DEF, SPD, HP)
+   ========================================================================== */
+
+.cell-stat-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  width: 240px;
+  background: linear-gradient(145deg, rgba(8, 14, 32, 0.98), rgba(4, 8, 22, 0.99));
+  border: 1.5px solid #00f0ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.88), 0 0 25px rgba(0, 240, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  pointer-events: none;
+  text-align: left;
+}
+
+/* Arrow indicator pointing to cell */
+.cell-stat-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #00f0ff transparent transparent transparent;
+}
+
+/* Horizontal positioning according to column to prevent screen overflow */
+.arena-grid-cell[data-col="left"] .cell-stat-tooltip {
+  left: 0;
+  transform-origin: bottom left;
+}
+.arena-grid-cell[data-col="left"] .cell-stat-tooltip::after {
+  left: 24px;
+}
+
+.arena-grid-cell[data-col="center"] .cell-stat-tooltip {
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+}
+.arena-grid-cell[data-col="center"] .cell-stat-tooltip::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arena-grid-cell[data-col="right"] .cell-stat-tooltip {
+  right: 0;
+  transform-origin: bottom right;
+}
+.arena-grid-cell[data-col="right"] .cell-stat-tooltip::after {
+  right: 24px;
+}
+
+/* Top row tooltip adjustment if near viewport boundary */
+.arena-grid-cell[data-row="front"] .cell-stat-tooltip {
+  bottom: calc(100% + 8px);
+}
+
+/* DISPLAY TOOLTIP ON HOVER ONLY WHEN OCCUPANT IS PRESENT */
+.arena-grid-cell.has-occupant:hover .cell-stat-tooltip {
+  display: flex !important;
+  flex-direction: column;
+  gap: 6px;
+  animation: tooltipFlyIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tooltip Interior Header */
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  padding-bottom: 4px;
+}
+
+.tooltip-valk-name {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tooltip-valk-faction {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tooltip-valk-faction.valhalla {
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+}
+.tooltip-valk-faction.eden {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.15);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+}
+.tooltip-valk-faction.sol {
+  color: #ffb700;
+  background: rgba(255, 183, 0, 0.15);
+  border: 1px solid rgba(255, 183, 0, 0.4);
+}
+
+.tooltip-valk-title {
+  font-size: 11px;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: -2px;
+}
+
+/* 3x2 STATS MATRIX WITH ATK, DEF, SPD, HP, RNG, EN */
+.tooltip-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.stat-value.hp { color: #00f0ff; }
+.stat-value.atk { color: #ff4466; text-shadow: 0 0 8px rgba(255, 68, 102, 0.6); }
+.stat-value.def { color: #38bdf8; text-shadow: 0 0 8px rgba(56, 189, 248, 0.6); }
+.stat-value.spd { color: #c084fc; text-shadow: 0 0 8px rgba(192, 132, 252, 0.6); }
+.stat-value.rng { color: #ffd700; }
+.stat-value.en { color: #10b981; }
+
+.tooltip-ultimate {
+  font-size: 10px;
+  line-height: 1.35;
+  color: #e2e8f0;
+  background: rgba(255, 42, 133, 0.12);
+  border-left: 2px solid #ff2a85;
+  padding: 4px 6px;
+  border-radius: 0 4px 4px 0;
+}
+
+.tooltip-ultimate .ult-tag {
+  font-weight: 800;
+  color: #ff2a85;
+}
+
+/* Cell Internal Typography & Elements */
+.cell-index-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 0.05em;
+}
+
+.cell-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.arena-grid-cell:hover .cell-avatar {
+  transform: scale(1.1);
+  border-color: #00f0ff;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.7);
+}
+
+.cell-occupant-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cell-empty-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.cell-bonus-tag {
+  font-size: 9px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.arena-grid-cell:hover .cell-bonus-tag {
+  color: #00f0ff;
+}
+
+.arena-hud-footer {
+  font-size: 11px;
+  color: #00f0ff;
+  text-align: center;
+  background: rgba(0, 240, 255, 0.08);
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px dashed rgba(0, 240, 255, 0.3);
+}
