@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CombatEntitySnapshot, getValkyrieById } from '@valkyrie/shared-domain';
+import { ValkyrieThreeAvatar } from './ValkyrieThreeAvatar.js';
 
 interface ValkyrieCardProps {
   readonly entity?: CombatEntitySnapshot | undefined;
@@ -31,21 +32,40 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
   const isCasting = entity?.isCastingUltimate ?? false;
   const isDead = entity ? !entity.isAlive : false;
 
-  // Floating Combat Numbers
+  // Floating Combat Numbers & Hit Reactions
   const prevHpRef = useRef(hp);
   const [damageFloater, setDamageFloater] = useState<{ value: number; type: 'DAMAGE' | 'HEAL'; id: number } | null>(null);
+  const [isHit, setIsHit] = useState(false);
+  const [hasShockwave, setHasShockwave] = useState(false);
+  const prevTierRef = useRef(tier);
 
   useEffect(() => {
     if (entity) {
       const diff = entity.currentHp - prevHpRef.current;
       if (diff < 0) {
         setDamageFloater({ value: Math.abs(diff), type: 'DAMAGE', id: Date.now() });
+        setIsHit(true);
+        const hitTimer = setTimeout(() => setIsHit(false), 300);
+        prevHpRef.current = entity.currentHp;
+        return () => clearTimeout(hitTimer);
       } else if (diff > 0) {
         setDamageFloater({ value: diff, type: 'HEAL', id: Date.now() });
       }
       prevHpRef.current = entity.currentHp;
     }
+    return undefined;
   }, [entity?.currentHp]);
+
+  useEffect(() => {
+    if (tier > prevTierRef.current) {
+      setHasShockwave(true);
+      const shockwaveTimer = setTimeout(() => setHasShockwave(false), 600);
+      prevTierRef.current = tier;
+      return () => clearTimeout(shockwaveTimer);
+    }
+    prevTierRef.current = tier;
+    return undefined;
+  }, [tier]);
 
   useEffect(() => {
     if (!damageFloater) return;
@@ -70,14 +90,21 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
     cardBorder = 'border-[#FF2A85] critical-burst-pulse';
   }
 
-  // Compact Mode: Tactical Unit Medallion for in-grid battle token (V2 Esports)
+  // Compact Mode: Tactical Unit Medallion for in-grid battle token (V3 Isometric)
   if (compact) {
+    const lungeClass = isCasting ? (isEnemy ? 'animate-lunge-enemy' : 'animate-lunge-player') : '';
+    const hitClass = isHit ? 'animate-hit-recoil' : '';
+    const overdriveClass = tier === 3 ? 'overdrive-aura' : '';
+
     return (
       <div
-        className={`relative w-full h-[48px] px-1.5 py-1 rounded-lg border glass-panel transition-all duration-150 flex items-center justify-between gap-1.5 ${cardBorder} ${
+        className={`billboard-token relative w-full h-[64px] px-1.5 py-1 rounded-lg border glass-panel transition-all duration-150 flex items-center justify-between gap-1.5 ${cardBorder} ${lungeClass} ${hitClass} ${overdriveClass} ${
           isDead ? 'opacity-30 grayscale' : ''
         } ${isCasting ? 'scale-105 shadow-[0_0_20px_#FF2A85] border-[#FF2A85]' : ''}`}
       >
+        {/* Cloth Damage Shockwave Ring */}
+        {hasShockwave && <div className="cloth-shockwave" />}
+
         {/* Floating Damage Text */}
         {damageFloater && (
           <div
@@ -92,19 +119,21 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
           </div>
         )}
 
-        {/* Left: Avatar with Glowing Border */}
-        <div className="w-8 h-8 rounded-md overflow-hidden border border-white/20 bg-black/60 flex-shrink-0 relative shadow-sm">
-          <img
-            src={`/avatars/${valk.id}.jpg`}
-            alt={valk.name}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLElement).style.display = 'none';
-            }}
+        {/* Left: 2.5D Three.js Hologram Avatar */}
+        <div
+          className="w-10 h-10 rounded-md overflow-hidden border border-white/20 bg-black/60 flex-shrink-0 relative shadow-sm"
+          style={{ width: '40px', height: '40px', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px' }}
+        >
+          <ValkyrieThreeAvatar
+            valkyrieId={valk.id}
+            faction={valk.faction}
+            tier={tier}
+            isEnemy={isEnemy}
+            isCasting={isCasting}
+            isHit={isHit}
+            isDead={isDead}
+            size={40}
           />
-          <span className="absolute inset-0 flex items-center justify-center font-bold text-[10px] text-white">
-            {valk.name[0]}
-          </span>
         </div>
 
         {/* Center: Name + Tier Badge + Dual Micro Bars */}
@@ -119,7 +148,7 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
           </div>
 
           {/* Micro HP Bar */}
-          <div className="w-full h-1 bg-black/70 rounded-full overflow-hidden mt-0.5">
+          <div className="w-full h-1.5 bg-black/70 rounded-full overflow-hidden mt-0.5">
             <div
               className={`h-full transition-all duration-150 ${
                 hpPercent > 50 ? 'bg-[#00F0FF]' : hpPercent > 25 ? 'bg-[#FFD700]' : 'bg-[#FF3344]'
@@ -129,7 +158,7 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
           </div>
 
           {/* Micro Mana Bar */}
-          <div className="w-full h-1 bg-black/70 rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-black/70 rounded-full overflow-hidden">
             <div
               className={`h-full transition-all duration-150 ${
                 mana >= 100 ? 'bg-[#FF2A85] animate-pulse' : 'bg-[#8A2BE2]'
@@ -204,19 +233,21 @@ export const ValkyrieCard: React.FC<ValkyrieCardProps> = ({
       {/* Valkyrie Name & Role & Avatar */}
       <div className="flex items-center justify-between mb-2 gap-2">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/20 bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0 relative shadow-md">
-            <img
-              src={`/avatars/${valk.id}.jpg`}
-              alt={valk.name}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // Graceful fallback to letter badge if avatar file doesn't exist
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+          <div
+            className="w-10 h-10 rounded-xl overflow-hidden border border-white/20 bg-black/60 flex-shrink-0 relative shadow-md"
+            style={{ width: '40px', height: '40px', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px' }}
+          >
+            <ValkyrieThreeAvatar
+              valkyrieId={valk.id}
+              faction={valk.faction}
+              tier={tier}
+              isEnemy={isEnemy}
+              isCasting={isCasting}
+              isHit={isHit}
+              isDead={isDead}
+              size={40}
+              interactive={true}
             />
-            <span className="absolute inset-0 flex items-center justify-center font-bold text-xs text-white -z-0">
-              {valk.name[0]}
-            </span>
           </div>
           <div>
             <h4 className="font-display font-bold text-sm text-white tracking-wide flex items-center gap-1.5 leading-tight">

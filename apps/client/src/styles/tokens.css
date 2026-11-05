@@ -21,6 +21,11 @@
   padding: 0;
 }
 
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -32,13 +37,17 @@ html, body, #root {
 }
 
 body {
-  background-color: var(--color-bg-base);
+  background-color: #08090E;
   color: var(--color-text-main);
   font-family: var(--font-sub);
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(255, 42, 133, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.1) 0%, transparent 40%),
-    linear-gradient(rgba(13, 14, 21, 0.96), rgba(13, 14, 21, 0.96));
+    radial-gradient(circle at 50% 25%, rgba(0, 240, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(255, 42, 133, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(138, 43, 226, 0.12) 0%, transparent 45%),
+    linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 40%, rgba(18, 22, 38, 0.9) 0%, rgba(8, 9, 14, 0.98) 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px, 100% 100%;
   background-attachment: fixed;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
@@ -119,12 +128,17 @@ body {
 .h-8 { height: 32px; }
 .w-9 { width: 36px; }
 .h-9 { height: 36px; }
+.w-10 { width: 40px !important; }
+.h-10 { height: 40px !important; }
+.w-\[40px\] { width: 40px !important; }
+.h-\[40px\] { height: 40px !important; }
 .w-12 { width: 48px; }
 .h-12 { height: 48px; }
 .w-14 { width: 56px; }
 .h-14 { height: 56px; }
 .w-16 { width: 64px; }
 .h-16 { height: 64px; }
+.h-\[64px\] { height: 64px !important; }
 .h-1\.5 { height: 6px; }
 .h-4 { height: 16px; }
 .h-4\.5 { height: 18px; }
@@ -546,3 +560,135 @@ body {
   .md\:h-36 { height: 144px !important; }
   .md\:p-2 { padding: 8px !important; }
 }
+
+/* ==========================================================================
+   2.5D ISOMETRIC STADIUM & KINETIC ACTION ENGINE (V3)
+   ========================================================================== */
+.isometric-arena-viewport {
+  perspective: 1100px;
+  perspective-origin: 50% 36%;
+}
+
+.isometric-board-grid {
+  transform: rotateX(20deg) scale(0.96);
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.billboard-token {
+  transform: rotateX(-20deg) translateY(-4px);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+
+.h-\[72px\] { height: 72px !important; }
+.w-\[72px\] { width: 72px !important; }
+.min-w-\[260px\] { min-width: 260px !important; }
+.max-w-\[280px\] { max-width: 280px !important; }
+
+/* 3D Bevel Hologram Tech-Pads */
+.hologram-pad-iso {
+  background: linear-gradient(180deg, rgba(13, 24, 40, 0.85) 0%, rgba(4, 9, 18, 0.95) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 0 12px rgba(0, 240, 255, 0.12);
+  border-radius: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hologram-pad-iso:hover {
+  border-color: rgba(0, 240, 255, 0.8);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.hologram-pad-iso-enemy {
+  background: linear-gradient(180deg, rgba(38, 12, 18, 0.85) 0%, rgba(18, 4, 8, 0.95) 100%);
+  border: 1px solid rgba(255, 51, 68, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 12px rgba(255, 51, 68, 0.12);
+  border-radius: 10px;
+}
+
+/* Kinetic Combat Animations */
+@keyframes unitLungePlayer {
+  0% { transform: rotateX(-20deg) translateY(-4px); }
+  40% { transform: rotateX(-20deg) translateY(-18px) scale(1.08); filter: drop-shadow(0 0 12px #00F0FF); }
+  100% { transform: rotateX(-20deg) translateY(-4px); }
+}
+.animate-lunge-player {
+  animation: unitLungePlayer 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes unitLungeEnemy {
+  0% { transform: rotateX(-20deg) translateY(-4px); }
+  40% { transform: rotateX(-20deg) translateY(18px) scale(1.08); filter: drop-shadow(0 0 12px #FF3344); }
+  100% { transform: rotateX(-20deg) translateY(-4px); }
+}
+.animate-lunge-enemy {
+  animation: unitLungeEnemy 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes hitRecoil {
+  0% { transform: rotateX(-20deg) translate(0, -4px); filter: brightness(1); }
+  25% { transform: rotateX(-20deg) translate(-4px, -2px); filter: brightness(2) drop-shadow(0 0 10px #FF3344); }
+  50% { transform: rotateX(-20deg) translate(4px, -6px); }
+  75% { transform: rotateX(-20deg) translate(-2px, -4px); }
+  100% { transform: rotateX(-20deg) translate(0, -4px); filter: brightness(1); }
+}
+.animate-hit-recoil {
+  animation: hitRecoil 0.3s ease-out;
+}
+
+@keyframes clothShockwave {
+  0% { transform: scale(0.8); opacity: 1; border-color: #FFD700; box-shadow: 0 0 0 rgba(255, 215, 0, 0.8); }
+  100% { transform: scale(1.8); opacity: 0; border-color: #FF2A85; box-shadow: 0 0 30px rgba(255, 42, 133, 0); }
+}
+.cloth-shockwave {
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+  pointer-events: none;
+  animation: clothShockwave 0.6s ease-out forwards;
+}
+
+@keyframes overdriveFlame {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 42, 133, 0.8), inset 0 0 10px rgba(255, 42, 133, 0.4); border-color: #FF2A85; }
+  50% { box-shadow: 0 0 30px rgba(255, 42, 133, 1), inset 0 0 20px rgba(255, 215, 0, 0.6); border-color: #FFD700; }
+}
+.overdrive-aura {
+  animation: overdriveFlame 1.2s infinite ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex { display: flex !important; }
+  .lg\:hidden { display: none !important; }
+  .lg\:block { display: block !important; }
+}
+
+.w-\[260px\] { width: 260px !important; }
+.min-w-\[260px\] { min-width: 260px !important; }
+.max-w-\[260px\] { max-width: 260px !important; }
+
+.w-\[540px\] { width: 540px !important; }
+.min-w-\[540px\] { min-width: 540px !important; }
+.max-w-\[540px\] { max-width: 540px !important; }
+
+.w-\[560px\] { width: 560px !important; }
+.min-w-\[560px\] { min-width: 560px !important; }
+.max-w-\[560px\] { max-width: 560px !important; }
+.h-\[430px\] { height: 430px !important; }
+.min-h-\[430px\] { min-height: 430px !important; }
+
+.w-\[580px\] { width: 580px !important; }
+.min-w-\[580px\] { min-width: 580px !important; }
+.max-w-\[580px\] { max-width: 580px !important; }
+
+.w-\[620px\] { width: 620px !important; }
+.max-w-\[620px\] { max-width: 620px !important; }
+
+.w-\[960px\] { width: 960px !important; }
+.min-w-\[960px\] { min-width: 960px !important; }
+.max-w-\[960px\] { max-width: 960px !important; }
+.h-\[520px\] { height: 520px !important; }
+.min-h-\[520px\] { min-height: 520px !important; }
+

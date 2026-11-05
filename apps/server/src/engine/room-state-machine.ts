@@ -1,31 +1,34 @@
 import {
   BO3_TARGET_WINS,
   BO5_TARGET_WINS,
-  CombatEntitySnapshot,
-  CombatEventItem,
   DRAFT_TIMEOUT_SECONDS,
   GamePhase,
   MatchFormat,
   PREPARATION_TIMEOUT_SECONDS,
   SeriesScore,
-  ServerMessage,
   UnitPlacement,
   validateFormation
 } from '@valkyrie/shared-domain';
 import { VectorBuffSelectionService } from '../services/vector-buff-selection.service.js';
 import { CombatEngine } from './combat-engine.js';
+import { PlayerSession } from './room-types.js';
+import {
+  broadcastCombatSnapshot,
+  broadcastCombatStart,
+  broadcastDraftStart,
+  broadcastMatchInit,
+  broadcastMatchResult,
+  broadcastPreparationStart,
+  broadcastRoundResult,
+  sendReconnectSync
+} from './room-broadcaster.js';
 
-export interface PlayerSession {
-  readonly playerId: string;
-  readonly displayName: string;
-  readonly avatarValkyrieId: string;
-  send: (msg: ServerMessage) => void;
-  accumulatedBuffIds: string[];
-  chosenBuffId?: string | undefined;
-  formation: UnitPlacement[];
-  isLockedIn: boolean;
-}
+export type { PlayerSession } from './room-types.js';
 
+/**
+ * Server-authoritative Room State Machine for 1v1 BO3/BO5 matches.
+ * Máy trạng thái phòng đấu phía Server cho các trận đối kháng 1v1 BO3/BO5.
+ */
 export class MatchRoom {
   public readonly matchId: string;
   public readonly format: MatchFormat;
@@ -58,44 +61,13 @@ export class MatchRoom {
     return this.currentPhase;
   }
 
-  public startMatch(): void {
-    // 1. Notify both players about match init
-    this.p1.send({
-      type: 'S2C_MATCH_INIT',
-      payload: {
-        matchId: this.matchId,
-        format: this.format,
-        targetWins: this.targetWins,
-        opponentProfile: {
-          id: this.p2.playerId,
-          displayName: this.p2.displayName,
-          rankRating: 1500,
-          avatarValkyrieId: this.p2.avatarValkyrieId
-        }
-      }
-    });
-
-    this.p2.send({
-      type: 'S2C_MATCH_INIT',
-      payload: {
-        matchId: this.matchId,
-        format: this.format,
-        targetWins: this.targetWins,
-        opponentProfile: {
-          id: this.p1.playerId,
-          displayName: this.p1.displayName,
-          rankRating: 1500,
-          avatarValkyrieId: this.p1.avatarValkyrieId
-        }
-      }
-    });
-
-    // 2. Start Round 1 Buff Drafting
-    this.startBuffDrafting();
-  }
-
   public getSeriesScore(): SeriesScore {
     return { playerWins: this.playerWins, opponentWins: this.opponentWins };
+  }
+
+  public startMatch(): void {
+    broadcastMatchInit(this.p1, this.p2, this.matchId, this.format, this.targetWins);
+    this.startBuffDrafting();
   }
 
   public startBuffDrafting(): void {
@@ -110,45 +82,28 @@ export class MatchRoom {
       this.p2.accumulatedBuffIds,
       this.roundNumber
     );
-
     const p2Buffs = this.vectorBuffService.selectDraftBuffs(
       this.p2.accumulatedBuffIds,
       this.p1.accumulatedBuffIds,
       this.roundNumber
     );
 
-    this.p1.send({
-      type: 'S2C_ROUND_DRAFT_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        seriesScore: this.getSeriesScore(),
-        draftTimeoutSeconds: DRAFT_TIMEOUT_SECONDS,
-        personalizedBuffs: p1Buffs,
-        historyAccumulationDepth: this.p1.accumulatedBuffIds.length
-      }
-    });
+    broadcastDraftStart(
+      this.p1,
+      this.p2,
+      this.matchId,
+      this.roundNumber,
+      this.getSeriesScore(),
+      p1Buffs,
+      p2Buffs
+    );
 
-    this.p2.send({
-      type: 'S2C_ROUND_DRAFT_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        seriesScore: { playerWins: this.opponentWins, opponentWins: this.playerWins },
-        draftTimeoutSeconds: DRAFT_TIMEOUT_SECONDS,
-        personalizedBuffs: p2Buffs,
-        historyAccumulationDepth: this.p2.accumulatedBuffIds.length
-      }
-    });
-
-    // If p2 is an AI session, pre-select buff so player draft selection advances immediately
     if (this.p2.playerId.startsWith('ai_')) {
       const bestBotBuff = p2Buffs[Math.floor(Math.random() * Math.min(3, p2Buffs.length))]?.id ?? 'BUFF-002';
       this.p2.chosenBuffId = bestBotBuff;
       this.p2.accumulatedBuffIds.push(bestBotBuff);
     }
 
-    // Timeout fallback after 20s
     this.clearTimers();
     this.phaseTimer = setTimeout(() => {
       this.resolveBuffSelection();
@@ -162,7 +117,6 @@ export class MatchRoom {
     player.chosenBuffId = buffId;
     player.accumulatedBuffIds.push(buffId);
 
-    // If both picked, advance immediately
     if (this.p1.chosenBuffId && this.p2.chosenBuffId) {
       this.resolveBuffSelection();
     }
@@ -171,7 +125,6 @@ export class MatchRoom {
   private resolveBuffSelection(): void {
     this.clearTimers();
 
-    // Auto-select first available if player didn't pick
     if (!this.p1.chosenBuffId) {
       const p1Buffs = this.vectorBuffService.selectDraftBuffs(this.p1.accumulatedBuffIds, this.p2.accumulatedBuffIds, this.roundNumber);
       const fallback = p1Buffs[0]?.id ?? 'BUFF-001';
@@ -193,7 +146,6 @@ export class MatchRoom {
     this.p1.isLockedIn = false;
     this.p2.isLockedIn = false;
 
-    // AI opponent setup: auto-lock in with adaptive roster per round
     if (this.p2.playerId.startsWith('ai_')) {
       this.p2.isLockedIn = true;
       if (this.roundNumber === 2) {
@@ -211,27 +163,8 @@ export class MatchRoom {
       }
     }
 
-    this.p1.send({
-      type: 'S2C_PREPARATION_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        timeoutSeconds: PREPARATION_TIMEOUT_SECONDS,
-        playerChosenBuffId: this.p1.chosenBuffId ?? ''
-      }
-    });
+    broadcastPreparationStart(this.p1, this.p2, this.matchId, this.roundNumber);
 
-    this.p2.send({
-      type: 'S2C_PREPARATION_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        timeoutSeconds: PREPARATION_TIMEOUT_SECONDS,
-        playerChosenBuffId: this.p2.chosenBuffId ?? ''
-      }
-    });
-
-    // 20s placement timer
     this.clearTimers();
     this.phaseTimer = setTimeout(() => {
       this.startCombatSimulation();
@@ -261,51 +194,19 @@ export class MatchRoom {
     this.clearTimers();
     this.currentPhase = 'BATTLE_SIMULATION';
 
-    // Lift Fog of Placement!
     const seed = Math.floor(Math.random() * 1000000);
+    broadcastCombatStart(this.p1, this.p2, this.matchId, this.roundNumber, seed);
 
-    this.p1.send({
-      type: 'S2C_COMBAT_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        randomSeed: seed,
-        playerFormation: this.p1.formation,
-        opponentFormation: this.p2.formation,
-        activeBuffs: {
-          playerBuffIds: this.p1.accumulatedBuffIds,
-          opponentBuffIds: this.p2.accumulatedBuffIds
-        }
-      }
-    });
-
-    this.p2.send({
-      type: 'S2C_COMBAT_START',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        randomSeed: seed,
-        playerFormation: this.p2.formation,
-        opponentFormation: this.p1.formation,
-        activeBuffs: {
-          playerBuffIds: this.p2.accumulatedBuffIds,
-          opponentBuffIds: this.p1.accumulatedBuffIds
-        }
-      }
-    });
-
-    // Initialize 20Hz Combat Engine
     this.combatEngine = new CombatEngine(
       this.p1.playerId,
       this.p1.formation,
       this.p2.playerId,
       this.p2.formation,
       (tick, entities, events) => {
-        this.broadcastCombatSnapshot(tick, entities, events);
+        broadcastCombatSnapshot(this.p1, this.p2, this.matchId, this.roundNumber, tick, entities, events);
       }
     );
 
-    // Run 50ms tick interval loop
     this.combatTimer = setInterval(() => {
       if (!this.combatEngine) return;
       const step = this.combatEngine.stepTick();
@@ -313,20 +214,6 @@ export class MatchRoom {
         this.finishRound(step.winnerId);
       }
     }, 50);
-  }
-
-  private broadcastCombatSnapshot(tick: number, entities: readonly CombatEntitySnapshot[], events: readonly CombatEventItem[]): void {
-    const payload = {
-      matchId: this.matchId,
-      roundNumber: this.roundNumber,
-      tick,
-      timestamp: Date.now(),
-      entities,
-      events
-    };
-
-    this.p1.send({ type: 'S2C_COMBAT_SNAPSHOT', payload });
-    this.p2.send({ type: 'S2C_COMBAT_SNAPSHOT', payload });
   }
 
   private finishRound(winnerPlayerId: string | null): void {
@@ -346,71 +233,26 @@ export class MatchRoom {
       totalUltimateCasts: 0
     };
 
-    // Check if entire match is decided
     const isP1Champion = this.playerWins >= this.targetWins;
     const isP2Champion = this.opponentWins >= this.targetWins;
     const isMatchOver = isP1Champion || isP2Champion;
 
-    // Send round result
-    this.p1.send({
-      type: 'S2C_ROUND_RESULT',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        winnerPlayerId,
-        updatedSeriesScore: currentScore,
-        nextState: isMatchOver ? 'MATCH_OVER' : 'BUFF_DRAFTING',
-        roundSummary: {
-          totalDamageDealt: summary.totalDamageDealt,
-          totalClothTearTriggers: summary.totalClothTearTriggers,
-          ultimateCount: summary.totalUltimateCasts
-        }
-      }
-    });
-
-    this.p2.send({
-      type: 'S2C_ROUND_RESULT',
-      payload: {
-        matchId: this.matchId,
-        roundNumber: this.roundNumber,
-        winnerPlayerId,
-        updatedSeriesScore: { playerWins: this.opponentWins, opponentWins: this.playerWins },
-        nextState: isMatchOver ? 'MATCH_OVER' : 'BUFF_DRAFTING',
-        roundSummary: {
-          totalDamageDealt: summary.totalDamageDealt,
-          totalClothTearTriggers: summary.totalClothTearTriggers,
-          ultimateCount: summary.totalUltimateCasts
-        }
-      }
-    });
+    broadcastRoundResult(
+      this.p1,
+      this.p2,
+      this.matchId,
+      this.roundNumber,
+      winnerPlayerId,
+      currentScore,
+      isMatchOver,
+      summary
+    );
 
     if (isMatchOver) {
       this.currentPhase = 'MATCH_OVER';
       const championId = isP1Champion ? this.p1.playerId : this.p2.playerId;
-
-      this.p1.send({
-        type: 'S2C_MATCH_RESULT',
-        payload: {
-          matchId: this.matchId,
-          championPlayerId: championId,
-          finalScores: currentScore,
-          mvpValkyrieId: this.p1.formation[0]?.valkyrieId ?? 'VALK-01',
-          mmrDelta: isP1Champion ? 25 : -25
-        }
-      });
-
-      this.p2.send({
-        type: 'S2C_MATCH_RESULT',
-        payload: {
-          matchId: this.matchId,
-          championPlayerId: championId,
-          finalScores: { playerWins: this.opponentWins, opponentWins: this.playerWins },
-          mvpValkyrieId: this.p2.formation[0]?.valkyrieId ?? 'VALK-02',
-          mmrDelta: isP2Champion ? 25 : -25
-        }
-      });
+      broadcastMatchResult(this.p1, this.p2, this.matchId, championId, currentScore, isP1Champion, isP2Champion);
     } else {
-      // Proceed to next round after 3.5s pause
       this.clearTimers();
       this.phaseTimer = setTimeout(() => {
         this.roundNumber += 1;
@@ -423,20 +265,9 @@ export class MatchRoom {
     const isP1 = playerId === this.p1.playerId;
     const player = isP1 ? this.p1 : this.p2;
     const opponent = isP1 ? this.p2 : this.p1;
+    const score = isP1 ? this.getSeriesScore() : { playerWins: this.opponentWins, opponentWins: this.playerWins };
 
-    player.send({
-      type: 'S2C_SYNC_STATE',
-      payload: {
-        matchId: this.matchId,
-        currentPhase: this.currentPhase,
-        remainingSecondsInPhase: 10,
-        roundNumber: this.roundNumber,
-        seriesScore: isP1 ? this.getSeriesScore() : { playerWins: this.opponentWins, opponentWins: this.playerWins },
-        myAccumulatedBuffs: player.accumulatedBuffIds,
-        opponentAccumulatedBuffs: opponent.accumulatedBuffIds,
-        currentFormation: player.formation
-      }
-    });
+    sendReconnectSync(player, opponent, this.matchId, this.currentPhase, this.roundNumber, score);
   }
 
   public clearTimers(): void {

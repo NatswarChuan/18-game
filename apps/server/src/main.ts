@@ -85,8 +85,8 @@ app.register(async (fastifyInstance) => {
     // Start match immediately
     room.startMatch();
 
-    // Listen to messages from Client
-    socket.on('message', (rawMessage: Buffer) => {
+    // Message listener with cleanup
+    const onMessage = (rawMessage: Buffer): void => {
       try {
         const parsed = JSON.parse(rawMessage.toString()) as ClientMessage;
 
@@ -111,13 +111,19 @@ app.register(async (fastifyInstance) => {
       } catch (err) {
         app.log.error({ err }, 'Failed to parse incoming WebSocket message');
       }
-    });
+    };
 
-    socket.on('close', () => {
+    // Close listener with cleanup
+    const onClose = (): void => {
       app.log.info({ playerId }, 'Client disconnected');
+      socket.off('message', onMessage);
+      socket.off('close', onClose);
       room.dispose();
       activeRooms.delete(matchId);
-    });
+    };
+
+    socket.on('message', onMessage);
+    socket.on('close', onClose);
   });
 });
 

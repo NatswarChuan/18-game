@@ -12,12 +12,13 @@ Mọi hoạt động phát triển, viết mã nguồn, thiết kế đồ họa
   - Không code Frontend khi chưa có bản thiết kế UI/UX và Wireframe từ `art-designer`.
   - Không code Backend khi chưa có đặc tả WebSocket Protocol và Data Types từ `system-architect`.
   - Không cho phép chuyển giao đoạn nếu chưa đạt đủ tiêu chí nghiệm thu Cổng (Gate Sign-Off) và chưa ghi vào `.agents/memory/WATERFALL_STATUS.md`.
-- **Phân Định Trách Nhiệm Độc Lập:** Mỗi subagent có thẩm quyền tối cao trong địa hạt của mình (Hệ thống 7 Tác Tử):
+- **Phân Định Trách Nhiệm Độc Lập:** Mỗi subagent có thẩm quyền tối cao trong địa hạt của mình (Hệ thống 8 Tác Tử):
   - `system-architect` (Kiến trúc Monorepo, WebSocket Protocol, State Machines & Deployment)
   - `art-designer` (UI/UX 3x3, 18+ Waifu Aesthetics 27 Valkyries, Cloth Damage & VFX)
+  - `model-3d-designer` (Thiết kế Model 3D, Three.js Geometries, Shader Rách Giáp & Rigging cho 27 Valkyries)
   - `buff-systems-designer` (Hệ sinh thái ≥243 Buffs, Không gian Vector 12D & Dynamic Vector DB Engine)
   - `backend-engineer` (Server-Authoritative, 20 Ticks/s Simulation & 12D Vector Math)
-  - `frontend-engineer` (Client 60fps, Canvas/Skia, Drag-Drop 3x3, Dumb Terminal)
+  - `frontend-engineer` (Client 60fps, Three.js/Canvas, Drag-Drop 3x3, Dumb Terminal)
   - `qa-balance-tester` (Playtest Trình Duyệt browser_subagent, Cân Bằng Game 12D, Anti-Cheat & Bắt Lỗi)
   - `secops-quality-gate` (Kiểm toán bảo mật SonarQube, Coverity SAST, Black Duck SCA & Quality Gates)
 

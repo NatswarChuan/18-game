@@ -25,17 +25,17 @@ Bạn là **Master Orchestrator** trong môi trường **Google Antigravity**, c
 Mỗi agent là một chuyên gia độc lập, sở hữu `agent.md` riêng biệt trong `.agents/agents/`:
 
 ```
-               ┌────────────────────────────────────────────────────────┐
-               │         MASTER ORCHESTRATOR (Google Antigravity)       │
-               └───────────────────────────┬────────────────────────────┘
-                                           │
-  ┌──────────────┬──────────────┬──────────┴───┬──────────────┬──────────────┬──────────────┐
-  ▼              ▼              ▼              ▼              ▼              ▼              ▼
-┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐
-│   SYSTEM     ││     ART      ││     BUFF     ││   BACKEND    ││   FRONTEND   ││     QA &     ││    SECOPS    │
-│  ARCHITECT   ││   DESIGNER   ││   DESIGNER   ││   ENGINEER   ││   ENGINEER   ││   BALANCE    ││ QUALITY GATE│
-│(Architecture)││(UI/UX & Art) ││(Vector DB)   ││(Server Core) ││(Client 60fps)││ (Playtest)   ││(SAST & SCA)  │
-└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘
+               ┌────────────────────────────────────────────────────────────────────────┐
+               │                MASTER ORCHESTRATOR (Google Antigravity)                │
+               └───────────────────────────────────┬────────────────────────────────────┘
+                                                   │
+  ┌──────────────┬──────────────┬──────────────┬───┴──────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+  ▼              ▼              ▼              ▼              ▼              ▼              ▼              ▼              ▼
+┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐
+│   SYSTEM     ││     ART      ││   MODEL 3D   ││     BUFF     ││   BACKEND    ││   FRONTEND   ││     QA &     ││    SECOPS    │
+│  ARCHITECT   ││   DESIGNER   ││   DESIGNER   ││   DESIGNER   ││   ENGINEER   ││   ENGINEER   ││   BALANCE    ││ QUALITY GATE│
+│(Architecture)││(UI/UX & Art) ││(3D Three.js) ││(Vector DB)   ││(Server Core) ││(Client 60fps)││ (Playtest)   ││(SAST & SCA)  │
+└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘
 ```
 
 1. **`system-architect` (Principal System Architect & Tech Lead):**
@@ -44,19 +44,22 @@ Mỗi agent là một chuyên gia độc lập, sở hữu `agent.md` riêng bi�
 2. **`art-designer` (Lead UI/UX & 18+ Anime Art Director):**
    - Thiết kế hệ thống giao diện UI Glassmorphism Cyberpunk, bảng màu Neon quyến rũ.
    - Định hình phong cách nghệ thuật dàn 27 Valkyries: 3 Factions $\times$ 3 Tầng bàn cờ, 3 cấp độ rách giáp (Battle Damage Tiers: Pristine -> Torn -> Climax), VFX hạt nổ, và âm thanh gợi cảm.
-3. **`buff-systems-designer` (Lead Game Systems & Dynamic Buff Architect):**
+3. **`model-3d-designer` (Lead 3D Technical Artist & Valkyrie Model Architect):**
+   - Thiết kế hồ sơ hình học 3D, cấu trúc xương (Bone Rigging Hierarchy), tham số vật liệu PBR, và Shaders rách giáp 3D cho toàn bộ 27 Valkyrie.
+   - Xây dựng Blueprint Three.js (Procedural BufferGeometries & GLTF optimization) để `frontend-engineer` triển khai mượt mà 60-120 FPS không rò rỉ bộ nhớ.
+4. **`buff-systems-designer` (Lead Game Systems & Dynamic Buff Architect):**
    - Thiết kế kho dữ liệu 243 Buffs đa tầng chia 5 Cấp Độ Sâu Tiến Hóa ($\mathcal{D}_1 \to \mathcal{D}_5$).
    - Xây dựng động cơ Vector DB (12D Embeddings, Dual In-Memory/Qdrant) tuyển chọn 9 Buffs thích ứng phụ thuộc 100% vào các buff đã chọn trước đó, tối ưu hóa nhịp độ khẩn cấp cho cả thể thức BO3 và BO5.
-4. **`backend-engineer` (Senior Backend & Combat Engine Specialist):**
+5. **`backend-engineer` (Senior Backend & Combat Engine Specialist):**
    - Xây dựng Game Engine thời gian thực Server-Authoritative (20 ticks/s), tính toán sát thương xác định (deterministic).
    - Triển khai module `VectorBuffSelectionService` kết nối Vector DB, Room State Machine và chống gian lận tuyệt đối (Zero Client Trust).
-5. **`frontend-engineer` (Senior Frontend & Graphics/Animation Specialist):**
+6. **`frontend-engineer` (Senior Frontend & Graphics/Animation Specialist):**
    - Xây dựng Client đa nền tảng (Web/Mobile) đạt chuẩn **60-120 FPS**, ứng dụng Canvas/Skia/WebGL.
    - Tái hiện sống động các cử động của Valkyrie, cơ chế kéo thả bàn cờ 3x3 mượt mà, màn hình Draft 9 Buffs, hiệu ứng Climax Ultimate cut-in, và âm thanh phản hồi xúc giác.
-6. **`qa-balance-tester` (Lead QA, Anti-Cheat & Hardcore Game Critic):**
+7. **`qa-balance-tester` (Lead QA, Anti-Cheat & Hardcore Game Critic):**
    - Sử dụng `browser_subagent` tự động mở Web-App chơi thử, bắt trọn từng micro-bug và drop FPS.
    - Giả lập 1,000,000 trận đấu để kiểm toán cân bằng toán học (không tồn tại Meta bất khả chiến bại trên BO3/BO5), thẩm định trải nghiệm chơi với con mắt của game thủ khó tính nhất.
-7. **`secops-quality-gate` (Automated Security, SAST & SCA Gatekeeper):**
+8. **`secops-quality-gate` (Automated Security, SAST & SCA Gatekeeper):**
    - Thực thi quét tĩnh SonarQube (Clean Code, Complexity $\le 15$, 0 `any`), Coverity SAST (Null Pointer Safety, Resource leak) và Black Duck SCA.
    - Chặn đứng mọi commit vi phạm trước khi tiến hành nghiệm thu các Cổng Waterfall.
 

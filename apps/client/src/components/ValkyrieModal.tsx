@@ -1,5 +1,6 @@
 import React from 'react';
 import { getValkyrieById } from '@valkyrie/shared-domain';
+import { ValkyrieThreeAvatar } from './ValkyrieThreeAvatar.js';
 
 interface ValkyrieModalProps {
   readonly valkyrieId: string | null;
@@ -17,18 +18,13 @@ export const ValkyrieModal: React.FC<ValkyrieModalProps> = ({ valkyrieId, onClos
         {/* Top Glow Header */}
         <div className="relative p-6 border-b border-white/10 flex items-start justify-between bg-gradient-to-r from-white/5 to-transparent">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#00F0FF]/50 shadow-lg relative bg-gradient-to-tr from-[#FF2A85] to-[#8A2BE2] flex-shrink-0">
-              <img
-                src={`/avatars/${valk.id}.jpg`}
-                alt={valk.name}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+            <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#00F0FF]/50 shadow-lg relative bg-black/60 flex-shrink-0">
+              <ValkyrieThreeAvatar
+                valkyrieId={valk.id}
+                faction={valk.faction}
+                size={64}
+                interactive={true}
               />
-              <span className="absolute inset-0 flex items-center justify-center font-bold text-2xl text-white">
-                {valk.name[0]}
-              </span>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
@@ -54,6 +50,24 @@ export const ValkyrieModal: React.FC<ValkyrieModalProps> = ({ valkyrieId, onClos
 
         {/* Content Body */}
         <div className="p-6 space-y-5 max-h-[70vh] overflow-y-auto">
+          {/* 2.5D Three.js Interactive Hologram Stage */}
+          <div className="flex flex-col items-center justify-center p-3 rounded-2xl border border-[#00F0FF]/30 bg-gradient-to-b from-[#00F0FF]/10 to-transparent relative overflow-hidden shadow-[inset_0_0_30px_rgba(0,240,255,0.15)]">
+            <span className="font-mono text-[9px] text-[#00F0FF] uppercase tracking-widest mb-1">
+              ⬡ HÌNH CHIẾU HOLOGRAM 2.5D THỜI GIAN THỰC (THREE.JS WEBGL)
+            </span>
+            <div className="relative">
+              <ValkyrieThreeAvatar
+                valkyrieId={valk.id}
+                faction={valk.faction}
+                size={140}
+                interactive={true}
+              />
+            </div>
+            <span className="text-[9px] text-gray-400 font-sub mt-1">
+              Di chuyển chuột trên mô hình để kích hoạt hiệu ứng xoay thị sai 3D (Parallax Depth)
+            </span>
+          </div>
+
           {/* Base Stats Grid */}
           <div>
             <h4 className="font-display font-bold text-xs text-gray-400 uppercase tracking-wider mb-2">
